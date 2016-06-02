@@ -100,10 +100,12 @@ if(!isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE ){
 			$modificarLibro="UPDATE clientes SET foto='".$nombrefoto.$ext."'
 								where id='".$id."'";
 								
-								echo $modificarLibro;
+								
 	
 		   
 			$resultado=ConsultaSql($modificarLibro);
+			header('Location: miCuenta.php');
+			exit();
 			
 			}
 
