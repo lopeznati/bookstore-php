@@ -98,3 +98,7 @@ include_once "header.php";
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
+
+<footer class="container-fluid text-center">
+    <p style='font-size: 12px;'><?php echo include_once 'ws.php' ?></p>
+	</footer>
