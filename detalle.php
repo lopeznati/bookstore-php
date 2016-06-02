@@ -41,7 +41,8 @@ $libro=ConsultaSql($sql);
 					$e=mysql_fetch_assoc(ConsultaSql($sqlEditorial));
 					echo "<form action='verCarro.php' action='GET'>";
 					echo "<tr>";
-					echo "<td class='celdafoto'><img class='foto' src='".$l['foto']."'/></td>";
+					echo "<td class='celdafoto'><img class='foto' src='".$l['foto']."'/>
+					<a href='like.php?idlib=".$l['id']."' > <IMG SRC='icon/me-gusta.jpg' WIDTH=30 HEIGHT=30>  </a></td>";
 					echo "<td  > <span class='titulos'>".$l['titulo']."</span></br>
 														<span class='titulos'>ISBN: </span>".$l['ISBN']."</br>
 														<span class='titulos'>Precio: </span>"."$ ".$l['precio']."</br>
@@ -50,7 +51,9 @@ $libro=ConsultaSql($sql);
 														<span class='titulos'>Paginas: </span>".$l['cantPaginas']."</br>
 														
 														
-														<div class='celdaboton2'><input  type='submit' class='btn btn-primary' value='Comprar +'/></div>
+														<div class='celdaboton2'><input  type='submit' class='btn btn-primary' value='Comprar +'/></div></br>
+														
+														
 														
 														
 														</div>
