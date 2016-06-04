@@ -14,55 +14,7 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
 	
 ?>
 
-	<script type="text/javascript" src="js/js_export/jquery.js"></script>
-    <script type="text/javascript" src="js/js_export/jquery.tabletoCSV.js"></script>
-    <script type="text/javascript" src="js/js_export/tableExport.js"></script>
-    <script type="text/javascript" src="js/js_export/jquery.base64.js"></script>
-    <script type="text/javascript" src="js/js_export/jspdf/libs/sprintf.js"></script>
-    <script type="text/javascript" src="js/js_export/jspdf/jspdf.js"></script>
-    <script type="text/javascript" src="js/js_export/jspdf/libs/base64.js"></script>
-	
-	
-	<!-- scripts para exportar-->
-	<script>
-        $(function(){
-            $("#CSV").click(function(){
-                $("#tabla").tableToCSV();
-            });
-        });
-    </script>
 
-	<script type="text/javascript">
-    $(document).ready(function(e){
-    $("#XLS").click(function(e){
-    $("#tabla").tableExport({
-    type:'excel',
-    escape:'false'
-    });
-    });
-    });
-    </script> 
-
-   <script type="text/javascript">
-    $(document).ready(function(e){
-    $("#XML").click(function(e){
-    $("#tabla").tableExport({
-    type:'xml',
-    escape:'false'
-    });
-    });
-    });
-    </script>
-    <script type="text/javascript">
-    $(document).ready(function(e){
-    $("#JSON").click(function(e){
-    $("#tabla").tableExport({
-    type:'json',
-    escape:'false'
-    });
-    });
-    });
-    </script>
 
 	
 	<!-- MENU -->
@@ -123,8 +75,6 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
 			$agregarLibro="INSERT INTO libros(id,ISBN,titulo,descripcion,nroEdicion,cantPaginas,precio,existencia,id_categoria, id_editorial, foto, archivo)  
 							VALUES('','".$isbn."','".$titulo."','".$descripcion."','".$nedicion."','".$cpaginas."','".$precio."','".$nexistencia."','".$categoriaid."','".$editorialid."', '".$nombrefoto.$ext."', '".$nombrearchivo.$ext2."')";
 			$resultado=ConsultaSql($agregarLibro);
-			
-			
 	
 	
 		
@@ -254,9 +204,10 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
 			$libros=ConsultaSql($sqlLibros);
 			
 			
+			
 		  ?>
           <div class="table-responsive">
-            <table id="tabla" class="table table-striped">
+            <table class="table table-striped">
               <thead>
                 <tr>
                   <th>#</th>
@@ -308,30 +259,12 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
               </tbody>
             </table>
 			
-			
-			<center>
-			   <div>
-				<button id="CSV" class="btn btn-primary" data-export="export">Exportar a CSV</button>
-				<button id="XLS" class="btn btn-primary" data-export="export">Exportar a XLS
-				</button>
-			   <button id="XML" class="btn btn-primary" data-export="export">Exportar a XML
-			   </button>
-			   <button id="JSON" class="btn btn-primary" data-export="export">Exportar a JSON
-			   </button>
-			   </div>
-			 </center>  
-			
-			
-			
-			<!--
 			<form action="" method="post">
 				<input type="hidden" name="exportar" value="1" />
 				<input type="submit" class="btn btn-primary" value="EXPORTAR a CSV" />
-			</form> -->
+			</form>
 			
-			<!--botones para exportar -->
 			<?php
-			/*
 				date_default_timezone_set('America/Argentina/Buenos_Aires');
 				if(!empty($_POST['exportar']) AND $_POST['exportar'] ==1){
 				//Genero el archivo csv.
@@ -360,14 +293,23 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
 				fclose($ac);
 				echo "Generé el archivo csv en el disco !!";
 			}
-			*/
+			
 			?>
           </div>
         </div>
       </div>
     </div>
 
-   
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="assets/js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
 

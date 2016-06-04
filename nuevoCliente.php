@@ -189,6 +189,43 @@ $localidades=ConsultaSql('select * from localidades');
                 
               </tbody>
             </table>
+			
+			<form action="" method="post">
+				<input type="hidden" name="exportar" value="1" />
+				<input type="submit" class="btn btn-primary" value="EXPORTAR a CSV" />
+			</form>
+			
+ 
+			
+			<?php
+				date_default_timezone_set('America/Argentina/Buenos_Aires');
+				if(!empty($_POST['exportar']) AND $_POST['exportar'] ==1){
+				//Genero el archivo csv.
+				$nombreArchivo = "clientes".date('Y-m-d_H.i').".csv";
+				$res = ConsultaSql("select * from clientes;");
+				
+				$salida = "";
+				if($res and mysql_num_rows($res) > 0){
+					while ($r = mysql_fetch_array($res)) {
+						$salida .= '"'.$r['id'].'",';
+						$salida .= '"'.$r['nombre'].'",';
+						$salida .= '"'.$r['apellido'].'",';
+						$salida .= '"'.$r['domicilio'].'",';
+						$salida .= '"'.$r['telefono'].'",';
+						$salida .= '"'.$r['mail'].'",';
+						$salida .= '"'.$r['usuario'].'",';
+						$salida .= '"'.$r['id_localidad'].'";';
+						
+						
+					}
+				}
+				$ac = fopen($nombreArchivo,'a+');
+				fputs($ac,$salida);
+				fclose($ac);
+				echo "Generé el archivo csv en el disco !!";
+			}
+			
+			?>
           </div>
         </div>
       </div>

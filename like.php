@@ -9,7 +9,7 @@ $libro=ConsultaSql($sql);
 $l=mysql_fetch_array($libro);
 
 
-$archivo2=fopen('datos.txt','a+');
+$archivo2=fopen('datos.dat','a+');
 fputs($archivo2,$l['id'].','.$l['titulo'].','.$_SESSION['id_usuario'].';');
 fclose($archivo2);
 header('location:detalle.php?id='.$idlibro.'');
