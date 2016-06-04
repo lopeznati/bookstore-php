@@ -14,6 +14,7 @@ include_once "header.php";
         
 		     <?php 
 		session_start();
+		
 		if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE ){
 		
 		}else{include_once "menu-lateral.php";}
@@ -22,9 +23,12 @@ include_once "header.php";
 	
 		
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+		
+		<!-- Sector de busqueda -->
+		 <?php include_once 'busq.php';?>
           <h1 class="page-header">Libros</h1>
 		  
-		  
+		
 		  
 
          
@@ -32,6 +36,7 @@ include_once "header.php";
           <!--<h2 class="sub-header">Section title</h2>-->
 		  
 		  <?php 
+		       
 				$sqllibros="select * from libros";
 				$libros=ConsultaSql($sqllibros);
 				
