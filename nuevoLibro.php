@@ -79,7 +79,7 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
           <h1 class="page-header">Nuevo Libro</h1>
 		  
 		  <?php
-			if(!empty($_POST) AND !empty($_FILES) AND !empty($_POST['isbn']) AND !empty($_POST['titulo']) AND !empty($_POST['descripcion']) AND !empty($_POST['nedicion']) AND !empty($_POST['cpaginas']) AND !empty($_POST['precio']) AND !empty($_POST['nexistencia']) AND !empty($_POST['categoria_id']) AND !empty($_POST['editorial_id'])){
+			if(!empty($_POST) AND !empty($_FILES['foto']) AND !empty($_POST['isbn']) AND !empty($_POST['titulo']) AND !empty($_POST['descripcion']) AND !empty($_POST['nedicion']) AND !empty($_POST['cpaginas']) AND !empty($_POST['precio']) AND !empty($_POST['nexistencia']) AND !empty($_POST['categoria_id']) AND !empty($_POST['editorial_id'])){
 			$isbn=trim($_POST['isbn']);
 			$titulo=trim($_POST['titulo']);
 			$descripcion=trim($_POST['descripcion']);
@@ -109,7 +109,11 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
 			}
 			//guardar la imagen a la carpeta foto
 			move_uploaded_file($_FILES['foto']['tmp_name'], $nombrefoto.$ext);
+			
+			
 			//archivo
+			
+			/*
 			
 			$nombrearchivo = "pdf/".date('Y-m-dHis')."_".rand(123,123123);
 			if(preg_match("/pdf/i", $_FILES['archivo']['type']) > 0){
@@ -118,10 +122,10 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
 			//guardar la imagen a la carpeta foto
 			move_uploaded_file($_FILES['archivo']['tmp_name'], $nombrearchivo.$ext2);
 			
-			
+			*/
 	
-			$agregarLibro="INSERT INTO libros(id,ISBN,titulo,descripcion,nroEdicion,cantPaginas,precio,existencia,id_categoria, id_editorial, foto, archivo)  
-							VALUES('','".$isbn."','".$titulo."','".$descripcion."','".$nedicion."','".$cpaginas."','".$precio."','".$nexistencia."','".$categoriaid."','".$editorialid."', '".$nombrefoto.$ext."', '".$nombrearchivo.$ext2."')";
+			$agregarLibro="INSERT INTO libros(id,ISBN,titulo,descripcion,nroEdicion,cantPaginas,precio,existencia,id_categoria, id_editorial, foto)  
+							VALUES('','".$isbn."','".$titulo."','".$descripcion."','".$nedicion."','".$cpaginas."','".$precio."','".$nexistencia."','".$categoriaid."','".$editorialid."', '".$nombrefoto.$ext."')";
 			$resultado=ConsultaSql($agregarLibro);
 			
 			
@@ -216,11 +220,27 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
                   <td><input type="file" name="foto" accept="image/*"><br /></td>
                 </tr>
 				
+				<!--
+				<form action="" method="post" enctype="multipart/form-data">
+				<table class="table table-striped">
+				<tr>
+			
+                  <td class='celdafoto'>PDF</td>
+                  <td><input type="file" name="archivo" accept="pdf/*"><br /></td>
+				  <td><input type="submit" class="btn btn-primary" value="Cambiar"></td>
+                </tr>
+				<tr>
+					
+				</tr>
+				</table>
+				</form>
+				
 				
 				<tr>
                   <td>PDF</td>
                   <td><input type="file" name="archivo" accept="pdf/*"><br /></td>
                 </tr>
+				-->
 				
 				<tr>
                   <td></td>
@@ -235,7 +255,9 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
 		   <?php 
 		   
 	       ?>
-
+		   
+		   
+		   
              
                
                 

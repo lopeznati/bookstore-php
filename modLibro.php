@@ -36,7 +36,7 @@ if($_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION[
           <h1 class="page-header">Modificar Libro</h1>
 		  
 		  <?php
-			if(!empty($_POST) AND $_POST['Modificado']==1 AND !empty($_POST['isbn']) AND !empty($_POST['titulo']) AND !empty($_POST['descripcion']) AND !empty($_POST['nedicion']) AND !empty($_POST['cpaginas']) AND !empty($_POST['precio']) AND !empty($_POST['nexistencia']) AND !empty($_POST['categoria_id']) AND !empty($_POST['editorial_id'])){
+			if(!empty($_POST) AND isset($_POST['Modificado']) AND $_POST['Modificado']==1 AND !empty($_POST['isbn']) AND !empty($_POST['titulo']) AND !empty($_POST['descripcion']) AND !empty($_POST['nedicion']) AND !empty($_POST['cpaginas']) AND !empty($_POST['precio']) AND !empty($_POST['nexistencia']) AND !empty($_POST['categoria_id']) AND !empty($_POST['editorial_id'])){
 			$id=trim($_POST['idlibro']);
 			$isbn=trim($_POST['isbn']);
 			$titulo=trim($_POST['titulo']);
@@ -61,6 +61,25 @@ if($_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION[
 		
 	
 	
+			}
+			
+			if(isset($_POST['archivo']) AND $_POST['archivo']==1 AND !empty($_FILES)){
+				
+				//archivo
+			
+			
+			
+			$nombrearchivo = "pdf/".date('Y-m-dHis')."_".rand(123,123123);
+			if(preg_match("/pdf/i", $_FILES['archivo']['type']) > 0){
+				$ext2 = ".pdf";
+			}
+			//guardar la imagen a la carpeta foto
+			move_uploaded_file($_FILES['archivo']['tmp_name'], $nombrearchivo.$ext2);
+			
+			$modificarLibro="UPDATE libros SET archivo='".$nombrearchivo.$ext2."' WHERE id='".$_POST['idlibro']."'";
+	
+			
+			$resultado=ConsultaSql($modificarLibro);
 			}
 
 
@@ -166,7 +185,20 @@ if($_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION[
 		   
 	       ?>
 
-             
+             <form action="" method="post" enctype="multipart/form-data">
+				<table class="table table-striped">
+				<tr>
+				<input type="hidden" name="idlibro" value="<?php echo $libroMod['id'];?>">
+				<input type="hidden" name="archivo" value="1">
+                  <td>PDF</td>
+                  <td><input type="file" name="archivo" accept="pdf/*"><br /></td>
+				  <td><input type="submit" class="btn btn-primary" value="Cambiar"></td>
+                </tr>
+				<tr>
+					
+				</tr>
+			</table>
+			</form>
                
                 
 		  
