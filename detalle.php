@@ -46,7 +46,7 @@ $libro=ConsultaSql($sql);
 					echo "<td  > <span class='titulos'>".$l['titulo']."</span></br>
 														<span class='titulos'>ISBN: </span>".$l['ISBN']."</br>
 														<span class='titulos'>Precio: </span>"."$ ".$l['precio']."</br>
-														<span class='titulos'>Categoria: </span>".$c['descripcion']."</br>
+														<span class='titulos'>Categoria: </span>".utf8_encode($c['descripcion'])."</br>
 														<span class='titulos'>Editorial: </span>".$e['nombre']."</br>
 														<span class='titulos'>Paginas: </span>".$l['cantPaginas']."</br>
 														

@@ -209,14 +209,14 @@ left:30px;
 }
 
 #suggestions {
-width:100px;
+width:250px;
 height:150px;
 overflow: auto;
 }
 .suggest-element{
 margin-left:5px;
 margin-top:5px;
-width:100px;
+width:250px;
 cursor:pointer;
 }
 

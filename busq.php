@@ -21,6 +21,7 @@
 			$.ajax({
 				type: "POST",
 				url: "autocomplete.php",
+				
 				data: dataString,
 				success: function(data) {
 					//Escribimos las sugerencias que nos manda la consulta
@@ -33,6 +34,9 @@
 						$('#busqueda').val($('#'+id).attr('data'));
 						//Hacemos desaparecer el resto de sugerencias
 						$('#suggestions').fadeOut(1000);
+						
+						//me manda a otra pagina al encontrar el elemento
+						document.location.href = "./detalle.php?id=" + id;
 					});              
 				}
 			});
@@ -43,6 +47,18 @@
 </script>
 
 <form class="navbar-form navbar-right">
+<table>
+	<tr>
+		<td>
             <input type="text" id="busqueda" name="busqueda" class="form-control"  placeholder="Search...">
+		</td>
+		
+	</tr>
+	<tr>
+		<td>
 			<div id="suggestions"></div>
+		</td>
+		
+	</tr>
+</table>			
 </form>

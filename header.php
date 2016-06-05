@@ -58,9 +58,7 @@ include_once "funciones.php";
             <li><a href="verCarro.php"><img src="vercarrito.png"></a></li>
             <li><a href="miCuenta.php">Mi Cuenta</a></li>
           </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
+          
         </div>
       </div>
     </nav>

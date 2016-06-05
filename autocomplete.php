@@ -9,7 +9,7 @@ $query_busqueda= ConsultaSql("SELECT id, titulo FROM libros WHERE titulo like '"
 
 
 while ($row_busqueda = mysql_fetch_array($query_busqueda)) {
-    echo '<div ><a class="suggest-element" data="'.$row_busqueda['titulo'].'" id="busqueda'.$row_busqueda['id'].'">'.utf8_encode($row_busqueda['titulo']).'</a></div>';
+    echo '<div ><a class="suggest-element" data="'.$row_busqueda['titulo'].'" id="'.$row_busqueda['id'].'">'.utf8_encode($row_busqueda['titulo']).'</a></div>';
 
 	
 	}
