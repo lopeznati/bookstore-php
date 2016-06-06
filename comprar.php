@@ -1,6 +1,6 @@
 <?php 
 include_once 'header.php';
-session_start();
+
 
 if($_SESSION['usuario_valido']==true){
 	$arreglo=$_SESSION['carro'];

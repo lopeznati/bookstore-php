@@ -7,7 +7,7 @@
 <?php 
 include_once "header.php";
 
-session_start();
+
 
 if(!isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE ){
 	header('Location: signin.php');

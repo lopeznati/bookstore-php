@@ -1,8 +1,8 @@
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+﻿<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script type="text/javascript"  src="js/scripts.js"></script>
 <?php 
 include_once 'header.php';
-session_start();
+
 //si lo agrego una segunda vez
 if(isset($_SESSION['carro'])){
 	if(isset($_REQUEST['id'])){

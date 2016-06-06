@@ -13,7 +13,7 @@ include_once "header.php";
       <div class="row">
         
 		     <?php 
-		session_start();
+		
 		
 		if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE ){
 		
@@ -104,6 +104,8 @@ include_once "header.php";
   </body>
 </html>
 
-<footer class="container-fluid text-center">
-    <p style='font-size: 12px;'><?php echo include_once 'ws.php' ?></p>
-	</footer>
+
+
+
+
+ <p style='font-size: 12px;  color:blue; float: right;'><?php echo include_once 'probandoo.php' ?></p>

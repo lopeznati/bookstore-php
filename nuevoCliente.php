@@ -1,13 +1,12 @@
 <?php 
-session_start();
 
+include_once "header.php";
 if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE ){
 	header('Location: signin.php');
 }else{
 	
 
 
-include_once "header.php";
 
 if(!empty($_POST AND !empty($_POST['nombre']) AND !empty($_POST['apellido']) AND !empty($_POST['telefono']) AND !empty($_POST['domicilio']) AND !empty($_POST['mail']) AND !empty($_POST['usuario']) AND !empty($_POST['contraseña']) AND !empty($_POST['localidad_id']))){
 	$nombre=trim($_POST['nombre']);

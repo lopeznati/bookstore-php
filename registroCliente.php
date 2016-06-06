@@ -22,8 +22,33 @@ if(!empty($_POST AND !empty($_POST['nombre']) AND !empty($_POST['apellido']) AND
 	$agregarCliente="INSERT INTO clientes(id,usuario,clave,apellido, nombre,domicilio,telefono,mail,id_localidad,fecha,rol)  
 	VALUES('','".$usuario."','".$contraseña."','".$apellido."','".$nombre."','".$domicilio."','".$telefono."','".$mail."','".$localidadid."', '".$fecha."','".$rol."')";
 	$resultado=ConsultaSql($agregarCliente);
-
 	
+	
+	
+	$asunto="Registro a Bookstore-php";
+	$cuerpo="
+				<html>
+				<head>
+					<title>Registro</title>
+					
+				</head>
+				<body>
+					<h1>Bienvenido!!!<h1>
+					<p>Datos de registro:</p>
+					<p>Usuario: ".$usuario."</p>
+					<p>mail: ".$mail." </p>
+                                        <p>ingresa: http://bookstore-php.esy.es/ </p>
+				</body>
+				</html>
+				";
+        $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
+        $cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+	if (mail($mail, $asunto, $cuerpo, $cabeceras) ){
+		echo "Enviado !<br />";
+	}else{
+		echo "Hubo un error !<br />";
+	}
 	
 		
 	

@@ -1,5 +1,7 @@
 <?php 
+session_start();
 include_once "funciones.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -52,9 +54,13 @@ include_once "funciones.php";
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="signin.php">Login</a></li>
-        
+		    <?php if(!isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE ){ ?>
+				<li><a href="signin.php">Login</a></li>
+				<?php 
+			}else{ ?>
+            
 			<li><a href="logout.php">Logout</a></li>
+			<?php } ?>
             <li><a href="verCarro.php"><img src="vercarrito.png"></a></li>
             <li><a href="miCuenta.php">Mi Cuenta</a></li>
           </ul>

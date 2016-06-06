@@ -10,7 +10,7 @@ $libro=ConsultaSql($sql);
       <div class="row">
         
 		     <?php 
-		session_start();
+		
 		if(!isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE ){
 		
 		}else{include_once "menu-lateral.php";}

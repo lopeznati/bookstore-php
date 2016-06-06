@@ -1,7 +1,7 @@
-
+﻿
 <?php 
 include_once "header.php";
-session_start();
+
 date_default_timezone_set('America/Argentina/Buenos_Aires');
 
 if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE ){
