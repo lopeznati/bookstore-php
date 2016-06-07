@@ -74,6 +74,11 @@ $libro=ConsultaSql($sql);
 					
 					</tr>
 					
+					<tr>
+						<td colspan='2' ><a href='CURLNOTICIAS.php'>Ver Cotizacion</a><td>
+					
+					</tr>
+					
 					<?php 
 					
 					
