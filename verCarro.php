@@ -64,9 +64,7 @@ if(isset($_SESSION['carro'])){
       <div class="row">
 	   <?php 
 		
-		if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE ){
-		
-		}else{include_once "menu-lateral.php";}
+		include_once "menu-lateral.php";
 		
 		?>
 		<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">

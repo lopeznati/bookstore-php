@@ -15,9 +15,7 @@ include_once "header.php";
 		     <?php 
 		
 		
-		if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE ){
-		
-		}else{include_once "menu-lateral.php";}
+		include_once "menu-lateral.php";
 		
 		?>
 	

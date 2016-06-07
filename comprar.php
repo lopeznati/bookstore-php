@@ -25,9 +25,7 @@ if($_SESSION['usuario_valido']==true){
 <div class="container-fluid">
       <div class="row">
 	  <?php
-        if($_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE ){
-		
-		}else{include_once "menu-lateral.php";}
+        include_once "menu-lateral.php";
 		
 		?>
 

@@ -62,7 +62,7 @@ include_once "funciones.php";
 			<li><a href="logout.php">Logout</a></li>
 			<?php } ?>
             <li><a href="verCarro.php"><img src="vercarrito.png"></a></li>
-            <li><a href="miCuenta.php">Mi Cuenta</a></li>
+            
           </ul>
           
         </div>
