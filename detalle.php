@@ -11,7 +11,7 @@ $libro=ConsultaSql($sql);
         
 		     <?php 
 		
-		if(!isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE ){
+		if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE ){
 		
 		}else{include_once "menu-lateral.php";}
 		
