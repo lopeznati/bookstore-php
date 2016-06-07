@@ -83,10 +83,10 @@ if($_SESSION['usuario_valido']==true){
 				</tr>
                
                 <tr>
-                  <td>Calle:</td> <td><input type="text" name="calle"></td>
+                  <td>Calle:</td> <td><input type="text" name="calle" required></td>
 				 </tr>
 				 <tr>
-				  <td> Numero:</td> <td><input type="text" name="numero"></td><br>
+				  <td> Numero:</td> <td><input type="text" name="numero" required></td><br>
 				 </tr>
            
 			     <tr>
@@ -99,15 +99,15 @@ if($_SESSION['usuario_valido']==true){
 			
                
                   <tr>
-                  <td>Numero de Targeta:</td> <td><input type="text" name="numero_tarjeta"></td>
+                  <td>Numero de Targeta:</td> <td><input type="text" name="numero_tarjeta" required></td>
 				 </tr>
 				  
 				  <tr>
-                  <td>Codigo de Seguridad:</td> <td> <input type="text" name="codigo_seguridad"></td>
+                  <td>Codigo de Seguridad:</td> <td> <input type="text" name="codigo_seguridad" required></td>
 				 </tr>
 				 
 				  <tr>
-                  <td> Apellido y Nombre:</td> <td><input type="text" name="titular"></td>
+                  <td> Apellido y Nombre:</td> <td><input type="text" name="titular" required></td>
 				 </tr>
 				  
 				<tr>

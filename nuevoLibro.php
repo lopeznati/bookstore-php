@@ -148,39 +148,39 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
              
                 <tr>
                   <td>ISBN</td>
-                  <td><input type="text" name="isbn"></td>
+                  <td><input type="text" name="isbn" required></td>
                 </tr>
 				
 				<tr>
                   <td>Titulo</td>
-                  <td><input type="text" name="titulo"></td>
+                  <td><input type="text" name="titulo" required></td>
                 </tr>
 				
 				<tr>
                   <td>Descripcion</td>
-                  <td><textarea rows="8" cols="50" name="descripcion"></textarea></td>
+                  <td><textarea rows="8" cols="50" name="descripcion" required></textarea></td>
                 </tr>
 				
 				
 				
 				<tr>
                   <td>Cantidad de Paginas</td>
-                  <td><input type="text" name="cpaginas"></td>
+                  <td><input type="text" name="cpaginas" required></td>
                 </tr>
 				
 				<tr>
                   <td>Numero Edicion</td>
-                  <td><input type="text" name="nedicion"></td>
+                  <td><input type="text" name="nedicion" required></td>
                 </tr>
 				
 				<tr>
                   <td>Precio</td>
-                  <td><input type="text" name="precio"></td>
+                  <td><input type="text" name="precio" required></td>
                 </tr>
 				
 				<tr>
                   <td>Existencia</td>
-                  <td><input type="text" name="nexistencia"></td>
+                  <td><input type="text" name="nexistencia" required></td>
                 </tr>
 				
 				<tr>

@@ -127,12 +127,12 @@ if(!isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE ){
 				<tr>
                   <td class='celdafoto'>Nombre</td>
 				 
-                  <td><input type="text" name="nombre" value="<?php echo $clienteMod['nombre'];?>"></td>
+                  <td><input type="text" name="nombre" value="<?php echo $clienteMod['nombre'];?>" required></td>
                 </tr>
 				
 				<tr>
                   <td class='celdafoto'>Apellido</td>
-                  <td><input type="text" name="apellido" value="<?php echo $clienteMod['apellido'];?>"></td>
+                  <td><input type="text" name="apellido" value="<?php echo $clienteMod['apellido'];?>" required></td>
                 </tr>
 				
 				
@@ -141,17 +141,17 @@ if(!isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE ){
 				
 				<tr>
                   <td class='celdafoto'>Contraseña</td>
-                  <td><input type="text" name="clave" value="<?php echo $clienteMod['clave'];?>"></td>
+                  <td><input type="text" name="clave" value="<?php echo $clienteMod['clave'];?>" required></td>
                 </tr>
 				
 				<tr>
                   <td class='celdafoto'>Domicilio</td>
-                  <td><input type="text" name="domicilio" value="<?php echo $clienteMod['domicilio'];?>"></td>
+                  <td><input type="text" name="domicilio" value="<?php echo $clienteMod['domicilio'];?>" required></td>
                 </tr>
 				
 				<tr>
                   <td class='celdafoto'>Telefono</td>
-                  <td><input type="text" name="telefono" value="<?php echo $clienteMod['telefono'];?>"></td>
+                  <td><input type="text" name="telefono" value="<?php echo $clienteMod['telefono'];?>" required></td>
                 </tr>
 				
 				
@@ -159,7 +159,7 @@ if(!isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE ){
 				
 				<tr>
                   <td class='celdafoto'>e-Mail</td>
-                  <td><input type="text" name="mail" value="<?php echo $clienteMod['mail'];?>"></td>
+                  <td><input type="email" name="mail" value="<?php echo $clienteMod['mail'];?>" required></td>
                 </tr>
 				
 				<tr>

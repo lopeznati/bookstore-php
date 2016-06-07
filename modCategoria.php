@@ -67,7 +67,7 @@ if($_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION[
 				<tr>
                   <td>Descripcion</td>
 				 
-                  <td><input type="text" name="descripcion" value="<?php echo $categoriaMod['descripcion'];?>"></td>
+                  <td><input type="text" name="descripcion" value="<?php echo $categoriaMod['descripcion'];?>" required></td>
                 </tr>
 				
 				

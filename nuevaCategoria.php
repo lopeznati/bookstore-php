@@ -52,7 +52,7 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
              
                 <tr>
                   <td>Descripcion</td>
-                  <td><input type="text" name="descripcion"></td>
+                  <td><input type="text" name="descripcion" required></td>
                 </tr>
 				
 				<tr>

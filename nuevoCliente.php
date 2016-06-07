@@ -56,39 +56,39 @@ $localidades=ConsultaSql('select * from localidades');
              
                 <tr>
                   <td>Nombre</td>
-                  <td><input type="text" name="nombre"></td>
+                  <td><input type="text" name="nombre" required></td>
                 </tr>
 				
 				<tr>
                   <td>apellido</td>
-                  <td><input type="text" name="apellido"></td>
+                  <td><input type="text" name="apellido" required></td>
                 </tr>
 				
 				<tr>
                   <td>Telefono</td>
-                  <td><input type="text" name="telefono"></td>
+                  <td><input type="text" name="telefono" required></td>
                 </tr>
 				
 				
 				
 				<tr>
                   <td>domicilio</td>
-                  <td><input type="text" name="domicilio"></td>
+                  <td><input type="text" name="domicilio" required></td>
                 </tr>
 				
 				<tr>
                   <td>mail</td>
-                  <td><input type="text" name="mail"></td>
+                  <td><input type="email" name="mail" required></td>
                 </tr>
 				
 				<tr>
                   <td>usuario</td>
-                  <td><input type="text" name="usuario"></td>
+                  <td><input type="text" name="usuario" required></td>
                 </tr>
 				
 				<tr>
                   <td>contraseña</td>
-                  <td><input type="password" name="contraseña"></td>
+                  <td><input type="password" name="contraseña" required></td>
                 </tr>
 				
 				<tr>

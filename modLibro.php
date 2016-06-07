@@ -96,39 +96,39 @@ if($_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION[
 				<tr>
                   <td>ISBN</td>
 				 
-                  <td><input type="text" name="isbn" value="<?php echo $libroMod['ISBN'];?>"></td>
+                  <td><input type="text" name="isbn" value="<?php echo $libroMod['ISBN'];?>" required></td>
                 </tr>
 				
 				<tr>
                   <td>Titulo</td>
-                  <td><input type="text" name="titulo" value="<?php echo $libroMod['titulo'];?>"></td>
+                  <td><input type="text" name="titulo" value="<?php echo $libroMod['titulo'];?>" required></td>
                 </tr>
 				
 				
 				<tr>
                   <td>Descripcion</td>
-                  <td><textarea rows="8" cols="50" name="descripcion"><?php echo $libroMod['descripcion'];?></textarea></td>
+                  <td><textarea rows="8" cols="50" name="descripcion" required><?php echo $libroMod['descripcion'];?></textarea></td>
                 </tr>
 				
 				
 				<tr>
                   <td>Cantidad de Paginas</td>
-                  <td><input type="text" name="cpaginas" value="<?php echo $libroMod['cantPaginas'];?>"></td>
+                  <td><input type="text" name="cpaginas" value="<?php echo $libroMod['cantPaginas'];?>" required></td>
                 </tr>
 				
 				<tr>
                   <td>Numero Edicion</td>
-                  <td><input type="text" name="nedicion" value="<?php echo $libroMod['nroEdicion'];?>"></td>
+                  <td><input type="text" name="nedicion" value="<?php echo $libroMod['nroEdicion'];?>" required></td>
                 </tr>
 				
 				<tr>
                   <td>Precio</td>
-                  <td><input type="text" name="precio" value="<?php echo $libroMod['precio'];?>"></td>
+                  <td><input type="text" name="precio" value="<?php echo $libroMod['precio'];?>" required></td>
                 </tr>
 				
 				<tr>
                   <td>Existencia</td>
-                  <td><input type="text" name="nexistencia" value="<?php echo $libroMod['existencia'];?>"></td>
+                  <td><input type="text" name="nexistencia" value="<?php echo $libroMod['existencia'];?>" required></td>
                 </tr>
 				
 				<tr>
