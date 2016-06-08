@@ -6,7 +6,7 @@
 <?php 
 include_once "./header.php";
 
-if(!empty($_POST AND !empty($_POST['nombre']) AND !empty($_POST['apellido']) AND !empty($_POST['telefono']) AND !empty($_POST['domicilio']) AND !empty($_POST['mail']) AND !empty($_POST['usuario']) AND !empty($_POST['contraseña']) AND !empty($_POST['localidad_id']))){
+if(!empty($_POST) AND !empty($_POST['nombre']) AND !empty($_POST['apellido']) AND !empty($_POST['telefono']) AND !empty($_POST['domicilio']) AND !empty($_POST['mail']) AND !empty($_POST['usuario']) AND !empty($_POST['contraseña']) AND !empty($_POST['localidad_id'])){
 	$nombre=trim($_POST['nombre']);
 	$apellido=trim($_POST['apellido']);
 	$telefono=trim($_POST['telefono']);
@@ -18,6 +18,13 @@ if(!empty($_POST AND !empty($_POST['nombre']) AND !empty($_POST['apellido']) AND
 	$localidadid=trim($_POST['localidad_id']);
 	$fecha=trim($_POST['fecha']);
 	$rol='cli';
+	
+	$validar=ConsultaSql('select * from clientes where usuario="'.$usuario.'"');
+	if(mysql_num_rows($validar)==1){
+		
+		echo "</br><div style='text-align:center; color:blue;'>usuario ya usado</div>";
+	}else{
+
 	
 	$agregarCliente="INSERT INTO clientes(id,usuario,clave,apellido, nombre,domicilio,telefono,mail,id_localidad,fecha,rol)  
 	VALUES('','".$usuario."','".$contraseña."','".$apellido."','".$nombre."','".$domicilio."','".$telefono."','".$mail."','".$localidadid."', '".$fecha."','".$rol."')";
@@ -65,6 +72,7 @@ if(!empty($_POST AND !empty($_POST['nombre']) AND !empty($_POST['apellido']) AND
            <?php
 		
 		
+	}
 	}
 	
 		
