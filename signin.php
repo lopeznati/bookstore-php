@@ -90,7 +90,17 @@ include_once "funciones.php";
 			$_SESSION['id_usuario']=$cli['id'];
 			$_SESSION['rol']=$cli['rol'];
 			header('Location: index.php');
-		}else{header('Location: probar.php');}
+		}else{
+			
+          ?>    <div id="navbar" class="navbar-collapse collapse" style="background-color: #0080FF;>
+				<div class="alert">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';"><a href="signin.php">X</a></span>
+                <strong><center>Usuario o Contraseña  incorrectos!</strong>
+                </div>
+                
+				</div>
+           <?php
+		}
 		
 	}
 	

@@ -57,7 +57,9 @@ if($_SESSION['usuario_valido']==true){
 			
 		}
 		
-		header('location: index.php');
+		if($resultado){
+			echo "<div style='text-align:center; color:blue;'>Se ha realizado la compra!!!!</div>";
+		}
 			
 			
 	
@@ -138,7 +140,7 @@ if($_SESSION['usuario_valido']==true){
 	
 	<?php 
 	}else{
-	header('location: signin.php');
+	echo "<div style='text-align:center, color:blue;'>se ha realizado la compra</div>";
 	}
 	$arreglo=$_SESSION['carro'];
 	$fecha=time();

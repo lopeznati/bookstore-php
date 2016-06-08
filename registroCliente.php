@@ -45,9 +45,26 @@ if(!empty($_POST AND !empty($_POST['nombre']) AND !empty($_POST['apellido']) AND
         $cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
 	if (mail($mail, $asunto, $cuerpo, $cabeceras) ){
-		echo "Enviado !<br />";
+		?>    <div id="navbar" class="navbar-collapse collapse" style="background-color: #0080FF;>
+				<div class="alert">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';"><a href="signin.php">X</a></span>
+                <strong><center>Se ha registrado y enviadoun email !</strong>
+                </div>
+                
+				</div>
+           <?php
+		
 	}else{
-		echo "Hubo un error !<br />";
+		?>    <div id="navbar" class="navbar-collapse collapse" style="background-color: #0080FF;>
+				<div class="alert">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';"><a href="signin.php">X</a></span>
+                <strong><center>Hubo un error !</strong>
+                </div>
+                
+				</div>
+           <?php
+		
+		
 	}
 	
 		
