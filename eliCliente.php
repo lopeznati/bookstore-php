@@ -1,8 +1,8 @@
 <?php 
 include_once './funciones.php';
-$idEliminar=$_REQUEST['ideli'];
+$idEliminar=$_REQUEST['idelim'];
 
 $sqlEliminar="DELETE FROM clientes WHERE id=".$idEliminar."";
 ConsultaSql($sqlEliminar);
-header('Location: signin.php')
+header('Location: nuevoCliente.php')
 ?>
