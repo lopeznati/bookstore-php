@@ -124,7 +124,7 @@ if(isset($_SESSION['carro'])){
 		//este es el contador que usamos
 		//para los colores alternos 
 		?>
-		<div class="producto"> 
+		<div class="producto_<?php echo $v['id']; ?>"> 
 		<tr bgcolor="<?php echo $color[$contador%2]; ?>" class='prod'> 
 		<td><?php echo $v['titulo'] ?></td>
 		<td><?php echo $v['precio'] ?></td>
@@ -132,7 +132,7 @@ if(isset($_SESSION['carro'])){
 					data-precio="<?php echo $v['precio']; ?>"
 					data-id="<?php echo $v['id']; ?>"
 					class="cantidad"></td>
-		<td><span class='subtotal'><?php echo $v['precio']*$v['cantidad'];?></span></td>
+		<td><span class='subtotal_<?php echo $v['id']; ?>'><?php echo $v['precio']*$v['cantidad'];?></span></td>
 		<td align="center"><a href="borracar.php?id=<?php echo $v['id'] ?>"><img src="trash.gif" width="12" height="14" border="0"></a></td>
 		
 		

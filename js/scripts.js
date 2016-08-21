@@ -5,7 +5,7 @@ var inicio=function () {
 				var id=$(this).attr('data-id');
 				var precio=$(this).attr('data-precio');
 				var cantidad=$(this).val();
-				$(this).parentsUntil('.producto').find('.subtotal').text((precio*cantidad));
+				$(this).parentsUntil('.producto_'+id).find('.subtotal_'+id).text((precio*cantidad));
 				$.post('./js/modificarDatos.php',{
 					Id:id,
 					Precio:precio,
