@@ -143,7 +143,7 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
 
 
 		  
-		  <form action="" method="post" enctype="multipart/form-data">
+		  <form id="form1" action="" method="post" enctype="multipart/form-data">
 		  <table class="table table-striped">
              
                 <tr>
@@ -244,7 +244,7 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
 				
 				<tr>
                   <td></td>
-                  <td><input type="submit" class="btn btn-primary" value="Guardar"></td>
+                  <td><input type="button" id="guardar" class="btn btn-primary" value="Guardar"></td>
 				  
 	
                 </tr>
@@ -388,6 +388,28 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
         </div>
       </div>
     </div>
+
+
+
+    <script src="dist/sweetalert.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+
+
+        $('#guardar').on('click',function(){
+
+          swal("Libro guardado", "", "success");
+          $('.confirm').click(function(){
+             $('#form1').submit();
+
+          });
+        });
+
+    });
+
+
+    </script>
 
    
   </body>

@@ -51,7 +51,7 @@ $localidades=ConsultaSql('select * from localidades');
           <h1 class="page-header">Nuevo Cliente</h1>
 
 		  
-		  <form action="" method="post">
+		  <form id="form1" action="" method="post">
 		  <table class="table table-striped">
              
                 <tr>
@@ -121,7 +121,7 @@ $localidades=ConsultaSql('select * from localidades');
 				
 				<tr>
                   <td></td>
-                  <td><input type="submit" value="Guardar"></td>
+                  <td><input type="button" id="guardar" value="Guardar"></td>
                 </tr>
 				
            </table>
@@ -177,11 +177,12 @@ $localidades=ConsultaSql('select * from localidades');
 					echo "<td>".$c['localidad']."</td>";
 					
 					echo "<td>
-				         <a href='eliCliente.php?idelim=".$c['id']."'> <IMG SRC='icon/gnome_edit_delete.png' WIDTH=30 HEIGHT=30>  </a></td>";
+				         <a href='#' onClick='eliminar(".$c['id'].")'> <IMG SRC='icon/gnome_edit_delete.png' WIDTH=30 HEIGHT=30>  </a></td>";
 					
 				   echo "<tr>";
-                  
-                
+
+                 // <a href='eliCliente.php?idelim=".$c['id']."'> <IMG SRC='icon/gnome_edit_delete.png' WIDTH=30 HEIGHT=30>  </a></td>";
+
 				  
 			  }
 			  ?>
@@ -230,9 +231,59 @@ $localidades=ConsultaSql('select * from localidades');
       </div>
     </div>
 
+
+    <form class="elim" action="" method="get">
+        <input class="idelim" type="hidden" name="idelim" value="">
+    </form>
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+
+
+     <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+    <script src="dist/sweetalert.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+
+
+        $('#guardar').on('click',function(){
+
+          swal("Cliente guardado", "", "success");
+          $('.confirm').click(function(){
+             $('#form1').submit();
+
+          });
+        });
+
+    });
+
+
+     function  eliminar(id){
+            swal({
+            title: "Desea eliminar al cliente?",
+            text: "",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Si, eliminarlo!",
+            closeOnConfirm: false
+        }, function () {
+            swal("Eliminado!", "El cliente ha sido eliminada.", "success");
+              var url='eliCliente.php';
+            $('.elim').attr('action',url);
+            $('.idelim').attr('value',id);
+            $('.elim').submit();
+
+        });
+        }
+
+
+
+    </script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="dist/js/bootstrap.min.js"></script>

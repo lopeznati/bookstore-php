@@ -33,11 +33,18 @@ include_once "header.php";
 
           <!--<h2 class="sub-header">Section title</h2>-->
 		  
-		  <?php 
-		       
-				$sqllibros="select * from libros";
-				$libros=ConsultaSql($sqllibros);
-				
+		  <?php
+
+
+          if(isset($_REQUEST['busqueda'])){
+              $busqueda=$_REQUEST['busqueda'];
+              $libros= ConsultaSql("SELECT * FROM libros WHERE titulo like '".$busqueda."%' ORDER BY TITULO DESC");
+
+          }else{
+              $sqllibros="select * from libros";
+              $libros=ConsultaSql($sqllibros);
+
+          }
 				
 			
 			?>
