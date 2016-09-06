@@ -48,7 +48,7 @@ $localidades=ConsultaSql('select * from localidades');
 
 		--..circulos del medio-..-
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Nuevo Cliente</h1>
+          <h1 class="page-header">Nuevo Usuario</h1>
 
 		  
 		  <form id="form1" action="" method="post">
@@ -60,7 +60,7 @@ $localidades=ConsultaSql('select * from localidades');
                 </tr>
 				
 				<tr>
-                  <td>apellido</td>
+                  <td>Apellido</td>
                   <td><input type="text" name="apellido" required></td>
                 </tr>
 				
@@ -68,26 +68,23 @@ $localidades=ConsultaSql('select * from localidades');
                   <td>Telefono</td>
                   <td><input type="text" name="telefono" required></td>
                 </tr>
-				
-				
-				
 				<tr>
-                  <td>domicilio</td>
+                  <td>Domicilio</td>
                   <td><input type="text" name="domicilio" required></td>
                 </tr>
 				
 				<tr>
-                  <td>mail</td>
+                  <td>E-Mail</td>
                   <td><input type="email" name="mail" required></td>
                 </tr>
 				
 				<tr>
-                  <td>usuario</td>
+                  <td>Usuario</td>
                   <td><input type="text" name="usuario" required></td>
                 </tr>
 				
 				<tr>
-                  <td>contraseña</td>
+                  <td>Contraseña</td>
                   <td><input type="password" name="contraseña" required></td>
                 </tr>
 				
@@ -95,8 +92,8 @@ $localidades=ConsultaSql('select * from localidades');
                   <td>Localidad</td>
 				  
                   <td>
-					<select name="localidad_id">
-						<option>Elegir Opcion</option>
+					<select id="localidad_id" name="localidad_id">
+						<option value="">Elegir Opcion</option>
 						<?php
 							while($c=mysql_fetch_array($localidades)){
 								echo "<option value='".$c['id']."'>".$c['nombre']."</option>";
@@ -110,8 +107,8 @@ $localidades=ConsultaSql('select * from localidades');
                   <td>Rol</td>
 				  
                   <td>
-					<select name="rol">
-						<option>Elegir Opcion</option>
+					<select id="rol" name="rol">
+						<option value="">Elegir Opcion</option>
 						<option value='admi'>Administrador</option>
 						<option value='cli'>Cliente</option>
 						
@@ -121,7 +118,7 @@ $localidades=ConsultaSql('select * from localidades');
 				
 				<tr>
                   <td></td>
-                  <td><input type="button" id="guardar" value="Guardar"></td>
+                  <td><input type="submit" id="guardar" value="Guardar"></td>
                 </tr>
 				
            </table>
@@ -156,7 +153,6 @@ $localidades=ConsultaSql('select * from localidades');
                   <th>Telefono</th>
 				  <th>Mail</th>
                   <th>Usuario</th>
-                  <th>Contraseña</th>
                   <th>Localidad</th>
 				  <th>Acciones</th>
 				  
@@ -173,7 +169,6 @@ $localidades=ConsultaSql('select * from localidades');
 					echo "<td>".$c['telefono']."</td>";
 					echo "<td>".$c['mail']."</td>";
 					echo "<td>".$c['usuario']."</td>";
-					echo "<td>".$c['clave']."</td>";
 					echo "<td>".$c['localidad']."</td>";
 					
 					echo "<td>
@@ -241,23 +236,37 @@ $localidades=ConsultaSql('select * from localidades');
     <!-- Placed at the end of the document so the pages load faster -->
 
 
-     <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 
     <script src="dist/sweetalert.min.js"></script>
 
     <script>
     $(document).ready(function(){
 
+		$("form").submit(function(event){
+				
+  				var localidad=$("#localidad_id").val();
+  				if(localidad === ''){
+  					alert("El campo Localidad no puede quedar vacio, seleccione una opcion.");	  
+					//cancela el evento
+   					event.preventDefault();
+  				}
 
-        $('#guardar').on('click',function(){
+				var rol=$("#rol").val();
+  				if(rol === ''){
+  					alert("El campo Rol no puede quedar vacio, seleccione una opcion.");	  
+					//cancela el evento
+   					event.preventDefault();
+  				}
+				
+				if (localidad!="" && rol!=""){
+					swal("Cliente guardado", "", "success");
+					$('.confirm').click(function(){
+					$('#form1').submit();
 
-          swal("Cliente guardado", "", "success");
-          $('.confirm').click(function(){
-             $('#form1').submit();
-
-          });
-        });
-
+					});
+				}
+		});
     });
 
 
@@ -279,9 +288,6 @@ $localidades=ConsultaSql('select * from localidades');
 
         });
         }
-
-
-
     </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
