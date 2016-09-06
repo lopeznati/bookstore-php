@@ -247,24 +247,30 @@ $localidades=ConsultaSql('select * from localidades');
 				
   				var localidad=$("#localidad_id").val();
   				if(localidad === ''){
-  					alert("El campo Localidad no puede quedar vacio, seleccione una opcion.");	  
+  					//alert("El campo Localidad no puede quedar vacio, seleccione una opcion.");
 					//cancela el evento
    					event.preventDefault();
+   					swal("", "El campo Localidad no puede quedar vacio, seleccione una opcion.", "warning");
   				}
 
 				var rol=$("#rol").val();
   				if(rol === ''){
-  					alert("El campo Rol no puede quedar vacio, seleccione una opcion.");	  
+  					//alert("El campo Rol no puede quedar vacio, seleccione una opcion.");
 					//cancela el evento
    					event.preventDefault();
+   					swal("", "El campo Rol no puede quedar vacio, seleccione una opcion.", "warning");
+
   				}
+
+
+
 				
 				if (localidad!="" && rol!=""){
 					swal("Cliente guardado", "", "success");
-					$('.confirm').click(function(){
-					$('#form1').submit();
 
-					});
+					//$('#form1').submit();
+
+
 				}
 		});
     });

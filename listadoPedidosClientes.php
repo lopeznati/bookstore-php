@@ -46,7 +46,7 @@
 									$sqllibro=ConsultaSql("select titulo from libros where id='".$p['id_libro']."'");
 									$libro=mysql_fetch_array($sqllibro);
 									
-									$sqllocalidad=ConsultaSql("select nombre from localidades where id='".$p['id_localidad']."'");
+									$sqllocalidad=ConsultaSql("select nombre from localidades where id='".$p['localidad_id']."'");
 									$localidad=mysql_fetch_array($sqllocalidad);
 			
 									echo "<tr>";

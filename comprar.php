@@ -165,45 +165,66 @@ if($_SESSION['usuario_valido']==true){
         </div>
       </div>
     </div>
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+	<script src="dist/sweetalert.min.js"></script>
 	<script>
 	
 	$(document).ready(function(){
 			$("form").submit(function(event){
+
+				var error=false;
 				
   				var localidad=$("#localidad_id").val();
   				if(localidad === ''){
-  					alert("El campo Localidad no puede quedar vacio, seleccione una opcion.");	  
+  					//alert("El campo Localidad no puede quedar vacio, seleccione una opcion.");
   				//cancela el evento
    					event.preventDefault();
+					error=true;
+					swal("", "El campo Localidad no puede quedar vacio, seleccione una opcion.", "warning");
   				}
 				
   
 				//valido la longitud de la tarjeta
 				if($("#numero_tarjeta").val().length !=16){
-  		 			alert("El numero de tarjeta debe tener 16 caracteres");
+  		 			//alert("El numero de tarjeta debe tener 16 caracteres");
   		 			event.preventDefault()
    					$("#numero_tarjeta").focus();
-  		 		}
+					error=true;
+					swal("", "El numero de tarjeta debe tener 16 caracteres.", "warning");
+
+				}
   				
   				//valido que el campo de numero de tarjeta sean solo numeros
   				
 				var num_tarjeta=$("#numero_tarjeta").val();
   				if(isNaN(num_tarjeta)){
-  					alert("El campo Numero de Tarjeta debe ser numerico");
+  					//alert("El campo Numero de Tarjeta debe ser numerico");
   					
   				//cancela el evento
    					event.preventDefault();
    					$("#numero_tarjeta").val("");
    					$("#numero_tarjeta").focus();
-  				}
+					error=true;
+					swal("", "El campo Numero de Tarjeta debe ser numerico.", "warning");
+
+				}
 				
 				var tarjeta=$("#tipo_tarjeta").val();
   				if(tarjeta === ''){
-  					alert("El campo Tipo Tarjeta no puede quedar vacio, seleccione una opcion.");	  
+  					//alert("El campo Tipo Tarjeta no puede quedar vacio, seleccione una opcion.");
   				//cancela el evento
    					event.preventDefault();
-  				}
+					error=true;
+					swal("", "El campo Tipo Tarjeta no puede quedar vacio, seleccione una opcion.", "warning");
+
+				}
+
+				if(error==false){
+					swal({   title: "Compra Realizada",   text: "Muchas gracias por su compra",   timer: 5000,   showConfirmButton: false });
+				}
+
+
 			});
 		});
 	</script>

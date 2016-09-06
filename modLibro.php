@@ -61,17 +61,17 @@
 					$categorias=ConsultaSql('select * from categorias');
 				?>
 
-				<form action="" method="post">
+				<form id="form1" action="" method="post">
 					<table class="table table-striped">
 						<input type="hidden" name="idlibro" value="<?php echo $libroMod['id'];?>">
 						<input type="hidden" name="Modificado" value="1">
 						<tr>
 							<td>ISBN</td>
-							<td><input type="text" name="isbn" value="<?php echo $libroMod['ISBN'];?>" required></td>
+							<td><input id="isbn" type="text" name="isbn" value="<?php echo $libroMod['ISBN'];?>" required></td>
 						</tr>
 						<tr>
 							<td>Titulo</td>
-							<td><input type="text" name="titulo" value="<?php echo $libroMod['titulo'];?>" required></td>
+							<td><input  type="text" name="titulo" value="<?php echo $libroMod['titulo'];?>" required></td>
 						</tr>
 						<tr>
 							<td>Descripcion</td>
@@ -83,24 +83,24 @@
 						</tr>				
 						<tr>
 							<td>Cantidad de Paginas</td>
-							<td><input type="text" name="cpaginas" value="<?php echo $libroMod['cantPaginas'];?>" required></td>
+							<td><input id="cpaginas" type="text" name="cpaginas" value="<?php echo $libroMod['cantPaginas'];?>" required></td>
 						</tr>
 						<tr>
 							<td>Numero Edicion</td>
-							<td><input type="text" name="nedicion" value="<?php echo $libroMod['nroEdicion'];?>" required></td>
+							<td><input id="nedicion" type="text" name="nedicion" value="<?php echo $libroMod['nroEdicion'];?>" required></td>
 						</tr>
 						<tr>
 							<td>Precio</td>
-							<td><input type="text" name="precio" value="<?php echo $libroMod['precio'];?>" required></td>
+							<td><input id="precio" type="text" name="precio" value="<?php echo $libroMod['precio'];?>" required></td>
 						</tr>
 						<tr>
 							<td>Existencia</td>
-							<td><input type="text" name="nexistencia" value="<?php echo $libroMod['existencia'];?>" required></td>
+							<td><input id="nexistencia" type="text" name="nexistencia" value="<?php echo $libroMod['existencia'];?>" required></td>
 						</tr>
 						<tr>	
 							<td>Editorial</td>
 							<td>
-								<select name="editorial_id">
+								<select id="editorial_id" name="editorial_id">
 									<?php
 										while($c=mysql_fetch_array($editoriales))
 										{	
@@ -117,7 +117,7 @@
 						<tr>
 							<td>Categorias</td>
 							<td>
-								<select name="categoria_id">
+								<select id="categoria_id" name="categoria_id">
 									<option>Elegir Opcion</option>
 										<?php
 											while($c=mysql_fetch_array($categorias))
@@ -133,7 +133,7 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td><input type="submit" class="btn btn-primary" value="Guardar"></td>
+							<td><input type="button" id="guardar" class="btn btn-primary" value="Guardar"></td>
 						</tr>
 					</table>
 				</form>
@@ -210,9 +210,11 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script src="dist/sweetalert.min.js"></script>
 	<script>
 		$(document).ready(function(){
-			$("form").submit(function(event){		
+		    //swal("Good job!", "You clicked the button!", "warning");
+			$("#guardar").click(function(event){
 				var error=false;
 				
 				var isbn=$("#isbn").val();

@@ -221,7 +221,10 @@
 									}
 									else{echo "<td></td>";}
 									echo "<td><a href='modLibro.php?idmodif=".$l['id']."'><IMG SRC='icon/modify.png' WIDTH=20 HEIGHT=20></a>
-										  <a href='eliLibro.php?idelim=".$l['id']."'> <IMG SRC='icon/gnome_edit_delete.png' WIDTH=30 HEIGHT=30>  </a></td>";
+									<a href='#' onClick='eliminar(".$l['id'].")'> <IMG SRC='icon/gnome_edit_delete.png' WIDTH=30 HEIGHT=30>  </a></td>";
+
+
+
 									echo "<tr>";
 								}
 							?>
@@ -239,79 +242,117 @@
 			</div>
 		</div>
 	</div>
+
+		<form class="elim" action="" method="get">
+			<input class="idelim" type="hidden" name="idelim" value="">
+		</form>
 	    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 		<script src="dist/sweetalert.min.js"></script>
 		<script>
 		$(document).ready(function(){
-			$("form").submit(function(event){		
+
+			$("form").submit(function(event){
+				var error=false;
 				
 				var isbn=$("#isbn").val();
 	  			isbn =parseInt(isbn);
 	  			if(isNaN(isbn)){
-	  				alert("El campo ISBN ingresado debe ser un numero");	  
+
+	  				//alert("El campo ISBN ingresado debe ser un numero");
 					error=true;
 					//cancela el evento
 	   				event.preventDefault();
-	  			}else error=false;
+	   			   swal("", "El campo ISBN ingresado debe ser un numero", "warning");
+	  			}
 	  			
 				var cantidad=$("#cpaginas").val();
 	  			cantidad =parseInt(cantidad);
 	  			if(isNaN(cantidad)){
-	  				alert("El campo Cantidad de Paginas ingresado debe ser un numero");	  
+	  				swal("", "El campo Cantidad de Paginas ingresado debe ser un numero", "warning");
+	  				//alert("El campo Cantidad de Paginas ingresado debe ser un numero");
 					error=true;
 					//cancela el evento
 	   				event.preventDefault();
-	  			}else error=false;
+	  			}
 	  				
 	  			var nro_edicion=$("#nedicion").val();
 	  			nro_edicion =parseInt(nro_edicion);
 	  			if(isNaN(nro_edicion)){
-	  				alert("El campo Número de Edicion ingresado debe ser un numero");	  
+	  				//alert("El campo Número de Edicion ingresado debe ser un numero");
+	  				swal("", "El campo Número de Edicion ingresado debe ser un numero", "warning");
+
 					error=true;
 					//cancela el evento
 					event.preventDefault();
-	  			}else error=false;
+	  			}
 	  				
 	  			var precio=$("#precio").val();
 	  			precio =parseFloat(precio);
 	  			if(isNaN(precio)){
-	  				alert("El campo Precio ingresado debe ser un numero o un decimal");	 
+	  				//alert("El campo Precio ingresado debe ser un numero o un decimal");
+	  				swal("", "El campo Precio ingresado debe ser un numero o un decimal", "warning");
+
 					error=true;					
 	  				//cancela el evento
 	   				event.preventDefault();
-	  			}else error=false;
+	  			}
 	  				
 	  			var existencia=$("#nexistencia").val();
 	  			existencia =parseInt(existencia);
 	  			if(isNaN(existencia)){
-	  				alert("El campo Existencia ingresado debe ser un numero");	  
+	  				//alert("El campo Existencia ingresado debe ser un numero");
+	  				swal("", "El campo Existencia ingresado debe ser un numero", "warning");
+
 					error=true;
 	  				//cancela el evento
 	   				event.preventDefault();
-	  			}else error=false;
+	  			}
 				
 				var editorial=$("#editorial_id").val();
 				if(editorial === ''){
-					alert("El campo Editorial no puede quedar vacio, seleccione una opcion.");	  
+					//alert("El campo Editorial no puede quedar vacio, seleccione una opcion.");
+					swal("", "El campo Editorial no puede quedar vacio, seleccione una opcion.", "warning");
+
 					//cancela el evento
 					event.preventDefault();
 				}
 				var categoria=$("#categoria_id").val();
 				if(categoria === ''){
-					alert("El campo Categoria no puede quedar vacio, seleccione una opcion.");	  
+					//alert("El campo Categoria no puede quedar vacio, seleccione una opcion.");
+					  swal("", "El campo Categoria no puede quedar vacio, seleccione una opcion.", "warning");
+
 					//cancela el evento
 					event.preventDefault();
 				}	
 				
 				if (editorial !="" && categoria !="" && error==false){
 					swal("Libro guardado", "", "success");
-					$('.confirm').click(function(){
-					$('#form1').submit();
-
-					});
+				}else{
+				event.preventDefault();
 				}
 			});
 		});
+
+
+
+		 function  eliminar(id){
+            swal({
+            title: "Desea eliminar al cliente?",
+            text: "",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Si, eliminarlo!",
+            closeOnConfirm: false
+        }, function () {
+            swal("Eliminado!", "El cliente ha sido eliminada.", "success");
+              var url='eliLibro.php';
+            $('.elim').attr('action',url);
+            $('.idelim').attr('value',id);
+            $('.elim').submit();
+
+        });
+        }
 		</script>
 	</body>
 </html>

@@ -141,6 +141,7 @@
 	<script type="text/javascript">
 			$("#fecha").datepicker({format:'dd/mm/yyyy',language:'es'});
 		   </script>
+		<script src="dist/sweetalert.min.js"></script>
 	 <script>
     $(document).ready(function(){
 
@@ -148,9 +149,10 @@
 				
   				var localidad=$("#localidad_id").val();
   				if(localidad === ''){
-  					alert("El campo Localidad no puede quedar vacio, seleccione una opcion.");	  
+  					//alert("El campo Localidad no puede quedar vacio, seleccione una opcion.");
 					//cancela el evento
    					event.preventDefault();
+					swal("", "El campo Localidad no puede quedar vacio, seleccione una opcion.", "warning");
   				}
 		});
     });

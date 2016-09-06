@@ -59,7 +59,7 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
 				
 				<tr>
                   <td></td>
-                  <td><input type="button" class="btn btn-primary" id="guardar" value="Guardar"></td>
+                  <td><input type="submit" class="btn btn-primary" id="guardar" value="Guardar"></td>
 				  
 	
                 </tr>
@@ -137,11 +137,11 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
     $(document).ready(function(){
 
 
-        $('#guardar').on('click',function(){
+        $('form').on('submit',function(){
 
           swal("Categoria guardada", "", "success");
           $('.confirm').click(function(){
-             $('#form1').submit();
+             //$('#form1').submit();
 
           });
         });

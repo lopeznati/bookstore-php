@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ba457e26-4caa-4e03-bf42-d2c429fe71c1" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/comprar.php" afterPath="$PROJECT_DIR$/comprar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/listadoPedidosClientes.php" afterPath="$PROJECT_DIR$/listadoPedidosClientes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modLibro.php" afterPath="$PROJECT_DIR$/modLibro.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nuevaCategoria.php" afterPath="$PROJECT_DIR$/nuevaCategoria.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nuevoCliente.php" afterPath="$PROJECT_DIR$/nuevoCliente.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nuevoLibro.php" afterPath="$PROJECT_DIR$/nuevoLibro.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/registroCliente.php" afterPath="$PROJECT_DIR$/registroCliente.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/signin.php" afterPath="$PROJECT_DIR$/signin.php" />
+    </list>
+    <ignored path="bookstore-php.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="bookstore-php" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="comprar.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/comprar.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.012195">
+              <caret line="169" column="50" selection-start-line="169" selection-start-column="4" selection-end-line="169" selection-end-column="50" />
+              <folding>
+                <marker date="1473189574374" expanded="true" signature="1221:1400" placeholder="INSERT INTO tarjeta..." />
+                <marker date="1473189574374" expanded="true" signature="1572:1838" placeholder="INSERT INTO pedidos..." />
+                <marker date="1473189574374" expanded="true" signature="1939:1969" placeholder="..." />
+                <marker date="1473189574374" expanded="true" signature="2065:2090" placeholder="select * fro..localidades..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signin.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/signin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.961538">
+              <caret line="124" column="87" selection-start-line="124" selection-start-column="87" selection-end-line="124" selection-end-column="87" />
+              <folding>
+                <marker date="1473189834766" expanded="true" signature="2788:2880" placeholder="SELECT * FRO..clientes..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registroCliente.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/registroCliente.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.1827957">
+              <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+              <folding>
+                <marker date="1473190021923" expanded="true" signature="918:969" placeholder="select * fro..clientes..." />
+                <marker date="1473190021923" expanded="true" signature="1037:1067" placeholder="..." />
+                <marker date="1473190021923" expanded="true" signature="1129:1399" placeholder="INSERT INTO clientes..." />
+                <marker date="1473190021923" expanded="true" signature="1509:1810" placeholder="..." />
+                <marker date="1473190021923" expanded="true" signature="1522:1567" placeholder="..." />
+                <marker date="1473190021923" expanded="true" signature="1580:1797" placeholder="..." />
+                <marker date="1473190021923" expanded="true" signature="1592:1790" placeholder="..." />
+                <marker date="1473190021923" expanded="true" signature="1609:1790" placeholder="..." />
+                <marker date="1473190021923" expanded="true" signature="2729:2754" placeholder="select * fro..localidades..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="listadoPedidosClientes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/listadoPedidosClientes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="2.7454545">
+              <caret line="48" column="122" selection-start-line="48" selection-start-column="122" selection-end-line="48" selection-end-column="122" />
+              <folding>
+                <marker date="1473189166158" expanded="true" signature="573:598" placeholder="SELECT p.* F..pedidos..." />
+                <marker date="1473189166158" expanded="true" signature="1093:1186" placeholder="select conca..clientes..." />
+                <marker date="1473189166158" expanded="true" signature="1282:1337" placeholder="select titul..libros..." />
+                <marker date="1473189166158" expanded="true" signature="1433:1497" placeholder="select nombr..localidades..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nuevoLibro.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nuevoLibro.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="14.396227">
+              <caret line="264" column="85" selection-start-line="264" selection-start-column="19" selection-end-line="264" selection-end-column="85" />
+              <folding>
+                <marker date="1473188588850" expanded="true" signature="3251:3586" placeholder="INSERT INTO libros..." />
+                <marker date="1473188588850" expanded="true" signature="3674:3699" placeholder="select * fro..editoriales..." />
+                <marker date="1473188588850" expanded="true" signature="3732:3756" placeholder="select * fro..categorias..." />
+                <marker date="1473188588850" expanded="true" signature="5918:6014" placeholder="SELECT l.*, ..libros..." />
+                <marker date="1473188588850" expanded="true" signature="6613:6681" placeholder="select descr..categorias..." />
+                <marker date="1473188588850" expanded="true" signature="7344:7481" placeholder="..." />
+                <marker date="1473188588850" expanded="true" signature="7344:7562" placeholder="..." />
+                <marker date="1473188588850" expanded="true" signature="7652:7683" placeholder="..." />
+                <marker date="1473188588850" expanded="true" signature="7664:7683" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nuevoCliente.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nuevoCliente.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.0">
+              <caret line="240" column="50" selection-start-line="238" selection-start-column="3" selection-end-line="240" selection-end-column="50" />
+              <folding>
+                <marker date="1473188501918" expanded="true" signature="827:1077" placeholder="INSERT INTO clientes..." />
+                <marker date="1473188501918" expanded="true" signature="1182:1207" placeholder="select * fro..localidades..." />
+                <marker date="1473188501918" expanded="true" signature="3673:3783" placeholder="SELECT c.*, ..clientes..." />
+                <marker date="1473188501918" expanded="true" signature="4754:4882" placeholder="..." />
+                <marker date="1473188501918" expanded="true" signature="5570:5592" placeholder="select * fro..clientes..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nuevaCategoria.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nuevaCategoria.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-17.0">
+              <caret line="146" column="11" selection-start-line="139" selection-start-column="8" selection-end-line="146" selection-end-column="11" />
+              <folding>
+                <marker date="1473187876320" expanded="true" signature="726:803" placeholder="INSERT INTO categorias..." />
+                <marker date="1473187876320" expanded="true" signature="1603:1627" placeholder="SELECT * FRO..categorias..." />
+                <marker date="1473187876320" expanded="true" signature="2164:2436" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modLibro.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modLibro.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="20.923077">
+              <caret line="220" column="35" selection-start-line="220" selection-start-column="35" selection-end-line="220" selection-end-column="35" />
+              <folding>
+                <marker date="1473186958561" expanded="true" signature="267:314" placeholder="select * fro..libros..." />
+                <marker date="1473186958561" expanded="true" signature="1570:1877" placeholder="UPDATE libro..." />
+                <marker date="1473186958561" expanded="true" signature="2418:2503" placeholder="UPDATE libro..." />
+                <marker date="1473186958561" expanded="true" signature="2597:2622" placeholder="select * fro..editoriales..." />
+                <marker date="1473186958561" expanded="true" signature="2656:2680" placeholder="select * fro..categorias..." />
+                <marker date="1473186958561" expanded="true" signature="5946:6042" placeholder="SELECT l.*, ..libros..." />
+                <marker date="1473186958561" expanded="true" signature="6628:6696" placeholder="select descr..categorias..." />
+                <marker date="1473186958561" expanded="true" signature="7343:7568" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/modLibro.php" />
+        <option value="$PROJECT_DIR$/nuevaCategoria.php" />
+        <option value="$PROJECT_DIR$/nuevoCliente.php" />
+        <option value="$PROJECT_DIR$/nuevoLibro.php" />
+        <option value="$PROJECT_DIR$/listadoPedidosClientes.php" />
+        <option value="$PROJECT_DIR$/comprar.php" />
+        <option value="$PROJECT_DIR$/signin.php" />
+        <option value="$PROJECT_DIR$/registroCliente.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1378" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bookstore-php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bookstore-php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bookstore-php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ba457e26-4caa-4e03-bf42-d2c429fe71c1" name="Default" comment="" />
+      <created>1473126063119</created>
+      <option name="number" value="Default" />
+      <updated>1473126063119</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2579666" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2579666" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/comprar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1473189574374" expanded="true" signature="1221:1400" placeholder="INSERT INTO tarjeta..." />
+            <marker date="1473189574374" expanded="true" signature="1572:1838" placeholder="INSERT INTO pedidos..." />
+            <marker date="1473189574374" expanded="true" signature="1939:1969" placeholder="..." />
+            <marker date="1473189574374" expanded="true" signature="2065:2090" placeholder="select * fro..localidades..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nuevoLibro.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1473188588850" expanded="true" signature="3251:3586" placeholder="INSERT INTO libros..." />
+            <marker date="1473188588850" expanded="true" signature="3674:3699" placeholder="select * fro..editoriales..." />
+            <marker date="1473188588850" expanded="true" signature="3732:3756" placeholder="select * fro..categorias..." />
+            <marker date="1473188588850" expanded="true" signature="5918:6014" placeholder="SELECT l.*, ..libros..." />
+            <marker date="1473188588850" expanded="true" signature="6613:6681" placeholder="select descr..categorias..." />
+            <marker date="1473188588850" expanded="true" signature="7344:7481" placeholder="..." />
+            <marker date="1473188588850" expanded="true" signature="7344:7562" placeholder="..." />
+            <marker date="1473188588850" expanded="true" signature="7652:7683" placeholder="..." />
+            <marker date="1473188588850" expanded="true" signature="7664:7683" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modLibro.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="214" column="68" selection-start-line="214" selection-start-column="11" selection-end-line="214" selection-end-column="68" />
+          <folding>
+            <marker date="1473186958561" expanded="true" signature="267:314" placeholder="select * fro..libros..." />
+            <marker date="1473186958561" expanded="true" signature="1570:1877" placeholder="UPDATE libro..." />
+            <marker date="1473186958561" expanded="true" signature="2418:2503" placeholder="UPDATE libro..." />
+            <marker date="1473186958561" expanded="true" signature="2597:2622" placeholder="select * fro..editoriales..." />
+            <marker date="1473186958561" expanded="true" signature="2656:2680" placeholder="select * fro..categorias..." />
+            <marker date="1473186958561" expanded="true" signature="5946:6042" placeholder="SELECT l.*, ..libros..." />
+            <marker date="1473186958561" expanded="true" signature="6628:6696" placeholder="select descr..categorias..." />
+            <marker date="1473186958561" expanded="true" signature="7343:7568" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modCategoria.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eliCliente.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1465692807473" expanded="true" signature="87:133" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modLibro.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="20.923077">
+          <caret line="220" column="35" selection-start-line="220" selection-start-column="35" selection-end-line="220" selection-end-column="35" />
+          <folding>
+            <marker date="1473186958561" expanded="true" signature="267:314" placeholder="select * fro..libros..." />
+            <marker date="1473186958561" expanded="true" signature="1570:1877" placeholder="UPDATE libro..." />
+            <marker date="1473186958561" expanded="true" signature="2418:2503" placeholder="UPDATE libro..." />
+            <marker date="1473186958561" expanded="true" signature="2597:2622" placeholder="select * fro..editoriales..." />
+            <marker date="1473186958561" expanded="true" signature="2656:2680" placeholder="select * fro..categorias..." />
+            <marker date="1473186958561" expanded="true" signature="5946:6042" placeholder="SELECT l.*, ..libros..." />
+            <marker date="1473186958561" expanded="true" signature="6628:6696" placeholder="select descr..categorias..." />
+            <marker date="1473186958561" expanded="true" signature="7343:7568" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nuevaCategoria.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.0">
+          <caret line="146" column="11" selection-start-line="139" selection-start-column="8" selection-end-line="146" selection-end-column="11" />
+          <folding>
+            <marker date="1473187876320" expanded="true" signature="726:803" placeholder="INSERT INTO categorias..." />
+            <marker date="1473187876320" expanded="true" signature="1603:1627" placeholder="SELECT * FRO..categorias..." />
+            <marker date="1473187876320" expanded="true" signature="2164:2436" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nuevoCliente.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.0">
+          <caret line="240" column="50" selection-start-line="238" selection-start-column="3" selection-end-line="240" selection-end-column="50" />
+          <folding>
+            <marker date="1473188501918" expanded="true" signature="827:1077" placeholder="INSERT INTO clientes..." />
+            <marker date="1473188501918" expanded="true" signature="1182:1207" placeholder="select * fro..localidades..." />
+            <marker date="1473188501918" expanded="true" signature="3673:3783" placeholder="SELECT c.*, ..clientes..." />
+            <marker date="1473188501918" expanded="true" signature="4754:4882" placeholder="..." />
+            <marker date="1473188501918" expanded="true" signature="5570:5592" placeholder="select * fro..clientes..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/listadoPedidosClientes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.7454545">
+          <caret line="48" column="122" selection-start-line="48" selection-start-column="122" selection-end-line="48" selection-end-column="122" />
+          <folding>
+            <marker date="1473189166158" expanded="true" signature="573:598" placeholder="SELECT p.* F..pedidos..." />
+            <marker date="1473189166158" expanded="true" signature="1093:1186" placeholder="select conca..clientes..." />
+            <marker date="1473189166158" expanded="true" signature="1282:1337" placeholder="select titul..libros..." />
+            <marker date="1473189166158" expanded="true" signature="1433:1497" placeholder="select nombr..localidades..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nuevoLibro.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="14.396227">
+          <caret line="264" column="85" selection-start-line="264" selection-start-column="19" selection-end-line="264" selection-end-column="85" />
+          <folding>
+            <marker date="1473188588850" expanded="true" signature="3251:3586" placeholder="INSERT INTO libros..." />
+            <marker date="1473188588850" expanded="true" signature="3674:3699" placeholder="select * fro..editoriales..." />
+            <marker date="1473188588850" expanded="true" signature="3732:3756" placeholder="select * fro..categorias..." />
+            <marker date="1473188588850" expanded="true" signature="5918:6014" placeholder="SELECT l.*, ..libros..." />
+            <marker date="1473188588850" expanded="true" signature="6613:6681" placeholder="select descr..categorias..." />
+            <marker date="1473188588850" expanded="true" signature="7344:7481" placeholder="..." />
+            <marker date="1473188588850" expanded="true" signature="7344:7562" placeholder="..." />
+            <marker date="1473188588850" expanded="true" signature="7652:7683" placeholder="..." />
+            <marker date="1473188588850" expanded="true" signature="7664:7683" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comprar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.012195">
+          <caret line="169" column="50" selection-start-line="169" selection-start-column="4" selection-end-line="169" selection-end-column="50" />
+          <folding>
+            <marker date="1473189574374" expanded="true" signature="1221:1400" placeholder="INSERT INTO tarjeta..." />
+            <marker date="1473189574374" expanded="true" signature="1572:1838" placeholder="INSERT INTO pedidos..." />
+            <marker date="1473189574374" expanded="true" signature="1939:1969" placeholder="..." />
+            <marker date="1473189574374" expanded="true" signature="2065:2090" placeholder="select * fro..localidades..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/signin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.961538">
+          <caret line="124" column="87" selection-start-line="124" selection-start-column="87" selection-end-line="124" selection-end-column="87" />
+          <folding>
+            <marker date="1473189834766" expanded="true" signature="2788:2880" placeholder="SELECT * FRO..clientes..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/registroCliente.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1827957">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+          <folding>
+            <marker date="1473190021923" expanded="true" signature="918:969" placeholder="select * fro..clientes..." />
+            <marker date="1473190021923" expanded="true" signature="1037:1067" placeholder="..." />
+            <marker date="1473190021923" expanded="true" signature="1129:1399" placeholder="INSERT INTO clientes..." />
+            <marker date="1473190021923" expanded="true" signature="1509:1810" placeholder="..." />
+            <marker date="1473190021923" expanded="true" signature="1522:1567" placeholder="..." />
+            <marker date="1473190021923" expanded="true" signature="1580:1797" placeholder="..." />
+            <marker date="1473190021923" expanded="true" signature="1592:1790" placeholder="..." />
+            <marker date="1473190021923" expanded="true" signature="1609:1790" placeholder="..." />
+            <marker date="1473190021923" expanded="true" signature="2729:2754" placeholder="select * fro..localidades..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
