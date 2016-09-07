@@ -17,13 +17,9 @@
     <script src="assets/js/chart-master/Chart.js"></script>
 
     <!-- MENU -->
-    <div class="container-fluid">
+<body>
+	  <div class="container-fluid">
 		<div class="row">
-		     <?php
-
-				include_once "menu-lateral.php";
-				?>
-
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 				<!-- Sector de busqueda -->
 				<?php include_once 'busq.php';?>
@@ -101,4 +97,3 @@
     <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
 
   </body>
-</html>
