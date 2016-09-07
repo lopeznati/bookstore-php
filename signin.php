@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 include_once "funciones.php";
 
@@ -24,56 +24,47 @@ include_once "funciones.php";
     <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
 
-	
+
 	    <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
-	
-	    <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
+
+
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    
+        	<link href="assets/css/bootstrap.css" rel="stylesheet">
+        	<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        	<link rel="stylesheet" href="http://s.mlcdn.co/animate.css">
+        	<link href="assets/css/style.css" rel="stylesheet">
+        	<link href="assets/css/style-responsive.css" rel="stylesheet">
+        	<link href="css/styles.css" rel="stylesheet">
   </head>
 
   <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.php">Bookstore</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <?php if(!isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE ){ ?>
-				<li><a href="signin.php">Login</a></li>
-				<?php 
-			}else{ ?>
-            
-			<li><a href="logout.php">Logout</a></li>
-			<?php } ?>
-			<li><a href="verCarro.php"><img src="vercarrito.png"></a></li>
-            <li><a href="miCuenta.php">Mi Cuenta</a></li>
-          </ul>
-          
-        </div>
-      </div>
-    </nav>
+    <div class="container">
+      <form class="form-signin" action="" method="post">
+        <h2 class="form-signin-heading">INICIAR SESIÓN</h2>
+        <label for="inputUsuario" class="sr-only">Usuario</label>
+        <input type="text" name="usuario" id="inputUsuario" class="form-control" placeholder="Usuario" required autofocus>
+        <label for="inputPassword" class="sr-only"> Contraseña</label>
+        <input type="password" name="clave" id="inputPassword" class="form-control" placeholder="Contraseña" required>
 
- 
-	
-	<?php 
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+    <a href="registroCliente.php" class="text-center new-account"> Crear una cuenta </a>
+      </form>
+
+    </div> <!-- /container -->
+
+
+
+	<?php
 
 	$_SESSION['usuario_valido']=false;
 	if(!empty($_POST['usuario']) AND !empty($_POST['clave'] )){
@@ -81,9 +72,9 @@ include_once "funciones.php";
 		$cliente=ConsultaSql($sql);
 		echo $cliente;
 		$count = mysql_num_rows($cliente);
-		
+
 		$cli=mysql_fetch_array($cliente);
-		
+
 		if($count==1){
 			$_SESSION['usuario_valido']=TRUE;
 			$_SESSION['usuario']=$_POST['usuario'];
@@ -91,44 +82,20 @@ include_once "funciones.php";
 			$_SESSION['rol']=$cli['rol'];
 			header('Location: index.php');
 		}else{
-			
-          ?>    <div id="navbar" class="navbar-collapse collapse" style="background-color: #0080FF;>
+
+          ?>
+          <div id="navbar" class="navbar-collapse collapse" style="background-color: #0080FF;">
 				<div class="alert">
                 <span class="closebtn" onclick="this.parentElement.style.display='none';"><a href="signin.php">X</a></span>
                 <strong><center>Usuario o Contraseña  incorrectos!</strong>
                 </div>
-                
+
 				</div>
            <?php
 		}
-		
+
 	}
-	
+
 	?>
-
-    <div class="container">
-	
-
-      <form class="form-signin" action="" method="post">
-        <h2 class="form-signin-heading">INICIAR SESIÓN</h2>
-        <label for="inputUsuario" class="sr-only">Usuario</label>
-        <input type="text" name="usuario" id="inputUsuario" class="form-control" placeholder="Usuario" required autofocus>
-        <label for="inputPassword" class="sr-only"> Contraseña</label>
-        <input type="password" name="clave" id="inputPassword" class="form-control" placeholder="Contraseña" required>
-		
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
-		<a href="registroCliente.php" class="text-center new-account"> Crear una cuenta </a>
-      </form>
-
-    </div> <!-- /container -->
-
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-  </body>
-</html>
+  <script src="assets/js/jquery.js"></script>
+    	<script src="assets/js/bootstrap.min.js"></script>
