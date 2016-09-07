@@ -1,0 +1,10 @@
+.navbar-inverse, .navbar, .navbar-light, .navbar-fixed-top{
+  font-family: 'Crete Round', serif;
+  color:#121B26;
+  background-color: #BCB793;
+}
+
+.navbar-brand{
+  font-size: 40px;
+  color:#121B26;
+}

@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 include_once "funciones.php";
 
@@ -21,29 +21,24 @@ include_once "funciones.php";
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+  <!--  <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">-->
 
-    <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="dist/sweetalert.css">
-	
-	
+  <!--  <link rel="stylesheet" type="text/css" href="dist/sweetalert.css">-->
+
+
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link href="styles.css" rel="stylesheet">
+  <!--Goole Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Crete+Round|Roboto" rel="stylesheet">
   </head>
 
   <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-light navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -58,15 +53,15 @@ include_once "funciones.php";
           <ul class="nav navbar-nav navbar-right">
 		    <?php if(!isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE ){ ?>
 				<li><a href="signin.php">Login</a></li>
-				<?php 
+				<?php
 			}else{ ?>
-            
+
 			<li><a href="logout.php">Logout</a></li>
 			<?php } ?>
             <li><a href="verCarro.php"><img src="vercarrito.png"></a></li>
-            
+
           </ul>
-          
+
         </div>
       </div>
     </nav>
