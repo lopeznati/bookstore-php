@@ -1,27 +1,4 @@
-<!--<div class="col-sm-3 col-md-2 sidebar">
-    <ul class="nav nav-sidebar">
-		<?php if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE )
-		{
-		?>
-			<li class="active"><a href="miCuenta.php">Mi Cuenta</a></li>
-			<li><a href="pedidosCliente.php">Mis pedidos</a></li>
-		<?php
-		}
-		else
-		{
-		?>
-			<li><a href="miCuenta.php">Mi Cuenta</a></li>
-			<li class="active"><a href="nuevoLibro.php">Libros <span class="sr-only">(current)</span></a></li>
-			<li><a href="nuevoCliente.php">Clientes</a></li>
-			<li><a href="nuevaCategoria.php">Categorias</a></li>
-			<li><a href="listadoPedidosClientes.php">Pedidos Clientes</a></li>
-		<?php
-		}
-		?>
-    </ul>
-</div>-->
 
-<aside>
         <div id="sidebar"  class="nav-collapse ">
         	<ul class="sidebar-menu" id="nav-accordion">
             	<p class="centered"><a href="index.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
@@ -48,31 +25,32 @@
               		?>
                   <li class="sub-menu">
                   	<a href="miCuenta.php" >
-                  		<i class="fa fa-user" aria-hidden="true"></i>
+                      <i class="fa fa-child" aria-hidden="true"></i>
                   		<span>Mi Cuenta</span>
                   	</a>
                    </li>
                   <li class="active">
                     <a href="nuevoLibro.php">
-                      Libros <span class="sr-only">(current)</span>
+                      <i class="fa fa-book" aria-hidden="true"></i>
+                      <span>Libros</span>
                     </a>
                   </li>
                   <li class="sub-menu">
                   	<a href="nuevoCliente.php" >
-                  		<i class="fa fa-user" aria-hidden="true"></i>
+                  		<i class="fa fa-users" aria-hidden="true"></i>
                   		<span>Clientes</span>
                   	</a>
                    </li>
 
                   <li class="sub-menu">
                       <a href="nuevaCategoria.php" >
-                      	  <i class="fa fa-book" aria-hidden="true"></i>
+                      	  <i class="fa fa-star" aria-hidden="true"></i>
                           <span>Categorias</span>
                       </a>
                   </li>
                   <li class="sub-menu">
                   	<a href="listadoPedidosClientes.php" >
-                  		<i class="fa fa-user" aria-hidden="true"></i>
+                  		<i class="fa fa-list" aria-hidden="true"></i>
                   		<span>Pedidos Clientes</span>
                   	</a>
                    </li>
@@ -81,4 +59,4 @@
                		?>
               </ul>
           </div>
-      </aside>
+      
