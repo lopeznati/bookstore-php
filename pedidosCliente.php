@@ -20,7 +20,7 @@
 			
 				<?php 
 		
-					$sqlPedidos="SELECT p.*, concat(c.nombre,' ',c.apellido) as cliente FROM pedidos p inner join clientes c on p.id_cliente= c.id";		
+					$sqlPedidos="SELECT p.*, concat(c.nombre,' ',c.apellido) as cliente FROM pedidos p inner join clientes c on p.id_cliente= c.id where p.id_cliente=" .$_SESSION['id_usuario'];		
 					$pedidos=ConsultaSql($sqlPedidos);
 				?>
 				<div class="table-responsive">
@@ -43,7 +43,7 @@
 									$sqllibro=ConsultaSql("select titulo from libros where id='".$p['id_libro']."'");
 									$libro=mysql_fetch_array($sqllibro);
 									
-									$sqllocalidad=ConsultaSql("select nombre from localidades where id='".$p['id_localidad']."'");
+									$sqllocalidad=ConsultaSql("select nombre from localidades where id='".$p['localidad_id']."'");
 									$localidad=mysql_fetch_array($sqllocalidad);
 			
 									echo "<tr>";

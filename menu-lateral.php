@@ -26,7 +26,7 @@
         	<ul class="sidebar-menu" id="nav-accordion">
             	<p class="centered"><a href="index.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
               	<h5 class="centered">The Open Book</h5>
-              <?php if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE )
+              <?php if(!isset($_SESSION['rol']) or !isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE )
           		{
           		?>
                 <li class="sub-menu">
@@ -35,15 +35,9 @@
                 		<span>Mi Cuenta</span>
                 	</a>
                  </li>
-                 <li class="sub-menu">
-                  <a href="pedidosCliente.php" >
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Mis Pedidos</span>
-                  </a>
-                  </li>
                   <?php
               		}
-              		else
+              		else if ((strcmp($_SESSION['rol'],'admi'))==0)
               		{
               		?>
                   <li class="sub-menu">
@@ -78,7 +72,23 @@
                    </li>
                    <?php
                		}
-               		?>
+					else if ((strcmp($_SESSION['rol'],'cli'))==0)
+					{?>
+                <li class="sub-menu">
+                	<a href="miCuenta.php" >
+                		<i class="fa fa-user" aria-hidden="true"></i>
+                		<span>Mi Cuenta</span>
+                	</a>
+                 </li>
+                 <li class="sub-menu">
+                  <a href="pedidosCliente.php" >
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <span>Mis Pedidos</span>
+                  </a>
+                  </li>
+					<?php 
+					}
+					?>
               </ul>
           </div>
       </aside>
