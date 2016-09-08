@@ -1,6 +1,7 @@
 <?php
-	include_once "header.php";
+include_once "menu-lateral.php";
 ?>
+<head>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
@@ -8,24 +9,17 @@
 
 		<link href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="assets/css/zabuto_calendar.css">
-    <link rel="stylesheet" type="text/css" href="assets/js/gritter/css/jquery.gritter.css" />
-    <link rel="stylesheet" type="text/css" href="assets/lineicons/style.css">
-    <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
-    <script src="assets/js/chart-master/Chart.js"></script>
-
+		<script src="https://use.fontawesome.com/7fa1cd24b5.js"></script>
+</head>
+<body>
     <!-- MENU -->
-    <div class="container-fluid">
+	<div class="container-fluid">
 		<div class="row">
-		     <?php
-				include_once "menu-lateral.php";
-				?>
-
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 				<!-- Sector de busqueda -->
 				<?php include_once 'busq.php';?>
-				<h1 class="page-header">Libros</h1>
+				<h2 class="page-header">Libros</h2>
 				<?php
 					if(isset($_REQUEST['busqueda']))
 					{
@@ -39,7 +33,7 @@
 					}
 				?>
 				<div class="table-responsive">
-					<table class="table table-striped" class="modulobuscador" >
+					<table class="table table-hover" class="modulobuscador" >
 						<tbody>
 						<?php
 							while($l=mysql_fetch_array($libros))
@@ -58,8 +52,8 @@
 										<span class='titulos'>Precio: </span>"."$ ".$l['precio']."</br>
 										<span class='titulos'>Categoria: </span>".$c['descripcion']."</br>
 										<span class='titulos'>Editorial: </span>".$e['nombre']."</br>
-										<div class='celdaboton'><a href='detalle.php?id=".$l['id']."'><botton class='btn btn-primary'>+Info</botton></a>
-											<input  type='submit' class='btn btn-primary' value='Comprar'/>
+										<div class='celdaboton'><a href='detalle.php?id=".$l['id']."'><botton class='btn btn-sunny text-uppercase'><i class='fa fa-plus' aria-hidden='true'></i>Info</botton></a>
+											<input  type='submit' class='btn btn-fresh text-uppercase' value='Comprar'/>
 											<!--<input  type='submit' class='btn btn-primary' value='+Info'/>
 											<botton id='cartelLibro' class='btn btn-primary'> Carro</botton>
 											<a href='detalle.php'><botton class='btn btn-primary'> Carro</botton></a>-->
