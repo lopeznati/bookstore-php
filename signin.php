@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+<?php
+session_start();
+include_once "funciones.php";
+>>>>>>> 926e92ca98e1d23596793602cb7378ab7ad292c0
 
 
 <!DOCTYPE html>
@@ -21,27 +27,62 @@
     <link href="https://fonts.googleapis.com/css?family=Crete+Round|Oswald|Roboto" rel="stylesheet">
 
 
+<<<<<<< HEAD
 	    <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
 
 	    <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+=======
+
+	    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+
+
+>>>>>>> 926e92ca98e1d23596793602cb7378ab7ad292c0
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    
+        	<link href="assets/css/bootstrap.css" rel="stylesheet">
+        	<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        	<link rel="stylesheet" href="http://s.mlcdn.co/animate.css">
+        	<link href="assets/css/style.css" rel="stylesheet">
+        	<link href="assets/css/style-responsive.css" rel="stylesheet">
+        	<link href="css/styles.css" rel="stylesheet">
   </head>
 
   <body>
+<<<<<<< HEAD
 	<?php
   include_once "header.php";
+=======
+    <div class="container">
+      <form class="form-signin" action="" method="post">
+        <h2 class="form-signin-heading">INICIAR SESIÓN</h2>
+        <label for="inputUsuario" class="sr-only">Usuario</label>
+        <input type="text" name="usuario" id="inputUsuario" class="form-control" placeholder="Usuario" required autofocus>
+        <label for="inputPassword" class="sr-only"> Contraseña</label>
+        <input type="password" name="clave" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+    <a href="registroCliente.php" class="text-center new-account"> Crear una cuenta </a>
+      </form>
+
+    </div> <!-- /container -->
+
+
+
+	<?php
+
+>>>>>>> 926e92ca98e1d23596793602cb7378ab7ad292c0
 	$_SESSION['usuario_valido']=false;
 	if(!empty($_POST['usuario']) AND !empty($_POST['clave'] )){
 		$sql="SELECT * FROM clientes where usuario='".$_POST['usuario']."' and clave='".$_POST['clave']."'";
@@ -59,7 +100,12 @@
 			header('Location: index.php');
 		}else{
 
+<<<<<<< HEAD
           ?>    <div id="navbar" class="navbar-collapse collapse" style="background-color: #0080FF;>
+=======
+          ?>
+          <div id="navbar" class="navbar-collapse collapse" style="background-color: #0080FF;">
+>>>>>>> 926e92ca98e1d23596793602cb7378ab7ad292c0
 				<div class="alert">
                 <span class="closebtn" onclick="this.parentElement.style.display='none';"><a href="signin.php">X</a></span>
                 <strong><center>Usuario o Contraseña  incorrectos!</strong>
@@ -68,6 +114,7 @@
 				</div>
            <?php
 		}
+<<<<<<< HEAD
 
 	}
 
@@ -95,9 +142,11 @@
       </form>
 
     </div> <!-- /container -->
+=======
+>>>>>>> 926e92ca98e1d23596793602cb7378ab7ad292c0
 
+	}
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-  </body>
-</html>
+	?>
+  <script src="assets/js/jquery.js"></script>
+    	<script src="assets/js/bootstrap.min.js"></script>
