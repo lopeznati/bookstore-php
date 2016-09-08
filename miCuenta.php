@@ -19,22 +19,14 @@ if(!isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE ){
 	$clienteMod=mysql_fetch_array($resultado);
 
 ?>
-
-
-
-
 	<!-- MENU -->
-
     <div class="container-fluid">
       <div class="row">
 		<!-- Modificar libros -->
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header" >Mis datos personales</h1>
-
+          <h1 class="page-header" >Mis datos personales</h1
 		  <?php
-
 			if(!empty($_POST) AND $_POST['Modificado']==1 AND !empty($_POST['idcliente']) AND !empty($_POST['nombre']) AND !empty($_POST['apellido']) AND !empty($_POST['clave']) AND !empty($_POST['domicilio']) AND !empty($_POST['telefono']) AND !empty($_POST['mail']) AND !empty($_POST['localidad_id'])){
-
 			$id=trim($_POST['idcliente']);
 			$nombre=trim($_POST['nombre']);
 			$apellido=trim($_POST['apellido']);
@@ -58,12 +50,6 @@ if(!isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE ){
 
 			header('Location: miCuenta.php');
 			exit();
-
-
-
-
-
-
 			}
 
 			if(!empty($_FILES)){
