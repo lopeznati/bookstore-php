@@ -1,11 +1,9 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script type="text/javascript"  src="js/scripts.js"></script>
-<<<<<<< HEAD
 <link href="https://fonts.googleapis.com/css?family=Crete+Round|Oswald|Roboto" rel="stylesheet">
 <link href="styles.css" rel="stylesheet">
-<?php
-include_once 'header.php';
-=======
+
+
 <link href="assets/css/bootstrap.css" rel="stylesheet">
 <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="assets/css/zabuto_calendar.css">
@@ -14,17 +12,14 @@ include_once 'header.php';
 <link href="assets/css/style.css" rel="stylesheet">
 <link href="assets/css/style-responsive.css" rel="stylesheet">
 <script src="assets/js/chart-master/Chart.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript"  src="js/scripts.js"></script>
 <?php
-include_once "menu-lateral.php";
-include_once "header.php";
->>>>>>> 926e92ca98e1d23596793602cb7378ab7ad292c0
-
+include_once 'menu-lateral.php';
+//si lo agrego una segunda vez
 if(isset($_SESSION['carro'])){
 	if(isset($_REQUEST['id'])){
-<<<<<<< HEAD
 
-=======
->>>>>>> 926e92ca98e1d23596793602cb7378ab7ad292c0
 		$arreglo=$_SESSION['carro'];
 		$encontro=false;
 		$numero=0;
@@ -52,15 +47,10 @@ if(isset($_SESSION['carro'])){
 			array_push($arreglo,$datosNuevos);
 			$_SESSION['carro']=$arreglo;
 		}
-<<<<<<< HEAD
 
 	}
 
 }else{
-=======
-}
-} else{
->>>>>>> 926e92ca98e1d23596793602cb7378ab7ad292c0
 	//primera vez
 	if(isset($_REQUEST['id'])){
 		$titulo="";
@@ -77,77 +67,10 @@ if(isset($_SESSION['carro'])){
 		$_SESSION['carro']=$arreglo;
 	}
 }
-<<<<<<< HEAD
 
-
-
-=======
->>>>>>> 926e92ca98e1d23596793602cb7378ab7ad292c0
 ?>
-			<section id="container white-backround" >
-	  			<section id="main-content">
-          			<section class="wrapper">
-              			<div class="row mt">
-                  		<div class="col-md-12">
-                  		<h4><i class="fa fa-angle-right"></i>Tu carrito</h4>
-	              		<hr>
-                      	<div class="content-panel">
-													<?php
-													if(isset($_SESSION['carro'])){
-														$datos=$_SESSION['carro'];
-														$total=0;
 
-													//si el carro no está vacío,
-													//mostramos los productos
-													?>
-                        	<table id="tabla" class="table table-striped">
-              					<thead>
-                					<tr>
-                  						<th>Libro</th>
-                  						<th>Precio</th>
-                 					 		<th>Cantidad de Unidades</th>
-                 					 		<th>SubTotal</th>
-                					</tr>
-              					</thead>
-                        <tbody>
-													<?php
-													$color=array("#ffffff","#F0F0F0");
-													$contador=0;
-													$suma=0;
-													foreach($datos as $k => $v){
-													$subto=$v['cantidad']*$v['precio'];
-													$suma=$suma+$subto;
-													$contador++;
-													?>
-                      		<tr bgcolor="<?php echo $color[$contador%2]; ?>" class='prod'>
-                          	<td><?php echo $v['titulo'] ?></td>
-														<td><?php echo $v['precio'] ?></td>
-														<td><input  type='text' value='<?php echo $v['cantidad']; ?>'
-																	data-precio="<?php echo $v['precio']; ?>"
-																	data-id="<?php echo $v['id']; ?>"
-																	class="cantidad"></td>
-														<td><span class='subtotal_<?php echo $v['id']; ?>'><?php echo $v['precio']*$v['cantidad']; ?></span></td>
-														<td><a href="borracar.php?id=<?php echo $v['id'] ?>"><img src="trash.gif" width="12" height="14" border="0"></a>
-															<input name="id" type="hidden" id="id" value="<?php echo $v['id'] ?>"> </td>
-													</tr>
-                      	</tbody>
-												<?php } ?>
-                        </table>
-                        <div align="center"><span >Total de Articulos:<?php echo count($datos); ?></span>
-									</div><br>
-									<div  align="center" id='total'><span >Total:$<?php echo number_format($suma,2); ?>
-								</span>
-								</div><br>
-									<div  align="center">
-										<span>Continuar la seleccion de productos</span>
-										<a href="index.php?<?php echo SID; ?>">
-										<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-									</div>
-									<div  align="center">
-										<?php if($suma!=0) { ?>
-										<input type="button" name="btnComprar" value="Comprar" class="btn btn-primary" onClick="location.href='comprar.php'">
 
-<<<<<<< HEAD
  <div class="container-fluid">
       <div class="row">
 	   <?php
@@ -175,17 +98,17 @@ if(isset($_SESSION['carro'])){
 		?>
 
 		<table width="800" border="0" cellspacing="0" cellpadding="0" align="center">
-			<thead>
-				<tr>
-					<th>Libro</th>
-					<th>Precio</th>
-					<th>Cantidad de unidades</th>
-					<th>Subtotal</th>
-					<th>Borrar</th>
-				</tr>
-			</thead>
+		<tr bgcolor="#333333" class="tit">
+		<td width="105">Libro</td>
+		<td width="207">Precio</td>
+		<td width='305' >Cantidad de Unidades</td>
+		<td width='105'>SubTotal</td>
+
+		<td width="10" align="center">Borrar</td>
+
+		</tr>
 		<?php
-		$color=array("#ffffff","#D9D4C8");
+		$color=array("#ffffff","#F0F0F0");
 		$contador=0;
 		//las 2 líneas anteriores
 		//sirven sólo para hacer
@@ -261,7 +184,7 @@ if(isset($_SESSION['carro'])){
 		<img src="continuar.gif" width="13" height="13" border="0"></a>
 		</div>
 		<?php if($suma!=0){ ?>
-		<div  style="margin-left:900px;" align="center"><a href='comprar.php'><botton class='btn btn-fresh text-uppercase'>Iniciar Compra</botton></a> </div>
+		<div  style="margin-left:900px;" align="center"><a href='comprar.php'><botton class='btn btn-primary'>Iniciar Compra</botton></a> </div>
 		<?php }?>
 		<?php }else{ ?>
 
@@ -300,24 +223,3 @@ if(isset($_SESSION['carro'])){
 
   </body>
 </html>
-=======
-									</div>
-									<br>
-                  <?php } ?>
-									<?php } else{ ?>
-									<div align="center">
-										<span class="prod">No hay productos seleccionados</span>
-							    		<a href="index.php?<?php echo SID; ?>">
-										<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-									</div>
-									<div  align="center">
-										<input disabled type="button" name="btnComprar" value="Comprar" class="btn btn-primary" onClick="location.href='comprar.php'">
-									</div>
-									<? } ?>
-                      		</div>
-                  		</div>
-              		</div>
-				</section>
-      		</section>
-	  	</section>
->>>>>>> 926e92ca98e1d23596793602cb7378ab7ad292c0

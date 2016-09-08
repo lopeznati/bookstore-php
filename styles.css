@@ -15,16 +15,6 @@ table, tr, th, thead, td{
   border: 0px;
 }
 
-.navbar-inverse, .navbar, .navbar-light, .navbar-fixed-top{
-  font-family: 'Crete Round', serif;
-  color:#121B26;
-  background-color: #BCB793;
-}
-
-.navbar-brand{
-  font-size: 40px;
-  color:#121B26;
-}
 .btn-sunny {
 color: #fff;
 background-color: #f4ad49;
@@ -74,7 +64,7 @@ margin-top: 2px;
 a {color:#fff;}
 a:hover {text-decoration:none; color:#fff;}
 
-.navbar-brand { position: relative; z-index: 2; }
+.navbar-brand { position: relative; z-index: 2; font-family: 'Crete Round', serif; }
 
 .navbar-nav.navbar-right .btn { position: relative; z-index: 2; padding: 4px 20px; margin: 10px auto; transition: transform 0.3s; }
 
@@ -82,9 +72,9 @@ a:hover {text-decoration:none; color:#fff;}
 .navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 22px; }
 
 .navbar .nav-collapse { position: absolute; z-index: 1; top: 0; left: 0; right: 0; bottom: 0; margin: 0; padding-right: 120px; padding-left: 80px; width: 100%; }
-.navbar.navbar-default .nav-collapse { background-color: #f8f8f8; }
-.navbar.navbar-inverse .nav-collapse { background-color: #222; }
-.navbar .nav-collapse .navbar-form { border-width: 0; box-shadow: none; }
+.navbar.navbar-default .nav-collapse { background-color: #f8f8f8; font-family: 'Crete Round', serif; }
+.navbar.navbar-inverse .nav-collapse { background-color: #222; font-family: 'Crete Round', serif; }
+.navbar .nav-collapse .navbar-form { border-width: 0; box-shadow: none; font-family: 'Crete Round', serif; }
 .nav-collapse>li { float: right; }
 
 .btn.btn-circle { border-radius: 50px; }
@@ -94,6 +84,7 @@ a:hover {text-decoration:none; color:#fff;}
     background-color: rgb(111, 84, 153);
     border-color: rgb(111, 84, 153);
     color: rgb(255, 255, 255);
+    font-family: 'Crete Round', serif;
 }
 
 .navbar.navbar-default .nav-collapse,
