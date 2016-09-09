@@ -32,7 +32,7 @@ if($_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION[
 
 		<!-- Modificar libros -->
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Modificar Libro</h1>
+          <h1 class="page-header">Modificar Categoria</h1>
 
 		  <?php
 			if(!empty($_POST) AND $_POST['Modificado']==1 AND !empty($_POST['descripcion']) ){
@@ -65,7 +65,7 @@ if($_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION[
                 <input type="hidden" name="id" value="<?php echo $categoriaMod['id'];?>">
 				<input type="hidden" name="Modificado" value="1">
 				<tr>
-                  <td>Descripcion</td>
+                  <td>Descripcion:</td>
 
                   <td><input type="text" name="descripcion" value="<?php echo $categoriaMod['descripcion'];?>" required></td>
                 </tr>

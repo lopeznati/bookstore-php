@@ -29,7 +29,7 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
 
 		<!-- Alta libros -->
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main margen">
-          <h1 class="page-header">Nueva categoria</h1>
+          <h1 class="page-header">Nueva Categoria</h1>
 
 		  <?php
 			if(!empty($_POST)  AND !empty($_POST['descripcion'])){
@@ -53,7 +53,7 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
 		  <table class="table table-striped">
 
                 <tr>
-                  <td>Descripcion</td>
+                  <td>Descripcion:</td>
                   <td><input type="text" name="descripcion" required></td>
                 </tr>
 

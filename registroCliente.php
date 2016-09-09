@@ -100,7 +100,7 @@
 						</tr>
 						<tr>
 							<td>Fecha Nacimiento</td>
-							<td><input id="fecha" type="text" name="fecha" class="btn panel-primary" required></td>
+							<td><input id="fecha" type="text" name="fecha"  required></td>
 						</tr>
 						<tr>
 							<td>E-Mail</td>
@@ -128,8 +128,8 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td><input type="submit" value="Guardar"></td>
-							</tr>
+							<td><input type="submit"  class="btn btn-primary" value="Guardar"></td>
+						</tr>
 					</table>
 				</form>
 			<?php

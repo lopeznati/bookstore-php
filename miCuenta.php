@@ -76,49 +76,49 @@ ob_start();
 				$localidades=ConsultaSql('select * from localidades');
 				?>
 <div class="container">
-      <div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
-								<div class="panel panel-info">
-									<div class="panel-heading">
-										<h3 class="panel-title">Ficha Personal</h3>
+    <div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h3 class="panel-title">Ficha Personal</h3>
+					</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="<?php echo $clienteMod['foto'];?>" class="img-circle img-responsive"> </div>
 									</div>
-									<div class="panel-body">
-										<div class="row">
-											<div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="<?php echo $clienteMod['foto'];?>" class="img-circle img-responsive"> </div>
-											</div>
-											<div class=" col-md-9 col-lg-9 ">
+										<div class=" col-md-9 col-lg-9 ">
 											<form action="" method="post">
 												<table class="table table-user-information">
 													<input type="hidden" name="idcliente" value="<?php echo $clienteMod['id'];?>">
 													<input type="hidden" name="Modificado" value="1">
 													<tbody>
 														<tr>
-															<td>Nombre</td>
+															<td>Nombre:</td>
 															<td><input type="text" name="nombre" value="<?php echo $clienteMod['nombre'];?>" required></td>
 														</tr>
 														<tr>
-															<td>Apellido</td>
+															<td>Apellido:</td>
 															<td><input type="text" name="apellido" value="<?php echo $clienteMod['apellido'];?>" required></td>
 														</tr>
 														<tr>
-															<td>Contraseña</td>
+															<td>Contraseña:</td>
 															<td><input type="text" name="clave" value="<?php echo $clienteMod['clave'];?>" required></td>
 														</tr>
 															 <tr>
 																	 <tr>
-															<td>Domicilio</td>
+															<td>Domicilio:</td>
 															<td><input type="text" name="domicilio" value="<?php echo $clienteMod['domicilio'];?>" required></td>
 														</tr>
 															<tr>
-															<td>Teléfono</td>
+															<td>Teléfono:</td>
 															<td><input type="text" name="telefono" value="<?php echo $clienteMod['telefono'];?>" required></td>
 														</tr>
 														<tr>
-															<td>Email</td>
+															<td>Email:</td>
 															<td><input type="email" name="mail" value="<?php echo $clienteMod['mail'];?>" required></td>
 														</tr>
 														<tr>
-															<td>Localidad</td>
+															<td>Localidad:</td>
 															<td>
 																<select name="localidad_id">
 																<?php
@@ -131,24 +131,26 @@ ob_start();
 																</select>
 														 </td>
 														</tr>
-													</tbody>
+													</tbody>	
+													<td>
+														<input type="submit" class="btn btn-fresh text-uppercase" value="Guardar">
+													</td>
 												</table>
-												<a href="#" class="btn btn-fresh text-uppercase">Guardar</a>
 											</form>
 											<form action="" method="post" enctype="multipart/form-data">
-		                  <table class="table table-user-information">
-		                    <tbody>
-		                      <tr>
-															<input type="hidden" name="idcliente" value="<?php echo $clienteMod['id'];?>">
-															<input type="hidden" name="Modificado" value="1">
-										          <td class='celdafoto'>Imagen</td>
-										          <td><input type="file" name="foto" accept="image/*"></td>
-		                      </tr>
+											<table class="table table-user-information">
+												<tbody>
+													<tr>
+														<input type="hidden" name="idcliente" value="<?php echo $clienteMod['id'];?>">
+														<input type="hidden" name="Modificado" value="1">
+														<td class='celdafoto'>Imagen:</td>
+														<td><input type="file" name="foto" accept="image/*"></td>
+													</tr>
 													<tr>
 														<td><input type="submit" class="btn btn-sunny text-uppercase" value="Cambiar"></td>
 													</tr>
-		                    </tbody>
-		                  </table>
+												</tbody>
+											</table>
 										</form>
 										<a href='eliCliente.php?ideli="<?php echo $idModificar;?>"'>Eliminar Cuenta</a>
 									   <script type="text/javascript">
@@ -156,12 +158,12 @@ ob_start();
 									   </script>
 									   <?php
 								       ?>
-											</div>
-										</div>
 									</div>
 								</div>
 							</div>
 						</div>
+					</div>
+				</div>
 	    <!-- Bootstrap core JavaScript
 	    ================================================== -->
 	    <!-- Placed at the end of the document so the pages load faster -->
@@ -180,6 +182,6 @@ ob_start();
 	<?php
 	}
 	?>
-	<?php
-	      ob_end_flush();
+<?php
+	ob_end_flush();
 ?>

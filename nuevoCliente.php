@@ -53,41 +53,41 @@ $localidades=ConsultaSql('select * from localidades');
 		  <table class="table table-striped">
 
                 <tr>
-                  <td>Nombre</td>
+                  <td>Nombre:</td>
                   <td><input type="text" name="nombre" required></td>
                 </tr>
 
 				<tr>
-                  <td>Apellido</td>
+                  <td>Apellido:</td>
                   <td><input type="text" name="apellido" required></td>
                 </tr>
 
 				<tr>
-                  <td>Telefono</td>
+                  <td>Telefono:</td>
                   <td><input type="text" name="telefono" required></td>
                 </tr>
 				<tr>
-                  <td>Domicilio</td>
-                  <td><input type="text" name="domicilio" required></td>
+                  <td>Domicilio:</td>
+                  <td><input type="text" name="domicilio" placeholder="Calle y Nro" required></td>
                 </tr>
 
 				<tr>
-                  <td>E-Mail</td>
+                  <td>E-Mail:</td>
                   <td><input type="email" name="mail" required></td>
                 </tr>
 
 				<tr>
-                  <td>Usuario</td>
+                  <td>Usuario:</td>
                   <td><input type="text" name="usuario" required></td>
                 </tr>
 
 				<tr>
-                  <td>Contraseña</td>
+                  <td>Contraseña:</td>
                   <td><input type="password" name="contraseña" required></td>
                 </tr>
 
 				<tr>
-                  <td>Localidad</td>
+                  <td>Localidad:</td>
 
                   <td>
 					<select id="localidad_id" name="localidad_id">
@@ -102,7 +102,7 @@ $localidades=ConsultaSql('select * from localidades');
                 </tr>
 
 				<tr>
-                  <td>Rol</td>
+                  <td>Rol:</td>
 
                   <td>
 					<select id="rol" name="rol">
@@ -116,7 +116,7 @@ $localidades=ConsultaSql('select * from localidades');
 
 				<tr>
                   <td></td>
-                  <td><input type="submit" id="guardar" value="Guardar"></td>
+                  <td><input type="submit" id="guardar" class="btn btn-primary" value="Guardar"></td>
                 </tr>
 
            </table>

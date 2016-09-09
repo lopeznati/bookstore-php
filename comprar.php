@@ -26,147 +26,99 @@ if($_SESSION['usuario_valido']==true){
       <div class="row">
 	  <?php
         include_once "menu-lateral.php";
-
 		?>
 
 		<!-- Alta libros -->
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-
 		  <?php
-			if(!empty($_POST) AND !empty($_POST['calle']) AND !empty($_POST['numero']) AND !empty($_POST['numero_tarjeta']) AND !empty($_POST['codigo_seguridad']) AND !empty($_POST['titular'])){
-			$calle=trim($_POST['calle']).trim($_POST['numero']);
-
-			$numero_tarjeta=trim($_POST['numero_tarjeta']);
-
-			$codigo_seguridad=trim($_POST['codigo_seguridad']);
-			$titular=trim($_POST['titular']);
-			$tipo_tarjeta=trim($_POST['tipo_tarjeta']);
-			$localidadid=trim($_POST['localidad_id']);
-
-			$sqlTarjeta="INSERT INTO tarjeta(id,numero_Tarjeta,titular,codigo_seguridad,tipo_tarjeta)
+			if(!empty($_POST) AND !empty($_POST['domicilio']) AND !empty($_POST['numero_tarjeta']) AND !empty($_POST['codigo_seguridad']) AND !empty($_POST['titular']))
+			{
+				$domicilio=trim($_POST['domicilio']);
+				$numero_tarjeta=trim($_POST['numero_tarjeta']);
+				$codigo_seguridad=trim($_POST['codigo_seguridad']);
+				$titular=trim($_POST['titular']);
+				$tipo_tarjeta=trim($_POST['tipo_tarjeta']);
+				$localidadid=trim($_POST['localidad_id']);
+				$sqlTarjeta="INSERT INTO tarjeta(id,numero_Tarjeta,titular,codigo_seguridad,tipo_tarjeta)
 									VALUES('','".$numero_tarjeta."','".$titular."','".$codigo_seguridad."','".$tipo_tarjeta."')";
 
-			ConsultaSql($sqlTarjeta);
-			$idTarjeta=mysql_insert_id();
+				ConsultaSql($sqlTarjeta);
+				$idTarjeta=mysql_insert_id();
 
-
-
-		foreach($arreglo as $k => $v){
-			$subtotal=$v['precio']*$v['cantidad'];
-			$agregarLibro="INSERT INTO pedidos(id,fechaPedido,id_cliente,id_libro,cantidad,subtotal,id_tarjeta,domicilio,localidad_id)
-									VALUES('',NOW(),'".$_SESSION['id_usuario']."','".$v['id']."','".$v['cantidad']."','".$subtotal."','".$idTarjeta."','".$calle."','".$localidadid."')";
-			$resultado=ConsultaSql($agregarLibro);
-
-		}
-
-
-
-		if($resultado){
-			echo "<div style='text-align:center; color:blue;'>Se ha realizado la compra!!!!</div>";
-		}
-
-
-
-
-
-
-
+				foreach($arreglo as $k => $v){
+					$subtotal=$v['precio']*$v['cantidad'];
+					$agregarLibro="INSERT INTO pedidos(id,fechaPedido,id_cliente,id_libro,cantidad,subtotal,id_tarjeta,domicilio,localidad_id)
+								   VALUES('',NOW(),'".$_SESSION['id_usuario']."','".$v['id']."','".$v['cantidad']."','".$subtotal."','".$idTarjeta."','".$domicilio."','".$localidadid."')";
+					$resultado=ConsultaSql($agregarLibro);
+				}
+				if($resultado)
+				{
+					echo "<div style='text-align:center; color:blue;'>Se ha realizado la compra!!!!</div>";
+				}
 			}
-		$localidades=ConsultaSql('select * from localidades');
-
-
+			$localidades=ConsultaSql('select * from localidades');
 			?>
 
-
-
-		  <form action="" method="post" enctype="multipart/form-data">
-		  <table class="table table-striped">
-
-                <tr>
-                  <td colspan='2' class='titulos'>Datos de Entrega:</td>
-				</tr>
-                <tr>
-                  <td>Domicilio:</td> <td><input type="text" name="calle" required></td>
-				 <tr>
-				<tr>
-                  <td>Localidad</td>
-
-                  <td>
-					<select id="localidad_id" name="localidad_id">
-						<option value="">Elegir Opcion</option>
-						<?php
-							while($c=mysql_fetch_array($localidades)){
-								echo "<option value='".$c['id']."'>".$c['nombre']."</option>";
-							}
-						?>
-					</select>
-				  </td>
-                </tr>
-				 <tr>
-				  <td> Numero:</td> <td><input type="text" name="numero" required></td><br>
-				 </tr>
-
-			     <tr>
-				  <td> <br></td><br>
-				 </tr>
-
-                <tr>
-                  <td colspan='2' class='titulos'>Medio de Pago:</td>
-				</tr>
-
-				<tr>
-                  <td>Tarjeta</td>
-
-                  <td>
-					<select id="tipo_tarjeta" name="tipo_tarjeta">
-						<option value="">Elegir Opcion</option>
-						<option value="Visa">Visa</option>
-						<option value="Mastercard">Mastercard</option>
-						<option value="American Express ">American Express </option>
-					</select>
-				  </td>
-                </tr>
-                  <tr>
-                  <td>Numero de Tarjeta:</td> <td><input type="text" id="numero_tarjeta" name="numero_tarjeta" required></td>
-				 </tr>
-
-				  <tr>
-                  <td>Codigo de Seguridad:</td> <td> <input type="text" name="codigo_seguridad" required></td>
-				 </tr>
-
-				  <tr>
-                  <td> Apellido y Nombre:</td> <td><input type="text" name="titular" required></td>
-				 </tr>
-
-				<tr>
-				<td colspan='2'><input type="submit" class="btn btn-primary" value="Confirmar"></td>
-				</tr>
-
-
-
-			</table>
-
-
-
-
-
-
-
-		   </form>
+			<form action="" method="post" enctype="multipart/form-data">
+				<table class="table table-striped">
+					<tr>
+						<td colspan='2' class='titulos'>Datos de Entrega:</td>
+					</tr>
+					<tr>
+						<td>Domicilio:</td> <td><input type="text" name="domicilio" placeHolder="Calle y Nro" required></td>
+					<tr>
+					<tr>
+						<td>Localidad:</td>
+						<td>
+							<select id="localidad_id" name="localidad_id">
+								<option value="">Elegir Opcion</option>
+								<?php
+									while($c=mysql_fetch_array($localidades))
+									{
+										echo "<option value='".$c['id']."'>".$c['nombre']."</option>";
+									}
+								?>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td> <br></td><br>
+					</tr>
+					<tr>
+						<td colspan='2' class='titulos'>Medio de Pago:</td>
+					</tr>
+					<tr>
+						<td>Tarjeta:</td>
+					<td>
+						<select id="tipo_tarjeta" name="tipo_tarjeta">
+							<option value="">Elegir Opcion</option>
+							<option value="Visa">Visa</option>
+							<option value="Mastercard">Mastercard</option>
+							<option value="American Express ">American Express </option>
+						</select>
+					</td>
+					</tr>
+					<tr>
+						<td>Numero de Tarjeta:</td> <td><input type="text" id="numero_tarjeta" name="numero_tarjeta" required></td>
+					</tr>
+					<tr>
+						<td>Codigo de Seguridad:</td> <td> <input type="text" name="codigo_seguridad" required></td>
+					</tr>
+					<tr>
+						<td>Titular:</td> <td><input type="text" name="titular" placeHolder="Apellido y Nombre" required></td>
+					</tr>
+					<tr>
+						<td colspan='2'><input type="submit" class="btn btn-primary" value="Confirmar"></td>
+					</tr>
+				</table>
+			</form>
 		   <?php
 
 	       ?>
-
-
-
-
-
-
         </div>
       </div>
     </div>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-
 	<script src="dist/sweetalert.min.js"></script>
 	<script>
 

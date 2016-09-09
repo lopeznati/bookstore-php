@@ -49,39 +49,44 @@ include_once "funciones.php";
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar-collapse-2">
           <ul class="nav navbar-nav navbar-right">
-            <?php if(!isset($_SESSION['rol']) or !isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE )
+            <?php 
+			if(!isset($_SESSION['rol']) or !isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE )
             {
             ?>
             <li><a href="miCuenta.php">Mi Cuenta</a></li>
-            <?php
-            }
-            else if ((strcmp($_SESSION['rol'],'admi'))==0)
-            {
-            ?>
-            <li><a href="miCuenta.php">Mi Cuenta</a></li>
-            <li><a href="nuevoLibro.php">Libros</a></li>
-            <li><a href="nuevoCliente.php">Clientes</a></li>
-            <li><a href="nuevaCategoria.php">Categorias</a></li>
-            <li><a href="listadoPedidosClientes.php">Pedidos Clientes</a></li>
-            <?php
-           }
-           else if ((strcmp($_SESSION['rol'],'cli'))==0)
-           {?>
-             <li><a href="miCuenta.php">Mi Cuenta</a></li>
-             <li><a href="pedidosCliente.php">Mis Pedidos</a></li>
-             <?php
-             }
-             ?>
-            <li><a href="formularioContacto.php">Contacto</a></li>
+			<li><a href="formularioContacto.php">Contacto</a></li>
             <li><a href="verCarro.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
 
-            <li>
-              <?php if(!isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE ){ ?>
-              <a class="btn btn-default btn-outline btn-circle collapsed"  href="signin.php" aria-expanded="false" >Iniciar Sesión</a>
-              <?php }else{ ?>
-              <a class="btn btn-default btn-outline btn-circle collapsed"  href="logout.php" aria-expanded="false" >Cerrar Sesión</a>
-              <?php } ?>
-            </li>
+			<a class="btn btn-default btn-outline btn-circle collapsed"  href="signin.php" aria-expanded="false" >Iniciar Sesión</a>
+            <?php
+            }
+			else if (isset($_SESSION['rol']))
+			{
+				?>
+					<li><a href="miCuenta.php">Mi Cuenta</a></li>
+				<?php
+				if ((strcmp($_SESSION['rol'],'admi'))==0)
+				{
+				?>
+					<li><a href="nuevoLibro.php">Libros</a></li>
+					<li><a href="nuevoCliente.php">Clientes</a></li>
+					<li><a href="nuevaCategoria.php">Categorias</a></li>
+					<li><a href="listadoPedidosClientes.php">Pedidos Clientes</a></li>
+				<?php
+				}
+				else if ((strcmp($_SESSION['rol'],'cli'))==0)
+				{?>
+					<li><a href="pedidosCliente.php">Mis Pedidos</a></li>
+					<?php
+				}
+				?>
+				<li><a href="formularioContacto.php">Contacto</a></li>
+				<li><a href="verCarro.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+				<li>
+					<a class="btn btn-default btn-outline btn-circle collapsed"  href="logout.php" aria-expanded="false" >Cerrar Sesión</a>
+				</li>
+			<?php 
+			} ?>
           </ul>
         <!--  <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse2">
             <form class="navbar-form navbar-right form-inline" role="form">

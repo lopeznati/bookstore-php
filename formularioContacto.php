@@ -42,7 +42,7 @@
 							if (mail($mail_sitio, $asunto, $cuerpo, $cabeceras) )
 							{
 								echo "<script language='javascript'>
-									  alert('Mensaje enviado, muchas gracias.');
+									  alert('Consulta enviada con éxito, muchas gracias.');
 									  window.location.href = 'http://bookstore-php.esy.es/';
 									  </script>";
 							}
@@ -57,20 +57,20 @@
 					<form id="formContacto" action="" method="post">
 						<table class="table table-striped">
 							<tr>
-								<td>Nombre</td>
+								<td>Nombre:</td>
 								<td><input type="text" name="nombre" required></td>
 							</tr>
 							<tr>
-								<td>Apellido</td>
+								<td>Apellido:</td>
 								<td><input type="text" name="apellido" required></td>
 							</tr>
 
 							<tr>
-								<td>E-Mail</td>
+								<td>E-Mail:</td>
 								<td><input type="email" name="email" required></td>
 							</tr>
 							<tr>
-								<td>Consulta</td>
+								<td>Consulta:</td>
 								<td><textarea rows="8" cols="50" name="consulta" required></textarea></td>
 							</tr>
 							<tr>

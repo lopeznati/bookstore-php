@@ -66,39 +66,39 @@
 						<input type="hidden" name="idlibro" value="<?php echo $libroMod['id'];?>">
 						<input type="hidden" name="Modificado" value="1">
 						<tr>
-							<td>ISBN</td>
+							<td>ISBN:</td>
 							<td><input id="isbn" type="text" name="isbn" value="<?php echo $libroMod['ISBN'];?>" required></td>
 						</tr>
 						<tr>
-							<td>Titulo</td>
+							<td>Titulo:</td>
 							<td><input  type="text" name="titulo" value="<?php echo $libroMod['titulo'];?>" required></td>
 						</tr>
 						<tr>
-							<td>Descripcion</td>
+							<td>Descripcion:</td>
 							<td><textarea rows="8" cols="50" name="descripcion" required><?php echo $libroMod['descripcion'];?></textarea></td>
 						</tr>
 						<tr>
-							<td>Autor</td>
+							<td>Autor:</td>
 							<td><input type="text" name="autor" value="<?php echo $libroMod['autor'];?>" required ></td>
 						</tr>
 						<tr>
-							<td>Cantidad de Paginas</td>
+							<td>Cantidad de Paginas:</td>
 							<td><input id="cpaginas" type="text" name="cpaginas" value="<?php echo $libroMod['cantPaginas'];?>" required></td>
 						</tr>
 						<tr>
-							<td>Numero Edicion</td>
+							<td>Numero Edicion:</td>
 							<td><input id="nedicion" type="text" name="nedicion" value="<?php echo $libroMod['nroEdicion'];?>" required></td>
 						</tr>
 						<tr>
-							<td>Precio</td>
+							<td>Precio:</td>
 							<td><input id="precio" type="text" name="precio" value="<?php echo $libroMod['precio'];?>" required></td>
 						</tr>
 						<tr>
-							<td>Existencia</td>
+							<td>Existencia:</td>
 							<td><input id="nexistencia" type="text" name="nexistencia" value="<?php echo $libroMod['existencia'];?>" required></td>
 						</tr>
 						<tr>
-							<td>Editorial</td>
+							<td>Editorial:</td>
 							<td>
 								<select id="editorial_id" name="editorial_id">
 									<?php
@@ -115,10 +115,10 @@
 						</tr>
 						<tr>
 						<tr>
-							<td>Categorias</td>
+							<td>Categorias:</td>
 							<td>
 								<select id="categoria_id" name="categoria_id">
-									<option>Elegir Opcion</option>
+									<option>Elegir Opcion:</option>
 										<?php
 											while($c=mysql_fetch_array($categorias))
 											{
@@ -145,9 +145,6 @@
 						<tr>
 							<input type="hidden" name="idlibro" value="<?php echo $libroMod['id'];?>">
 							<input type="hidden" name="archivo" value="1">
-							<td>PDF</td>
-								<td><input type="file" name="archivo" accept="pdf/*"><br /></td>
-								<td><input type="submit" class="btn btn-primary" value="Cambiar"></td>
 						</tr>
 						<tr>
 						</tr>

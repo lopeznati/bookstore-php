@@ -99,12 +99,11 @@ if(isset($_SESSION['carro'])){
 
 		<table width="800" border="0" cellspacing="0" cellpadding="0" align="center">
 		<tr bgcolor="#333333" class="tit">
-		<td width="105">Libro</td>
-		<td width="207">Precio</td>
-		<td width='305' >Cantidad de Unidades</td>
-		<td width='105'>SubTotal</td>
-
-		<td width="10" align="center">Borrar</td>
+		<td width="105"> <font color="#ffffff">Libro</font></td>
+		<td width="207"><font color="#ffffff">Precio</font></td>
+		<td width="305"><font color="#ffffff">Cantidad de Unidades</font></td>
+		<td width="105"><font color="#ffffff">SubTotal</font></td>
+		<td width="10" align="center"><font color="#ffffff">Borrar</font></td>
 
 		</tr>
 		<?php
