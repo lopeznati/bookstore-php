@@ -1,10 +1,10 @@
-<?php 
+<?php
 
-include_once "header.php";
+include_once "menu-lateral.php";
 if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE ){
 	header('Location: signin.php');
 }else{
-	
+
 
 
 
@@ -12,23 +12,23 @@ if(!empty($_POST) AND !empty($_POST['nombre']) AND !empty($_POST['apellido']) AN
 	$nombre=trim($_POST['nombre']);
 	$apellido=trim($_POST['apellido']);
 	$telefono=trim($_POST['telefono']);
-	
+
 	$domicilio=trim($_POST['domicilio']);
 	$mail=trim($_POST['mail']);
 	$usuario=trim($_POST['usuario']);
 	$contraseña=trim($_POST['contraseña']);
 	$localidadid=trim($_POST['localidad_id']);
 	$rol=trim($_POST['rol']);
-	
-	$agregarCliente="INSERT INTO clientes(id,usuario,clave,apellido, nombre,domicilio,telefono,mail,id_localidad, rol)  
+
+	$agregarCliente="INSERT INTO clientes(id,usuario,clave,apellido, nombre,domicilio,telefono,mail,id_localidad, rol)
 	VALUES('','".$usuario."','".$contraseña."','".$apellido."','".$nombre."','".$domicilio."','".$telefono."','".$mail."','".$localidadid."', '".$rol."')";
 	$resultado=ConsultaSql($agregarCliente);
 	echo $resultado;
-	
-	
-		
-	
-	
+
+
+
+
+
 }
 
 
@@ -37,12 +37,12 @@ $localidades=ConsultaSql('select * from localidades');
 ?>
 
 
-	
+
 	//menu
 
     <div class="container-fluid">
       <div class="row">
-         <?php 
+         <?php
 		include_once "menu-lateral.php";
 		?>
 
@@ -50,20 +50,20 @@ $localidades=ConsultaSql('select * from localidades');
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Nuevo Usuario</h1>
 
-		  
+
 		  <form id="form1" action="" method="post">
 		  <table class="table table-striped">
-             
+
                 <tr>
                   <td>Nombre</td>
                   <td><input type="text" name="nombre" required></td>
                 </tr>
-				
+
 				<tr>
                   <td>Apellido</td>
                   <td><input type="text" name="apellido" required></td>
                 </tr>
-				
+
 				<tr>
                   <td>Telefono</td>
                   <td><input type="text" name="telefono" required></td>
@@ -72,25 +72,25 @@ $localidades=ConsultaSql('select * from localidades');
                   <td>Domicilio</td>
                   <td><input type="text" name="domicilio" required></td>
                 </tr>
-				
+
 				<tr>
                   <td>E-Mail</td>
                   <td><input type="email" name="mail" required></td>
                 </tr>
-				
+
 				<tr>
                   <td>Usuario</td>
                   <td><input type="text" name="usuario" required></td>
                 </tr>
-				
+
 				<tr>
                   <td>Contraseña</td>
                   <td><input type="password" name="contraseña" required></td>
                 </tr>
-				
+
 				<tr>
                   <td>Localidad</td>
-				  
+
                   <td>
 					<select id="localidad_id" name="localidad_id">
 						<option value="">Elegir Opcion</option>
@@ -102,43 +102,43 @@ $localidades=ConsultaSql('select * from localidades');
 					</select>
 				  </td>
                 </tr>
-				
+
 				<tr>
                   <td>Rol</td>
-				  
+
                   <td>
 					<select id="rol" name="rol">
 						<option value="">Elegir Opcion</option>
 						<option value='admi'>Administrador</option>
 						<option value='cli'>Cliente</option>
-						
+
 					</select>
 				  </td>
                 </tr>
-				
+
 				<tr>
                   <td></td>
                   <td><input type="submit" id="guardar" value="Guardar"></td>
                 </tr>
-				
+
            </table>
-		   
+
 		   </form>
-		   <?php 
-		   
+		   <?php
+
 	       ?>
 
-             
-               
-                
+
+
+
 		  <!-- Listado de Libros -->
           <h2 class="sub-header">Listado</h2>
-		  <?php 
-		  
+		  <?php
+
 			$sqlclientes="SELECT c.*, l.nombre as localidad FROM clientes c
 						inner join localidades l
 							on c.id_localidad=l.id
-						
+
 						";
 			$clientes=ConsultaSql($sqlclientes);
 		  ?>
@@ -155,11 +155,11 @@ $localidades=ConsultaSql('select * from localidades');
                   <th>Usuario</th>
                   <th>Localidad</th>
 				  <th>Acciones</th>
-				  
+
                 </tr>
               </thead>
               <tbody>
-			  <?php 
+			  <?php
 			  while($c=mysql_fetch_array($clientes)){
 				  echo "<tr>";
 					echo "<td>".$c['id']."</td>";
@@ -170,35 +170,35 @@ $localidades=ConsultaSql('select * from localidades');
 					echo "<td>".$c['mail']."</td>";
 					echo "<td>".$c['usuario']."</td>";
 					echo "<td>".$c['localidad']."</td>";
-					
+
 					echo "<td>
 				         <a href='#' onClick='eliminar(".$c['id'].")'> <IMG SRC='icon/gnome_edit_delete.png' WIDTH=30 HEIGHT=30>  </a></td>";
-					
+
 				   echo "<tr>";
 
                  // <a href='eliCliente.php?idelim=".$c['id']."'> <IMG SRC='icon/gnome_edit_delete.png' WIDTH=30 HEIGHT=30>  </a></td>";
 
-				  
+
 			  }
 			  ?>
-                
+
               </tbody>
             </table>
-			
+
 			<form action="" method="post">
 				<input type="hidden" name="exportar" value="1" />
 				<input type="submit" class="btn btn-primary" value="EXPORTAR a CSV" />
 			</form>
-			
- 
-			
+
+
+
 			<?php
 				date_default_timezone_set('America/Argentina/Buenos_Aires');
 				if(!empty($_POST['exportar']) AND $_POST['exportar'] ==1){
 				//Genero el archivo csv.
 				$nombreArchivo = "clientes".date('Y-m-d_H.i').".csv";
 				$res = ConsultaSql("select * from clientes;");
-				
+
 				$salida = "";
 				if($res and mysql_num_rows($res) > 0){
 					while ($r = mysql_fetch_array($res)) {
@@ -210,8 +210,8 @@ $localidades=ConsultaSql('select * from localidades');
 						$salida .= '"'.$r['mail'].'",';
 						$salida .= '"'.$r['usuario'].'",';
 						$salida .= '"'.$r['id_localidad'].'";';
-						
-						
+
+
 					}
 				}
 				$ac = fopen($nombreArchivo,'a+');
@@ -219,7 +219,7 @@ $localidades=ConsultaSql('select * from localidades');
 				fclose($ac);
 				echo "Generé el archivo csv en el disco !!";
 			}
-			
+
 			?>
           </div>
         </div>
@@ -244,7 +244,7 @@ $localidades=ConsultaSql('select * from localidades');
     $(document).ready(function(){
 
 		$("form").submit(function(event){
-				
+
   				var localidad=$("#localidad_id").val();
   				if(localidad === ''){
   					//alert("El campo Localidad no puede quedar vacio, seleccione una opcion.");
@@ -264,7 +264,7 @@ $localidades=ConsultaSql('select * from localidades');
 
 
 
-				
+
 				if (localidad!="" && rol!=""){
 					swal("Cliente guardado", "", "success");
 
@@ -305,6 +305,6 @@ $localidades=ConsultaSql('select * from localidades');
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
-<?php 
+<?php
 }
 ?>

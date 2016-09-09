@@ -1,5 +1,5 @@
-﻿<?php 
-	include_once "header.php";
+﻿<?php
+	include_once "menu-lateral.php";
 	date_default_timezone_set('America/Argentina/Buenos_Aires');
 
 	if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE )
@@ -15,14 +15,14 @@
 		<script type="text/javascript" src="js/js_export/jspdf/libs/sprintf.js"></script>
 		<script type="text/javascript" src="js/js_export/jspdf/jspdf.js"></script>
 		<script type="text/javascript" src="js/js_export/jspdf/libs/base64.js"></script>
-		
+
 		<!-- scripts para exportar-->
 		<script>
 			$(function(){
 				$("#CSV").click(function(){
 					$("#tabla").tableToCSV();
 				});
-			});	
+			});
 		</script>
 
 		<script type="text/javascript">
@@ -34,7 +34,7 @@
 					});
 				});
 			});
-		</script> 
+		</script>
 
    <script type="text/javascript">
     $(document).ready(function(e){
@@ -60,7 +60,7 @@
 	<!-- MENU -->
     <div class="container-fluid">
 		<div class="row">
-			<?php 
+			<?php
 				include_once "menu-lateral.php";
 			?>
 			<!-- Alta libros -->
@@ -79,9 +79,9 @@
 					$nexistencia=trim($_POST['nexistencia']);
 					$categoriaid=trim($_POST['categoria_id']);
 					$editorialid=trim($_POST['editorial_id']);
-			
+
 					//definir nombre de la imagen
-			
+
 					$nombrefoto = "fotos/".date('Y-m-dHis')."_".rand(123,123123);
 					if(preg_match("/png/i", $_FILES['foto']['type']) > 0)
 						$ext = ".png";
@@ -91,15 +91,15 @@
 						$ext = ".jpeg";
 					if(preg_match("/gif/i", $_FILES['foto']['type']) > 0)
 						$ext = ".gif";
-						
+
 					//guardar la imagen a la carpeta foto
 					move_uploaded_file($_FILES['foto']['tmp_name'], $nombrefoto.$ext);
-	
-					$agregarLibro="INSERT INTO libros(id,ISBN,titulo,descripcion,autor,nroEdicion,cantPaginas,precio,existencia,id_categoria, id_editorial, foto)  
+
+					$agregarLibro="INSERT INTO libros(id,ISBN,titulo,descripcion,autor,nroEdicion,cantPaginas,precio,existencia,id_categoria, id_editorial, foto)
 								   VALUES('','".$isbn."','".$titulo."','".$descripcion."','".$autor."','".$nedicion."','".$cpaginas."','".$precio."','".$nexistencia."','".$categoriaid."','".$editorialid."', '".$nombrefoto.$ext."')";
 					$resultado=ConsultaSql($agregarLibro);
 				}
-				
+
 				$editoriales=ConsultaSql('select * from editoriales');
 				$categorias=ConsultaSql('select * from categorias');
 			?>
@@ -172,12 +172,12 @@
 						</tr>
 					</table>
 				</form>
-				<?php 
-				?>	
+				<?php
+				?>
 				<!-- Listado de Libros -->
 				<h2 class="sub-header">Listado</h2>
-				<?php 
-					$sqlLibros="SELECT l.*, e.nombre as editorial FROM libros l inner join editoriales e on l.id_editorial= e.id";		
+				<?php
+					$sqlLibros="SELECT l.*, e.nombre as editorial FROM libros l inner join editoriales e on l.id_editorial= e.id";
 					$libros=ConsultaSql($sqlLibros);
 				?>
 				<div class="table-responsive">
@@ -198,12 +198,12 @@
 							</tr>
 						</thead>
 						<tbody>
-							<?php 
+							<?php
 								while($l=mysql_fetch_array($libros))
 								{
 									$sqlcategoria=ConsultaSql("select descripcion from categorias where id='".$l['id_categoria']."'");
 									$categoria=mysql_fetch_array($sqlcategoria);
-			
+
 									echo "<tr>";
 									echo "<td>".$l['id']."</td>";
 									echo "<td>".$l['ISBN']."</td>";
@@ -214,7 +214,7 @@
 									echo "<td>".$l['precio']."</td>";
 									echo "<td>".$l['existencia']."</td>";
 									echo "<td>".$l['editorial']."</td>";
-						
+
 									if(mysql_num_rows($sqlcategoria)==1)
 									{
 										echo "<td>".$categoria['descripcion']."</td>";
@@ -237,7 +237,7 @@
 							<button id="XML" class="btn btn-primary" data-export="export">Exportar a XML</button>
 							<button id="JSON" class="btn btn-primary" data-export="export">Exportar a JSON</button>
 						</div>
-					</center>  
+					</center>
 				</div>
 			</div>
 		</div>
@@ -253,7 +253,7 @@
 
 			$("form").submit(function(event){
 				var error=false;
-				
+
 				var isbn=$("#isbn").val();
 	  			isbn =parseInt(isbn);
 	  			if(isNaN(isbn)){
@@ -264,7 +264,7 @@
 	   				event.preventDefault();
 	   			   swal("", "El campo ISBN ingresado debe ser un numero", "warning");
 	  			}
-	  			
+
 				var cantidad=$("#cpaginas").val();
 	  			cantidad =parseInt(cantidad);
 	  			if(isNaN(cantidad)){
@@ -274,7 +274,7 @@
 					//cancela el evento
 	   				event.preventDefault();
 	  			}
-	  				
+
 	  			var nro_edicion=$("#nedicion").val();
 	  			nro_edicion =parseInt(nro_edicion);
 	  			if(isNaN(nro_edicion)){
@@ -285,18 +285,18 @@
 					//cancela el evento
 					event.preventDefault();
 	  			}
-	  				
+
 	  			var precio=$("#precio").val();
 	  			precio =parseFloat(precio);
 	  			if(isNaN(precio)){
 	  				//alert("El campo Precio ingresado debe ser un numero o un decimal");
 	  				swal("", "El campo Precio ingresado debe ser un numero o un decimal", "warning");
 
-					error=true;					
+					error=true;
 	  				//cancela el evento
 	   				event.preventDefault();
 	  			}
-	  				
+
 	  			var existencia=$("#nexistencia").val();
 	  			existencia =parseInt(existencia);
 	  			if(isNaN(existencia)){
@@ -307,7 +307,7 @@
 	  				//cancela el evento
 	   				event.preventDefault();
 	  			}
-				
+
 				var editorial=$("#editorial_id").val();
 				if(editorial === ''){
 					//alert("El campo Editorial no puede quedar vacio, seleccione una opcion.");
@@ -323,8 +323,8 @@
 
 					//cancela el evento
 					event.preventDefault();
-				}	
-				
+				}
+
 				if (editorial !="" && categoria !="" && error==false){
 					swal("Libro guardado", "", "success");
 				}else{
@@ -357,6 +357,6 @@
 	</body>
 </html>
 
-<?php 
+<?php
 }
 ?>

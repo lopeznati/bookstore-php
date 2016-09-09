@@ -1,6 +1,6 @@
-<?php 
-	include_once "header.php";
-	
+<?php
+	include_once "menu-lateral.php";
+
 	if($_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE )
 	{
 		header('Location: signin.php');
@@ -11,11 +11,11 @@
 		$sql="select * from libros where id=".$idModificar."";
 		$resultado=ConsultaSql($sql);
 		$libroMod=mysql_fetch_array($resultado);
-?>	
+?>
 	<!-- MENU -->
     <div class="container-fluid">
 		<div class="row">
-			<?php 
+			<?php
 				include_once "menu-lateral.php";
 			?>
 			<!-- Modificar libros -->
@@ -35,28 +35,28 @@
 						$nexistencia=trim($_POST['nexistencia']);
 						$categoriaid=trim($_POST['categoria_id']);
 						$editorialid=trim($_POST['editorial_id']);
-					
+
 						$modificarLibro="UPDATE libros SET id='".$id."',ISBN='".$isbn."',titulo='".$titulo."',descripcion='".$descripcion."',autor='".$autor."',nroEdicion='".$nedicion."',cantPaginas='".$cpaginas."',precio='".$precio."',existencia='".$nexistencia."',id_categoria='".$categoriaid."',id_editorial='".$editorialid."' WHERE id='".$id."'";
 						$resultado=ConsultaSql($modificarLibro);
-						
+
 						header('Location: nuevoLibro.php');
 						exit();
 					}
-				
+
 					if(isset($_POST['archivo']) AND $_POST['archivo']==1 AND !empty($_FILES))
 					{
 						//archivo
 						$nombrearchivo = "pdf/".date('Y-m-dHis')."_".rand(123,123123);
 						if(preg_match("/pdf/i", $_FILES['archivo']['type']) > 0)
 							$ext2 = ".pdf";
-						
+
 						//guardar la imagen a la carpeta foto
 						move_uploaded_file($_FILES['archivo']['tmp_name'], $nombrearchivo.$ext2);
-				
+
 						$modificarLibro="UPDATE libros SET archivo='".$nombrearchivo.$ext2."' WHERE id='".$_POST['idlibro']."'";
 						$resultado=ConsultaSql($modificarLibro);
-					}	
-				
+					}
+
 					$editoriales=ConsultaSql('select * from editoriales');
 					$categorias=ConsultaSql('select * from categorias');
 				?>
@@ -80,7 +80,7 @@
 						<tr>
 							<td>Autor</td>
 							<td><input type="text" name="autor" value="<?php echo $libroMod['autor'];?>" required ></td>
-						</tr>				
+						</tr>
 						<tr>
 							<td>Cantidad de Paginas</td>
 							<td><input id="cpaginas" type="text" name="cpaginas" value="<?php echo $libroMod['cantPaginas'];?>" required></td>
@@ -97,13 +97,13 @@
 							<td>Existencia</td>
 							<td><input id="nexistencia" type="text" name="nexistencia" value="<?php echo $libroMod['existencia'];?>" required></td>
 						</tr>
-						<tr>	
+						<tr>
 							<td>Editorial</td>
 							<td>
 								<select id="editorial_id" name="editorial_id">
 									<?php
 										while($c=mysql_fetch_array($editoriales))
-										{	
+										{
 											if($c['id']==$libroMod['id_editorial'])
 												$sel='selected';
 											else $sel='';
@@ -111,9 +111,9 @@
 										}
 									?>
 								</select>
-							</td>	
+							</td>
 						</tr>
-						<tr>	
+						<tr>
 						<tr>
 							<td>Categorias</td>
 							<td>
@@ -126,7 +126,7 @@
 													$sel='selected';
 												else $sel='';
 												echo "<option ".$sel." value='".$c['id']."'>".$c['descripcion']."</option>";
-											}	
+											}
 										?>
 								</select>
 							</td>
@@ -137,9 +137,9 @@
 						</tr>
 					</table>
 				</form>
-				<?php 
+				<?php
 				?>
-		   
+
 				<form action="" method="post" enctype="multipart/form-data">
 					<table class="table table-striped">
 						<tr>
@@ -153,10 +153,10 @@
 						</tr>
 					</table>
 				</form>
-			
+
 				<!-- Listado de Libros -->
 				<h2 class="sub-header">Listado</h2>
-				<?php 
+				<?php
 					$sqlLibros="SELECT l.*, e.nombre as editorial FROM libros l inner join editoriales e on l.id_editorial= e.id";
 					$libros=ConsultaSql($sqlLibros);
 				?>
@@ -178,7 +178,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<?php 
+							<?php
 								while($l=mysql_fetch_array($libros))
 								{
 									$sqlcategoria=ConsultaSql("select descripcion from categorias where id='".$l['id_categoria']."'");
@@ -193,10 +193,10 @@
 									echo "<td>".$l['precio']."</td>";
 									echo "<td>".$l['existencia']."</td>";
 									echo "<td>".$l['editorial']."</td>";
-						
+
 									if(mysql_num_rows($sqlcategoria)==1)
 										echo "<td>".$categoria['descripcion']."</td>";
-									else 
+									else
 										echo "<td></td>";
 									echo "<td><a href='modLibro.php?idmodif=".$l['id']."'><IMG SRC='icon/modify.png' WIDTH=20 HEIGHT=20></a>
 								          <a href='eliLibro.php?idelim=".$l['id']."'> <IMG SRC='icon/gnome_edit_delete.png' WIDTH=30 HEIGHT=30>  </a></td>";
@@ -204,7 +204,7 @@
 								}
 							?>
 						</tbody>
-					</table>	
+					</table>
 				</div>
 			</div>
 		</div>
@@ -216,52 +216,52 @@
 		    //swal("Good job!", "You clicked the button!", "warning");
 			$("#guardar").click(function(event){
 				var error=false;
-				
+
 				var isbn=$("#isbn").val();
 	  			isbn =parseInt(isbn);
 	  			if(isNaN(isbn)){
-	  				alert("El campo ISBN ingresado debe ser un numero");	  
+	  				alert("El campo ISBN ingresado debe ser un numero");
 					error=true;
 					//cancela el evento
 	   				event.preventDefault();
 	  			}else error=false;
-				
+
 				var cantidad=$("#cpaginas").val();
 	  			cantidad =parseInt(cantidad);
 	  			if(isNaN(cantidad)){
 					error=true;
-	  				alert("El campo Cantidad de Paginas ingresado debe ser un numero");	  
+	  				alert("El campo Cantidad de Paginas ingresado debe ser un numero");
 					//cancela el evento
 	   				event.preventDefault();
 	  			}else error=false;
-	  				
+
 	  			var nro_edicion=$("#nedicion").val();
 	  			nro_edicion =parseInt(nro_edicion);
 	  			if(isNaN(nro_edicion)){
 					error=true;
-	  				alert("El campo Número de Edicion ingresado debe ser un numero");	  
+	  				alert("El campo Número de Edicion ingresado debe ser un numero");
 					//cancela el evento
 					event.preventDefault();
 	  			}else error=false;
-	  				
+
 	  			var precio=$("#precio").val();
 	  			precio =parseFloat(precio);
 	  			if(isNaN(precio)){
 					error=true;
-	  				alert("El campo Precio ingresado debe ser un numero o un decimal");	  
+	  				alert("El campo Precio ingresado debe ser un numero o un decimal");
 	  				//cancela el evento
 	   				event.preventDefault();
 	  			}else error=false;
-	  				
+
 	  			var existencia=$("#nexistencia").val();
 	  			existencia =parseInt(existencia);
 	  			if(isNaN(existencia)){
 					error=true;
-	  				alert("El campo Existencia ingresado debe ser un numero");	  
+	  				alert("El campo Existencia ingresado debe ser un numero");
 	  				//cancela el evento
 	   				event.preventDefault();
 	  			}else error=false;
-				
+
 				if (error==false){
 					swal("Libro guardado", "", "success");
 					$('.confirm').click(function(){
@@ -272,7 +272,7 @@
 			});
 		});
 	</script>
-	
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -285,6 +285,6 @@
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
-<?php 
+<?php
 }
 ?>

@@ -1,21 +1,8 @@
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script type="text/javascript"  src="js/scripts.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Crete+Round|Oswald|Roboto" rel="stylesheet">
-<link href="styles.css" rel="stylesheet">
-
-
-<link href="assets/css/bootstrap.css" rel="stylesheet">
-<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-<link rel="stylesheet" type="text/css" href="assets/css/zabuto_calendar.css">
-<link rel="stylesheet" type="text/css" href="assets/js/gritter/css/jquery.gritter.css" />
-<link rel="stylesheet" type="text/css" href="assets/lineicons/style.css">
-<link href="assets/css/style.css" rel="stylesheet">
-<link href="assets/css/style-responsive.css" rel="stylesheet">
-<script src="assets/js/chart-master/Chart.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+﻿<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script type="text/javascript"  src="js/scripts.js"></script>
 <?php
-include_once 'menu-lateral.php';
+include_once 'header.php';
+
 //si lo agrego una segunda vez
 if(isset($_SESSION['carro'])){
 	if(isset($_REQUEST['id'])){
@@ -67,6 +54,8 @@ if(isset($_SESSION['carro'])){
 		$_SESSION['carro']=$arreglo;
 	}
 }
+
+
 
 ?>
 

@@ -1,13 +1,26 @@
+
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+
 body {
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #eee;
+  background-image: url('white.jpg');
+  font-family: 'Oswald', sans-serif;
+  align-content: center;
+}
+
+.center{
+  align-content: center !important;
+}
+.new-account{
+  color:#9F0DFF;
 }
 
 .form-signin {
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
+  font-family: 'Oswald', sans-serif;
 }
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
@@ -38,3 +51,34 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+.btn-sky {
+color: #fff;
+background-color: #0bacd3;
+border-bottom:2px solid #098aa9;
+}
+
+.btn-sky:hover,.btn-sky.active:focus, .btn-sky:focus, .open>.dropdown-toggle.btn-sky {
+color: #fff;
+background-color: #29b6d8;
+border-bottom:2px solid #2192ad;
+outline: none;
+}
+
+.btn-sky:active, .btn-sky.active {
+color: #fff;
+background-color: #0a97b9;
+border-top:2px solid #087994;
+outline-offset: none;
+margin-top: 2px;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus {
+    outline: none;
+    outline-offset: 0px;
+}
+
+a {color:#FFDE27;}
+a:hover {text-decoration:none; color:#25BA67;}
