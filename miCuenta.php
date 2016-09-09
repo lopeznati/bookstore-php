@@ -87,7 +87,7 @@ ob_start();
 								<div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="<?php echo $clienteMod['foto'];?>" class="img-circle img-responsive"> </div>
 									</div>
 										<div class=" col-md-9 col-lg-9 ">
-											<form action="" method="post">
+											<form id="form1" action="" method="post">
 												<table class="table table-user-information">
 													<input type="hidden" name="idcliente" value="<?php echo $clienteMod['id'];?>">
 													<input type="hidden" name="Modificado" value="1">
@@ -149,10 +149,16 @@ ob_start();
 													<tr>
 														<td><input type="submit" class="btn btn-sunny text-uppercase" value="Cambiar"></td>
 													</tr>
+
+														<td colspan="2"><a style="color: #2b669a" href='#' onClick='eliminar("<?php echo $idModificar;?>")'>Eliminar Cuenta</a></td>
+													<tr>
+
+</tr>
 												</tbody>
 											</table>
 										</form>
-										<a href='eliCliente.php?ideli="<?php echo $idModificar;?>"'>Eliminar Cuenta</a>
+
+
 									   <script type="text/javascript">
 										$("#fecha").datepicker({format:'dd/mm/yyyy',language:'es'});
 									   </script>
@@ -164,6 +170,10 @@ ob_start();
 						</div>
 					</div>
 				</div>
+
+		<form class="elim" action="" method="get">
+			<input class="idelim" type="hidden" name="idelim" value="">
+		</form>
 	    <!-- Bootstrap core JavaScript
 	    ================================================== -->
 	    <!-- Placed at the end of the document so the pages load faster -->
@@ -176,6 +186,46 @@ ob_start();
 	    <script src="assets/js/vendor/holder.min.js"></script>
 	    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+	    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+	     <script src="dist/sweetalert.min.js"></script>
+
+
+	    <script>
+
+	    $(document).ready(function(){
+
+		$("#form1").submit(function(event){
+					swal("Datos guardado", "", "success");
+
+					//$('#form1').submit();
+
+
+
+		});
+    });
+
+	    function  eliminar(id){
+            swal({
+            title: "Desea eliminar su cuenta?",
+            text: "",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Si, eliminarlo!",
+            closeOnConfirm: false
+        }, function () {
+            swal("Eliminado!", "La cuenta ha sido eliminada.", "success");
+              var url='eliCliente.php';
+            $('.elim').attr('action',url);
+            $('.idelim').attr('value',id);
+            $('.elim').submit();
+
+        });
+        }
+		</script>
+
+
 	  </body>
 	</html>
 

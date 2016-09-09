@@ -47,6 +47,7 @@ if($_SESSION['usuario_valido']==true){
 
 				foreach($arreglo as $k => $v){
 					$subtotal=$v['precio']*$v['cantidad'];
+					ConsultaSql("UPDATE libros set existencia=(existencia - ".$v['cantidad'].") where id=".$v['id']);
 					$agregarLibro="INSERT INTO pedidos(id,fechaPedido,id_cliente,id_libro,cantidad,subtotal,id_tarjeta,domicilio,localidad_id)
 								   VALUES('',NOW(),'".$_SESSION['id_usuario']."','".$v['id']."','".$v['cantidad']."','".$subtotal."','".$idTarjeta."','".$domicilio."','".$localidadid."')";
 					$resultado=ConsultaSql($agregarLibro);

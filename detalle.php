@@ -4,6 +4,7 @@
 	$sql="select * from libros where id='".$idlibro."'";
 	$libro=ConsultaSql($sql);
 ?>
+<link href="dashboard.css" rel="stylesheet">
 
 <div class="container-fluid">
     <div class="row">

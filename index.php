@@ -2,7 +2,7 @@
 include_once "menu-lateral.php";
 ?>
 
-<head>
+
 	<meta charset="UTF-8">
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript"  src="js/scripts.js"></script>
@@ -20,7 +20,7 @@ include_once "menu-lateral.php";
 	<script src="assets/js/chart-master/Chart.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript"  src="js/scripts.js"></script>
-</head>
+
 <body>
     <!-- MENU -->
 	<div class="container-fluid">
@@ -44,7 +44,7 @@ include_once "menu-lateral.php";
 
 
 				//paginacionn
-				$cant_por_pag=2;
+				$cant_por_pag=4;
 				$pagina=isset($_GET['pagina'])? $_GET['pagina']: null;
 				if(!$pagina){
 					$inicio=0;

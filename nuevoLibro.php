@@ -354,7 +354,7 @@
             confirmButtonText: "Si, eliminarlo!",
             closeOnConfirm: false
         }, function () {
-            swal("Eliminado!", "El cliente ha sido eliminada.", "success");
+            swal("Eliminado!", "El libro ha sido eliminada.", "success");
               var url='eliLibro.php';
             $('.elim').attr('action',url);
             $('.idelim').attr('value',id);

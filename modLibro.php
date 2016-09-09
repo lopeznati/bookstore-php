@@ -133,7 +133,7 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td><input type="button" id="guardar" class="btn btn-primary" value="Guardar"></td>
+							<td><input type="submit" id="guardar" class="btn btn-primary" value="Guardar"></td>
 						</tr>
 					</table>
 				</form>
@@ -211,60 +211,67 @@
 	<script>
 		$(document).ready(function(){
 		    //swal("Good job!", "You clicked the button!", "warning");
-			$("#guardar").click(function(event){
-				var error=false;
+			$("#form1").submit(function(event){
+					var error=false;
 
 				var isbn=$("#isbn").val();
 	  			isbn =parseInt(isbn);
 	  			if(isNaN(isbn)){
-	  				alert("El campo ISBN ingresado debe ser un numero");
+
+	  				//alert("El campo ISBN ingresado debe ser un numero");
 					error=true;
 					//cancela el evento
 	   				event.preventDefault();
-	  			}else error=false;
+	   			   swal("", "El campo ISBN ingresado debe ser un numero", "warning");
+	  			}
 
 				var cantidad=$("#cpaginas").val();
 	  			cantidad =parseInt(cantidad);
 	  			if(isNaN(cantidad)){
+	  				swal("", "El campo Cantidad de Paginas ingresado debe ser un numero", "warning");
+	  				//alert("El campo Cantidad de Paginas ingresado debe ser un numero");
 					error=true;
-	  				alert("El campo Cantidad de Paginas ingresado debe ser un numero");
 					//cancela el evento
 	   				event.preventDefault();
-	  			}else error=false;
+	  			}
 
 	  			var nro_edicion=$("#nedicion").val();
 	  			nro_edicion =parseInt(nro_edicion);
 	  			if(isNaN(nro_edicion)){
+	  				//alert("El campo Número de Edicion ingresado debe ser un numero");
+	  				swal("", "El campo Número de Edicion ingresado debe ser un numero", "warning");
+
 					error=true;
-	  				alert("El campo Número de Edicion ingresado debe ser un numero");
 					//cancela el evento
 					event.preventDefault();
-	  			}else error=false;
+	  			}
 
 	  			var precio=$("#precio").val();
 	  			precio =parseFloat(precio);
 	  			if(isNaN(precio)){
+	  				//alert("El campo Precio ingresado debe ser un numero o un decimal");
+	  				swal("", "El campo Precio ingresado debe ser un numero o un decimal", "warning");
+
 					error=true;
-	  				alert("El campo Precio ingresado debe ser un numero o un decimal");
 	  				//cancela el evento
 	   				event.preventDefault();
-	  			}else error=false;
+	  			}
 
 	  			var existencia=$("#nexistencia").val();
 	  			existencia =parseInt(existencia);
 	  			if(isNaN(existencia)){
+	  				//alert("El campo Existencia ingresado debe ser un numero");
+	  				swal("", "El campo Existencia ingresado debe ser un numero", "warning");
+
 					error=true;
-	  				alert("El campo Existencia ingresado debe ser un numero");
 	  				//cancela el evento
 	   				event.preventDefault();
-	  			}else error=false;
-
+	  			}
 				if (error==false){
 					swal("Libro guardado", "", "success");
-					$('.confirm').click(function(){
-					$('#form1').submit();
 
-					});
+				}else{
+				event.preventDefault();
 				}
 			});
 		});

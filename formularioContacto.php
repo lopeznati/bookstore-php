@@ -5,6 +5,7 @@
 ?>
 
 <html>
+<script src="dist/sweetalert.min.js"></script>
 	<body>
 		<div class="container-fluid margen">
 			<div class="row margen">
@@ -37,19 +38,22 @@
 									</html>";
 							$cabeceras  = 'MIME-Version: 1.0' . "\r\n";
 							$cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-							$mail_sitio =  "mailencastellarin@gmail.com";
+							$mail_sitio =  "nati6029@gmail.com";
 
 							if (mail($mail_sitio, $asunto, $cuerpo, $cabeceras) )
 							{
 								echo "<script language='javascript'>
-									  alert('Consulta enviada con éxito, muchas gracias.');
+								swal({   title: 'Consulta enviada',   text: 'Muchas gracias por su visita',   timer: 2000,   showConfirmButton: false });
+
+									  //alert('Consulta enviada con éxito, muchas gracias.');
 									  window.location.href = 'http://bookstore-php.esy.es/';
 									  </script>";
 							}
 							else
 							{
 								echo "<script language='javascript'>
-									  alert('Falló envio.');
+									//  alert('Falló envio.');
+									swal('Falló el envio.', '', 'warning');
 									  </script>";
 							}
 						}
@@ -87,3 +91,16 @@
 		</div>
 	</body>
 </html>
+
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="dist/sweetalert.min.js"></script>
+<script>
+
+	$(document).ready(function(){
+		$("#formContacto").submit(function(event){
+			swal({   title: "Compra Realizada",   text: "Muchas gracias por su compra",   timer: 5000,   showConfirmButton: false });
+
+		}
+	});
+</script>
