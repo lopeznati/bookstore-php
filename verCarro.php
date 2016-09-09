@@ -71,8 +71,8 @@ if(isset($_SESSION['carro'])){
 ?>
 
 
- <div class="container-fluid">
-      <div class="row">
+ <div class="container-fluid margen">
+      <div class="row margen">
 	   <?php
 
 		include_once "menu-lateral.php";
@@ -162,7 +162,7 @@ if(isset($_SESSION['carro'])){
 		?>
 		</table>
 		</div>
-
+		<div class="fix-margin">
 		<div style="margin-left:250px;" align="center"><span class="prod">Total de Artículos: <?php echo count($datos);
 		//el total de items va a ser igual
 		//a la cantidad de elementos que
@@ -193,6 +193,7 @@ if(isset($_SESSION['carro'])){
 		<img src="continuar.gif" width="13" height="13" border="0"></a>
 		<?php }?>
 		</p>
+	</div>
 
 
 

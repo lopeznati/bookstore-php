@@ -8,12 +8,12 @@
 	}
 	else {
 ?>
-		<div class="container-fluid">
-			<div class="row">
+		<div class="container-fluid margen">
+			<div class="row margen">
 				<?php
 					include_once "menu-lateral.php";
 				?>
-				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main margen">
 				<h2 class="sub-header">Mis Pedidos</h2>
 
 				<!-- Listado Pedidos de un cliente -->

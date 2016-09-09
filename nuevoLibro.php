@@ -8,13 +8,19 @@
 	}
 	else{
 ?>
-
+<head>
+	<link href="assets/css/bootstrap.css" rel="stylesheet">
+	<link href="styles.css" rel="stylesheet">
+	<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+	<link href="assets/css/style-responsive.css" rel="stylesheet">
+	<script src="https://use.fontawesome.com/7fa1cd24b5.js"></script>
+</head>
 
 	<!-- MENU -->
-    <div class="container-fluid">
-		<div class="row">
+    <div class="container-fluid margen">
+		<div class="row margen">
 			<!-- Alta libros -->
-			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main margen">
 			<h1 class="page-header">Nuevo Libro</h1>
 			<?php
 				if(!empty($_POST) AND !empty($_FILES['foto']) AND !empty($_POST['isbn']) AND !empty($_POST['titulo']) AND !empty($_POST['descripcion'])AND !empty($_POST['autor']) AND !empty($_POST['nedicion']) AND !empty($_POST['cpaginas']) AND !empty($_POST['precio']) AND !empty($_POST['nexistencia']) AND !empty($_POST['categoria_id']) AND !empty($_POST['editorial_id']))

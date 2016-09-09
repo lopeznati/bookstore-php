@@ -20,15 +20,15 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
 
 	<!-- MENU -->
 
-    <div class="container-fluid">
-      <div class="row">
+    <div class="container-fluid margen">
+      <div class="row margen">
          <?php
 
 		include_once "menu-lateral.php";
 		?>
 
 		<!-- Alta libros -->
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main margen">
           <h1 class="page-header">Nueva categoria</h1>
 
 		  <?php

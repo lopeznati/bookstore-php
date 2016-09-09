@@ -1,6 +1,7 @@
 body, aside{
-  font-family: 'Oswald', serif;
+  font-family: 'Oswald', serif !important;
   color: #232423;
+  background-image: url("white.jpg");
 }
 .page-header{
   font-family: 'Crete Round', serif;
@@ -8,6 +9,10 @@ body, aside{
 .titulos{
   color: #333335 !important;
 }
+.margen{
+  margin-left: 50px;
+}
+
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
   background-color: rgba(150, 148, 94, 0.1);
 }

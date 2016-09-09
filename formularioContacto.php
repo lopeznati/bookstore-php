@@ -1,4 +1,4 @@
-<?php 
+<?php
 	include_once "menu-lateral.php";
 	date_default_timezone_set('America/Argentina/Buenos_Aires');
 
@@ -6,20 +6,20 @@
 
 <html>
 	<body>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-					<h1 class="page-header">Cóntacto</h1>
+		<div class="container-fluid margen">
+			<div class="row margen">
+				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main margen">
+					<h1 class="page-header">Contacto</h1>
 					<script src="lib/sweet-alert.min.js"></script>
 					<link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
 					<?php
-						if(isset($_POST['email'])) 
-						{						
+						if(isset($_POST['email']))
+						{
 							$nombre = "Nombre: " . $_POST['nombre'] . "\n";
 							$apellido = "Apellido: " . $_POST['apellido'] . "\n";
 							$mail = "E-Mail: " . $_POST['email'] . "\n";
 							$consulta = "Consulta: " . $_POST['consulta'] . "\n\n";
-						
+
 							$asunto="Consulta de usuario";
 							$cuerpo="
 									<html>
@@ -45,8 +45,8 @@
 									  alert('Mensaje enviado, muchas gracias.');
 									  window.location.href = 'http://bookstore-php.esy.es/';
 									  </script>";
-							} 
-							else 
+							}
+							else
 							{
 								echo "<script language='javascript'>
 									  alert('Falló envio.');
@@ -63,8 +63,8 @@
 							<tr>
 								<td>Apellido</td>
 								<td><input type="text" name="apellido" required></td>
-							</tr>	
-	
+							</tr>
+
 							<tr>
 								<td>E-Mail</td>
 								<td><input type="email" name="email" required></td>
@@ -79,7 +79,7 @@
 									<input type="submit" class="btn btn-primary" value="Enviar">
 									<input type="reset" class="btn btn-primary" value="Limpiar">
 								</td>
-							</tr>	
+							</tr>
 						</table>
 					</form>
 				</div>
@@ -87,4 +87,3 @@
 		</div>
 	</body>
 </html>
-

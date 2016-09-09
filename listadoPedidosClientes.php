@@ -19,7 +19,7 @@
 	<link href="assets/css/style-responsive.css" rel="stylesheet">
 	<script src="https://use.fontawesome.com/7fa1cd24b5.js"></script>
 </head>
-		<div class="container-fluid">
+		<div class="container-fluid" align-content="center">
 			<div class="row">
 				<?php
 					include_once "menu-lateral.php";
