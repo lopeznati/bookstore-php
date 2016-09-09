@@ -1,8 +1,8 @@
 <?php
-include_once "menu-lateral.php";
+ob_start();
 ?>
-<!DOCTYPE html>
-<html lang="en">
+<?php
+include_once "menu-lateral.php"; ?>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -82,5 +82,6 @@ include_once "menu-lateral.php";
     </body>
   <script src="assets/js/jquery.js"></script>
     	<script src="assets/js/bootstrap.min.js"></script>
-
-</html>
+      <?php
+      ob_end_flush();
+      ?>

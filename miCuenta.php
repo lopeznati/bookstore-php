@@ -1,3 +1,7 @@
+<?php
+ob_start();
+?>
+
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script src="dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -176,3 +180,6 @@
 	<?php
 	}
 	?>
+	<?php
+	      ob_end_flush();
+?>
