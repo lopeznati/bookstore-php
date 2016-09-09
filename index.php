@@ -1,13 +1,15 @@
 <?php
 include_once "menu-lateral.php";
 ?>
+
 <head>
+	<meta charset="UTF-8">
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 	<script type="text/javascript"  src="js/libro.js"></script>
-
 		<link href="assets/css/bootstrap.css" rel="stylesheet">
+		<link href="styles.css" rel="stylesheet">
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 		<script src="https://use.fontawesome.com/7fa1cd24b5.js"></script>

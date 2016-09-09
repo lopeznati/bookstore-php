@@ -74,9 +74,9 @@ include_once "funciones.php";
             <li><a href="verCarro.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
             <li>
               <?php if(!isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE ){ ?>
-              <a class="btn btn-default btn-outline btn-circle collapsed"  data-toggle="collapse" href="signin.php" aria-expanded="false" aria-controls="nav-collapse2">Iniciar Sesión</a>
+              <a class="btn btn-default btn-outline btn-circle collapsed"  href="signin.php" aria-expanded="false" >Iniciar Sesión</a>
               <?php }else{ ?>
-              <a class="btn btn-default btn-outline btn-circle collapsed"  data-toggle="collapse" href="logout.php" aria-expanded="false" aria-controls="nav-collapse2">Cerrar Sesión</a>
+              <a class="btn btn-default btn-outline btn-circle collapsed"  href="logout.php" aria-expanded="false" >Cerrar Sesión</a>
               <?php } ?>
             </li>
           </ul>

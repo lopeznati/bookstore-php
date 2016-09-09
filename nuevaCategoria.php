@@ -1,88 +1,88 @@
 <?php
-include_once "header.php";
+include_once "menu-lateral.php";
 
 date_default_timezone_set('America/Argentina/Buenos_Aires');
 
 if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE ){
 	header('Location: signin.php');
 }else{
-	
 
-		
-		
-	
+
+
+
+
 ?>
 
 
 
 
 
-	
+
 	<!-- MENU -->
 
     <div class="container-fluid">
       <div class="row">
-         <?php 
-		
+         <?php
+
 		include_once "menu-lateral.php";
 		?>
 
 		<!-- Alta libros -->
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Nueva categoria</h1>
-		  
+
 		  <?php
 			if(!empty($_POST)  AND !empty($_POST['descripcion'])){
 			$descripcion=trim($_POST['descripcion']);
-			
-			
-			$agregarLibro="INSERT INTO categorias(id,descripcion)  
+
+
+			$agregarLibro="INSERT INTO categorias(id,descripcion)
 							VALUES('','".$descripcion."')";
 			$resultado=ConsultaSql($agregarLibro);
-	
-	
-		
-	
-	
+
+
+
+
+
 			}
 			?>
 
 
-		  
+
 		  <form id="form1" action="" method="post" enctype="multipart/form-data">
 		  <table class="table table-striped">
-             
+
                 <tr>
                   <td>Descripcion</td>
                   <td><input type="text" name="descripcion" required></td>
                 </tr>
-				
+
 				<tr>
                   <td></td>
                   <td><input type="submit" class="btn btn-primary" id="guardar" value="Guardar"></td>
-				  
-	
+
+
                 </tr>
            </table>
-		   
+
 		   </form>
 		   </br>
 		   </br>
-		   <?php 
-		   
+		   <?php
+
 	       ?>
 
-             
-               
-                
-		  
+
+
+
+
           <!-- Listado de categorias -->
           <h2 class="sub-header">Listado</h2>
-		  <?php 
-		  
+		  <?php
+
 			$sqlCategoria="SELECT * FROM categorias";
 			$categorias=ConsultaSql($sqlCategoria);
-			
+
 		  ?>
           <div class="table-responsive">
             <table class="table table-striped">
@@ -90,12 +90,12 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
                 <tr>
                   <th>#</th>
                   <th>Descripcion</th>
-                 
+
 				  <th>Acciones</th>
                 </tr>
               </thead>
               <tbody>
-			  <?php 
+			  <?php
 			  while($l=mysql_fetch_array($categorias)){
 				  echo "<tr>";
 					echo "<td>".$l['id']."</td>";
@@ -104,17 +104,17 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
 				           <a class='eliminar' id='eliminar_".$l['id']."' onClick='eliminar(".$l['id'].")' href='#'> <IMG SRC='icon/gnome_edit_delete.png' WIDTH=30 HEIGHT=30>  </a></td>";
 
 				   echo "<tr>";
-                  
+
                 // <a class='eliminar'  href='eliCategoria.php?idelim=".$l['id']."'> <IMG SRC='icon/gnome_edit_delete.png' WIDTH=30 HEIGHT=30>  </a>
 
-				  
+
 			  }
 			  ?>
-                
+
               </tbody>
             </table>
 
-			
+
 
           </div>
         </div>
@@ -195,6 +195,6 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
   </body>
 </html>
 
-<?php 
+<?php
 }
 ?>

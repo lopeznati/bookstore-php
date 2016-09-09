@@ -1,5 +1,5 @@
-<?php 
-	include_once "header.php";
+<?php
+	include_once "menu-lateral.php";
 	$idlibro=$_REQUEST['id'];
 	$sql="select * from libros where id='".$idlibro."'";
 	$libro=ConsultaSql($sql);
@@ -7,7 +7,7 @@
 
 <div class="container-fluid">
     <div class="row">
-    <?php 
+    <?php
 		include_once "menu-lateral.php";
 	?>
 		<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -15,19 +15,19 @@
 			<div class="table-responsive">
 				<table class="table table-striped" class="modulobuscador"'>
 					<tbody>
-						<?php 
+						<?php
 							while($l=mysql_fetch_array($libro))
 							{
 								$sqlCategoria="select * from categorias where id=".$l['id_categoria']."";
 								$c=mysql_fetch_assoc(ConsultaSql($sqlCategoria));
-						
+
 								$sqlEditorial="select * from editoriales where id=".$l['id_editorial']."";
 								$e=mysql_fetch_assoc(ConsultaSql($sqlEditorial));
-								
+
 								echo "<form action='verCarro.php' action='GET'>";
 								echo "<tr>";
 								echo "<td class='celdafoto'><img class='foto' src='".$l['foto']."'/></td>";
-								echo "<td> 
+								echo "<td>
 										<span class='titulos'>".$l['titulo']."</span></br>
 										<span class='titulos'>ISBN: </span>".$l['ISBN']."</br>
 										<span class='titulos'>Precio: </span>"."$ ".$l['precio']."</br>
@@ -40,7 +40,7 @@
 										</br>
 										</div>
 										<input type='hidden' name='id' value='".$l['id']."'>
-									  </td>"; 
+									  </td>";
 								echo "</tr>";
 						?>
 							<tr>
@@ -49,12 +49,12 @@
 							<tr>
 								<td colspan='2' ><?php echo $l['descripcion'];?><td>
 							</tr>
-							<?php 
+							<?php
 								echo "</form>";
 							}
 							?>
 					</tbody>
-				</table>	
+				</table>
 			</div>
         </div>
      </div>

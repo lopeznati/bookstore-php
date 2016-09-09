@@ -3,8 +3,8 @@
 <script src="js/bootstrap-datepicker.min.js"></script>
 <script src="js/locales/bootstrap-datepicker.es.js"></script>
 
-<?php 
-	include_once "./header.php";
+<?php
+	include_once "menu-lateral.php";
 
 	if(!empty($_POST) AND !empty($_POST['nombre']) AND !empty($_POST['apellido']) AND !empty($_POST['telefono']) AND !empty($_POST['domicilio']) AND !empty($_POST['mail']) AND !empty($_POST['usuario']) AND !empty($_POST['contraseña']) AND !empty($_POST['localidad_id'])){
 		$nombre=trim($_POST['nombre']);
@@ -17,7 +17,7 @@
 		$localidadid=trim($_POST['localidad_id']);
 		$fecha=trim($_POST['fecha']);
 		$rol='cli';
-	
+
 		$validar=ConsultaSql('select * from clientes where usuario="'.$usuario.'"');
 		if(mysql_num_rows($validar)==1)
 		{
@@ -25,7 +25,7 @@
 		}
 		else
 		{
-			$agregarCliente="INSERT INTO clientes(id,usuario,clave,apellido, nombre,domicilio,telefono,mail,id_localidad,fecha,rol)  
+			$agregarCliente="INSERT INTO clientes(id,usuario,clave,apellido, nombre,domicilio,telefono,mail,id_localidad,fecha,rol)
 			VALUES('','".$usuario."','".$contraseña."','".$apellido."','".$nombre."','".$domicilio."','".$telefono."','".$mail."','".$localidadid."', '".$fecha."','".$rol."')";
 			$resultado=ConsultaSql($agregarCliente);
 
@@ -49,7 +49,7 @@
 
 			if (mail($mail, $asunto, $cuerpo, $cabeceras) )
 			{
-			?>    
+			?>
 				<div id="navbar" class="navbar-collapse collapse" style="background-color: #0080FF;>
 					<div class="alert">
 						<span class="closebtn" onclick="this.parentElement.style.display='none';"><a href="signin.php">X</a></span>
@@ -57,11 +57,11 @@
 					</div>
 				</div>
            <?php
-		
+
 			}
 			else
 			{
-			?>    
+			?>
 				<div id="navbar" class="navbar-collapse collapse" style="background-color: #0080FF;>
 					<div class="alert">
 					<span class="closebtn" onclick="this.parentElement.style.display='none';"><a href="signin.php">X</a></span>
@@ -72,7 +72,7 @@
 			}
 		}
 	}
-	
+
 	$localidades=ConsultaSql('select * from localidades');
 	?>
 
@@ -85,7 +85,7 @@
 						<tr>
 							<td>Nombre</td>
 							<td><input type="text" name="nombre" required></td>
-						</tr>			
+						</tr>
 						<tr>
 							<td>Apellido</td>
 							<td><input type="text" name="apellido" required></td>
@@ -101,11 +101,11 @@
 						<tr>
 							<td>Fecha Nacimiento</td>
 							<td><input id="fecha" type="text" name="fecha" class="btn panel-primary" required></td>
-						</tr>	
+						</tr>
 						<tr>
 							<td>E-Mail</td>
 							<td><input type="email" name="mail" required></td>
-						</tr>				
+						</tr>
 						<tr>
 							<td>Usuario</td>
 							<td><input type="text" name="usuario" required></td>
@@ -132,8 +132,8 @@
 							</tr>
 					</table>
 				</form>
-			<?php 
-		   
+			<?php
+
 	       ?>
       </div>
     </div>
@@ -146,7 +146,7 @@
     $(document).ready(function(){
 
 		$("form").submit(function(event){
-				
+
   				var localidad=$("#localidad_id").val();
   				if(localidad === ''){
   					//alert("El campo Localidad no puede quedar vacio, seleccione una opcion.");
