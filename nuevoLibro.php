@@ -8,61 +8,11 @@
 	}
 	else{
 ?>
-		<script type="text/javascript" src="js/js_export/jquery.js"></script>
-		<script type="text/javascript" src="js/js_export/jquery.tabletoCSV.js"></script>
-		<script type="text/javascript" src="js/js_export/tableExport.js"></script>
-		<script type="text/javascript" src="js/js_export/jquery.base64.js"></script>
-		<script type="text/javascript" src="js/js_export/jspdf/libs/sprintf.js"></script>
-		<script type="text/javascript" src="js/js_export/jspdf/jspdf.js"></script>
-		<script type="text/javascript" src="js/js_export/jspdf/libs/base64.js"></script>
 
-		<!-- scripts para exportar-->
-		<script>
-			$(function(){
-				$("#CSV").click(function(){
-					$("#tabla").tableToCSV();
-				});
-			});
-		</script>
-
-		<script type="text/javascript">
-			$(document).ready(function(e){
-				$("#XLS").click(function(e){
-					$("#tabla").tableExport({
-						type:'excel',
-						escape:'false'
-					});
-				});
-			});
-		</script>
-
-   <script type="text/javascript">
-    $(document).ready(function(e){
-    $("#XML").click(function(e){
-    $("#tabla").tableExport({
-    type:'xml',
-    escape:'false'
-    });
-    });
-    });
-    </script>
-    <script type="text/javascript">
-    $(document).ready(function(e){
-    $("#JSON").click(function(e){
-    $("#tabla").tableExport({
-    type:'json',
-    escape:'false'
-    });
-    });
-    });
-    </script>
 
 	<!-- MENU -->
     <div class="container-fluid">
 		<div class="row">
-			<?php
-				include_once "menu-lateral.php";
-			?>
 			<!-- Alta libros -->
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 			<h1 class="page-header">Nuevo Libro</h1>
@@ -248,10 +198,63 @@
 		</form>
 	    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 		<script src="dist/sweetalert.min.js"></script>
+
+
+		<script type="text/javascript" src="js/js_export/jquery.js"></script>
+		<script type="text/javascript" src="js/js_export/jquery.tabletoCSV.js"></script>
+		<script type="text/javascript" src="js/js_export/tableExport.js"></script>
+		<script type="text/javascript" src="js/js_export/jquery.base64.js"></script>
+		<script type="text/javascript" src="js/js_export/jspdf/libs/sprintf.js"></script>
+		<script type="text/javascript" src="js/js_export/jspdf/jspdf.js"></script>
+		<script type="text/javascript" src="js/js_export/jspdf/libs/base64.js"></script>
+
+		<!-- scripts para exportar-->
+		<script>
+			$(function(){
+				$("#CSV").click(function(){
+					$("#tabla").tableToCSV();
+				});
+			});
+		</script>
+
+		<script type="text/javascript">
+			$(document).ready(function(e){
+				$("#XLS").click(function(e){
+					$("#tabla").tableExport({
+						type:'excel',
+						escape:'false'
+					});
+				});
+			});
+		</script>
+
+	   <script type="text/javascript">
+		$(document).ready(function(e){
+		$("#XML").click(function(e){
+		$("#tabla").tableExport({
+		type:'xml',
+		escape:'false'
+		});
+		});
+		});
+		</script>
+		<script type="text/javascript">
+		$(document).ready(function(e){
+		$("#JSON").click(function(e){
+		$("#tabla").tableExport({
+		type:'json',
+		escape:'false'
+		});
+		});
+		});
+		</script>
+
+
+
 		<script>
 		$(document).ready(function(){
 
-			$("form").submit(function(event){
+			$("#form1").submit(function(event){
 				var error=false;
 
 				var isbn=$("#isbn").val();

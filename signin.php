@@ -1,6 +1,4 @@
 <?php
-session_start();
-include_once "funciones.php";
 include_once "menu-lateral.php";
 ?>
 <!DOCTYPE html>
@@ -45,7 +43,7 @@ include_once "menu-lateral.php";
   	if(!empty($_POST['usuario']) AND !empty($_POST['clave'] )){
   		$sql="SELECT * FROM clientes where usuario='".$_POST['usuario']."' and clave='".$_POST['clave']."'";
   		$cliente=ConsultaSql($sql);
-  		echo $cliente;
+  		//echo $cliente;
   		$count = mysql_num_rows($cliente);
 
   		$cli=mysql_fetch_array($cliente);
@@ -81,6 +79,7 @@ include_once "menu-lateral.php";
           </div>
         </form>
       </div>
+    </body>
   <script src="assets/js/jquery.js"></script>
     	<script src="assets/js/bootstrap.min.js"></script>
 

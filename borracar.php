@@ -9,16 +9,25 @@ extract($_GET);
 //extract() por comodidad,
 //pero podemos no hacerlo
 //tranquilamente
+
 $carro=$_SESSION['carro'];
+$carro2=[];
+$n=0;
 
 for($i=0;$i<count($carro);$i++){
-			if($carro[$i]['id']==$id){
-			
-				unset($carro[$i]);
-				
-				
-			}
-			}
+	if($carro[$i]['id']!=$id){
+
+		//unset($carro[$i]);
+		$carro2[$n]['id']=$carro[$i]['id'];
+		$carro2[$n]['titulo']=$carro[$i]['titulo'];
+		$carro2[$n]['precio']=$carro[$i]['precio'];
+		$carro2[$n]['cantidad']=$carro[$i]['cantidad'];
+
+		$n++;
+
+	}
+
+}
 
 //Asignamos a la variable
 //$carro los valores
@@ -31,7 +40,7 @@ for($i=0;$i<count($carro);$i++){
 //la usamos para borrar el
 //elemento cuyo id le pasemos
 //a la página por la url 
-$_SESSION['carro']=$carro;
+$_SESSION['carro']=$carro2;
 
 header("Location:verCarro.php");
 ?>

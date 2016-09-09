@@ -82,12 +82,70 @@
 							?>
 						</tbody>
 					</table>
+					<center>
+						<div>
+							<button id="CSV" class="btn btn-primary" data-export="export">Exportar a CSV</button>
+							<button id="XLS" class="btn btn-primary" data-export="export">Exportar a XLS</button>
+							<button id="XML" class="btn btn-primary" data-export="export">Exportar a XML</button>
+							<button id="JSON" class="btn btn-primary" data-export="export">Exportar a JSON</button>
+						</div>
+					</center>
 				</div>
 			</div>
 			</div>
 		</div>
 	</body>
 </html>
+
+		<script type="text/javascript" src="js/js_export/jquery.js"></script>
+		<script type="text/javascript" src="js/js_export/jquery.tabletoCSV.js"></script>
+		<script type="text/javascript" src="js/js_export/tableExport.js"></script>
+		<script type="text/javascript" src="js/js_export/jquery.base64.js"></script>
+		<script type="text/javascript" src="js/js_export/jspdf/libs/sprintf.js"></script>
+		<script type="text/javascript" src="js/js_export/jspdf/jspdf.js"></script>
+		<script type="text/javascript" src="js/js_export/jspdf/libs/base64.js"></script>
+
+		<!-- scripts para exportar-->
+		<script>
+			$(function(){
+				$("#CSV").click(function(){
+					$("#tabla").tableToCSV();
+				});
+			});
+		</script>
+
+		<script type="text/javascript">
+			$(document).ready(function(e){
+				$("#XLS").click(function(e){
+					$("#tabla").tableExport({
+						type:'excel',
+						escape:'false'
+					});
+				});
+			});
+		</script>
+
+	   <script type="text/javascript">
+		$(document).ready(function(e){
+		$("#XML").click(function(e){
+		$("#tabla").tableExport({
+		type:'xml',
+		escape:'false'
+		});
+		});
+		});
+		</script>
+		<script type="text/javascript">
+		$(document).ready(function(e){
+		$("#JSON").click(function(e){
+		$("#tabla").tableExport({
+		type:'json',
+		escape:'false'
+		});
+		});
+		});
+		</script>
+
 
 <?php
 }

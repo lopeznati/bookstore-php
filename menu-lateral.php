@@ -3,12 +3,14 @@ session_start();
 include_once "funciones.php";
 
 ?>
+<meta charset="utf-8">
 <script src="https://use.fontawesome.com/7fa1cd24b5.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Crete+Round|Oswald|Roboto" rel="stylesheet">
 <link href="styles.css" rel="stylesheet">
 <link href="dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="assets/js/ie-emulation-modes-warning.js"></script>
 <link href="styles.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="dist/sweetalert.css">
 <!--<div class="col-sm-3 col-md-2 sidebar">
     <ul class="nav nav-sidebar">
 		<?php if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE )
@@ -71,7 +73,9 @@ include_once "funciones.php";
              <?php
              }
              ?>
+            <li><a href="formularioContacto.php">Contacto</a></li>
             <li><a href="verCarro.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+
             <li>
               <?php if(!isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE ){ ?>
               <a class="btn btn-default btn-outline btn-circle collapsed"  href="signin.php" aria-expanded="false" >Iniciar Sesión</a>

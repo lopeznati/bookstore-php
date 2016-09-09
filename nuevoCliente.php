@@ -243,7 +243,7 @@ $localidades=ConsultaSql('select * from localidades');
     <script>
     $(document).ready(function(){
 
-		$("form").submit(function(event){
+		$("#form1").submit(function(event){
 
   				var localidad=$("#localidad_id").val();
   				if(localidad === ''){

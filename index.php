@@ -33,6 +33,43 @@ include_once "menu-lateral.php";
 						$sqllibros="select * from libros";
 						$libros=ConsultaSql($sqllibros);
 					}
+
+
+
+				//paginacionn
+				$cant_por_pag=2;
+				$pagina=isset($_GET['pagina'])? $_GET['pagina']: null;
+				if(!$pagina){
+					$inicio=0;
+					$pagina=1;
+
+
+				}
+				else{
+					$inicio=($pagina -1) * $cant_por_pag;
+
+				}
+
+				$total_registros=mysql_num_rows($libros);
+				$total_paginas=ceil($total_registros / $cant_por_pag);
+				if(isset($_REQUEST['busqueda']))
+				{
+					$libros=ConsultaSql("SELECT * FROM libros WHERE titulo like '".$busqueda."%' limit ".$inicio.",".$cant_por_pag);
+
+					//echo "SELECT * FROM libros WHERE titulo like '".$busqueda."%' limit ".$inicio.",".$cant_por_pag;
+				}
+				else
+				{
+					$libros=ConsultaSql("select * from libros"." limit ".$inicio.",".$cant_por_pag);
+
+				}
+
+
+				$total_registros=mysql_num_rows($libros);
+
+
+
+
 				?>
 				<div class="table-responsive">
 					<table class="table table-hover" class="modulobuscador" >
@@ -64,7 +101,23 @@ include_once "menu-lateral.php";
 									</td>";
 								echo "</tr>";
 								echo "</form>";
+
+
 							}
+
+						echo "</tbody>";
+						echo "</table>";
+						echo "</div>";
+						echo "<ul class='pagination'>";
+						if($total_paginas > 1){
+							for($i=1;$i<=$total_paginas;$i++){
+								if($pagina==$i){
+									 echo "<li class='active'><a href='index.php?pagina=".$pagina."'>".$pagina."</a></li>";
+
+								}else echo "<li><a href='index.php?pagina=".$i."'>".$i."</a></li>";
+							}
+						}
+						echo "</ul>";
 
 	?>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
