@@ -28,7 +28,7 @@
 								echo "<form action='verCarro.php' action='GET'>";
 								echo "<tr>";
 								echo "<td class='celdafoto'><img class='foto' src='".$l['foto']."'/></td>";
-								echo "<td>
+								/* echo "<td>
 										<span class='titulos'>".$l['titulo']."</span></br>
 										<span class='titulos'>ISBN: </span>".$l['ISBN']."</br>
 										<span class='titulos'>Precio: </span>"."$ ".$l['precio']."</br>
@@ -42,6 +42,43 @@
 										</div>
 										<input type='hidden' name='id' value='".$l['id']."'>
 									  </td>";
+
+								*/
+
+
+								?>
+
+
+								<td>
+
+									<span class='titulos'><?=$l['titulo'] ?></span></br>
+									<span class='titulos'>ISBN: </span><?=$l['ISBN']?></br>
+									<span class='titulos'>Precio: </span>$ <?=$l['precio']?></br>
+									<span class='titulos'>Categoria: </span><?=utf8_encode($c['descripcion'])?></br>
+									<span class='titulos'>Editorial: </span><?=$e['nombre']?></br>
+									<span class='titulos'>Paginas: </span><?=$l['cantPaginas']?></br>
+											<?php if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE )
+										{ ?>
+									      <div class='celdaboton2'>
+											<input  type='submit' class='btn btn-primary' value='Comprar +'/>
+										  </div>
+
+										<?php }?>
+										<!--<input  type='submit' class='btn btn-primary' value='+Info'/>
+                                        <botton id='cartelLibro' class='btn btn-primary'> Carro</botton>
+                                        <a href='detalle.php'><botton class='btn btn-primary'> Carro</botton></a>-->
+
+										</br>
+									</div>
+									<input type='hidden' name='id' value='".$l['id']."'>
+									</td>
+
+
+								<?php
+
+
+
+
 								echo "</tr>";
 						?>
 							<tr>

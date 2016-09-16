@@ -4,15 +4,10 @@
 
 ?>
 
-<html>
-<script src="dist/sweetalert.min.js"></script>
-	<body>
 		<div class="container-fluid margen">
 			<div class="row margen">
 				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main margen">
 					<h1 class="page-header">Contacto</h1>
-					<script src="lib/sweet-alert.min.js"></script>
-					<link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
 					<?php
 						if(isset($_POST['email']))
 						{
@@ -62,11 +57,11 @@
 						<table class="table table-striped">
 							<tr>
 								<td>Nombre:</td>
-								<td><input type="text" name="nombre" required></td>
+								<td><input type="text" id="nombre" name="nombre" required></td>
 							</tr>
 							<tr>
 								<td>Apellido:</td>
-								<td><input type="text" name="apellido" required></td>
+								<td><input type="text" id="apellido" name="apellido" required></td>
 							</tr>
 
 							<tr>
@@ -89,8 +84,8 @@
 				</div>
 			</div>
 		</div>
-	</body>
-</html>
+
+
 
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -99,8 +94,34 @@
 
 	$(document).ready(function(){
 		$("#formContacto").submit(function(event){
-			swal({   title: "Compra Realizada",   text: "Muchas gracias por su compra",   timer: 5000,   showConfirmButton: false });
 
-		}
+			var error=false;
+
+			if($("#apellido").val().length >15){
+				//alert("El numero de tarjeta debe tener 16 caracteres");
+				event.preventDefault()
+				$("#apellido").focus();
+				error=true;
+				swal("", "La cantidad de caracteres ingresados en el campo apellido supera el permitido.", "warning");
+
+			}
+
+			if($("#nombre").val().length >10){
+				//alert("El numero de tarjeta debe tener 16 caracteres");
+				event.preventDefault()
+				$("#nombre").focus();
+				error=true;
+				swal("", "La cantidad de caracteres ingresados en el campo nombre supera el permitido.", "warning");
+
+			}
+
+
+			if(error==false){
+				swal({   title: "Compra Realizada",   text: "Muchas gracias por su compra",   timer: 5000,   showConfirmButton: false });
+			}
+
+
+		})
 	});
 </script>
+

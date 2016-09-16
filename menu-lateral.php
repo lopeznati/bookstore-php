@@ -43,7 +43,7 @@ include_once "funciones.php";
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">Bookstore</a>
+          <a class="navbar-brand" href="index.php">Todo Colección</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->

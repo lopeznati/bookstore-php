@@ -67,7 +67,7 @@
 					</tr>
 					<tr>
 						<td>Titulo:</td>
-						<td><input type="text" name="titulo" required></td>
+						<td><input type="text" id="titulo" name="titulo" required></td>
 					</tr>
 					<tr>
 						<td>Descripcion:</td>
@@ -75,7 +75,7 @@
 					</tr>
 					<tr>
 						<td>Autor:</td>
-						<td><input type="text" name="autor" required></td>
+						<td><input type="text" id="autor" name="autor" required></td>
 					</tr>
 					<tr>
 						<td>Cantidad de Paginas:</td>
@@ -284,6 +284,17 @@
 	   				event.preventDefault();
 	  			}
 
+	  			if($("#cpaginas").val().length >5){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#cpaginas").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo Cantidad de Paginas supera el permitido.", "warning");
+
+            	}
+
+
+
 	  			var nro_edicion=$("#nedicion").val();
 	  			nro_edicion =parseInt(nro_edicion);
 	  			if(isNaN(nro_edicion)){
@@ -295,16 +306,58 @@
 					event.preventDefault();
 	  			}
 
+	  			if($("#nedicion").val().length >5){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#nedicion").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo  Número de Edicion supera el permitido.", "warning");
+
+            	}
+
+
+            	if($("#autor").val().length >15){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#nedicion").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo  Autor supera el permitido.", "warning");
+
+            	}
+
+            	if($("#titulo").val().length >15){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#nedicion").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo  titulo supera el permitido.", "warning");
+
+            	}
+
+
+
+
 	  			var precio=$("#precio").val();
-	  			precio =parseFloat(precio);
+	  			//precio =parseFloat(precio);
 	  			if(isNaN(precio)){
 	  				//alert("El campo Precio ingresado debe ser un numero o un decimal");
-	  				swal("", "El campo Precio ingresado debe ser un numero o un decimal", "warning");
+	  				swal("", "El campo Precio ingresado debe ser un numero", "warning");
 
 					error=true;
 	  				//cancela el evento
 	   				event.preventDefault();
 	  			}
+
+
+
+	  			if($("#precio").val().length >5){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#precio").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo Precio supera el permitido.", "warning");
+
+            	}
 
 	  			var existencia=$("#nexistencia").val();
 	  			existencia =parseInt(existencia);
@@ -316,6 +369,15 @@
 	  				//cancela el evento
 	   				event.preventDefault();
 	  			}
+
+	  			if($("#existencia").val().length >5){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#precio").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo Precio supera el permitido.", "warning");
+
+            	}
 
 				var editorial=$("#editorial_id").val();
 				if(editorial === ''){

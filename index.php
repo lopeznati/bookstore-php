@@ -92,7 +92,9 @@ include_once "menu-lateral.php";
 								echo "<form action='verCarro.php' action='GET'>";
 								echo "<tr>";
 								echo "<td class='celdafoto'><img class='foto' src='".$l['foto']."'/></td>";
-								echo "<td>
+
+
+								/*echo "<td>
 										<span class='titulos'>".$l['titulo']."</span></br>
 										<span class='titulos'>ISBN: </span>".$l['ISBN']."</br>
 										<span class='titulos'>Precio: </span>"."$ ".$l['precio']."</br>
@@ -105,7 +107,40 @@ include_once "menu-lateral.php";
 											<a href='detalle.php'><botton class='btn btn-primary'> Carro</botton></a>-->
 										</div>
 										<input type='hidden' name='id' value='".$l['id']."'>
-									</td>";
+									</td>"; */
+
+								?>
+
+								<td>
+
+									   <span class='titulos'><?=$l['titulo'] ?></span></br>
+										<span class='titulos'>ISBN: </span><?=$l['ISBN']?></br>
+										<span class='titulos'>Precio: </span>$ <?=$l['precio']?></br>
+										<span class='titulos'>Categoria: </span><?=$c['descripcion']?></br>
+										<span class='titulos'>Editorial: </span><?=$e['nombre']?></br>
+										<div class='celdaboton'><a href='detalle.php?id=<?=$l['id']?>'><botton class='btn btn-sunny text-uppercase'><i class='fa fa-plus' aria-hidden='true'></i>Info</botton></a>
+											<?php if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE )
+											{ ?>
+
+
+											<input  type='submit' class='btn btn-fresh text-uppercase' value='Comprar'/>
+
+											<?php }?>
+											<!--<input  type='submit' class='btn btn-primary' value='+Info'/>
+											<botton id='cartelLibro' class='btn btn-primary'> Carro</botton>
+											<a href='detalle.php'><botton class='btn btn-primary'> Carro</botton></a>-->
+										</div>
+										<input type='hidden' name='id' value='<?=$l['id']?>'>
+									</td>
+
+
+						<?php
+
+
+
+
+
+
 								echo "</tr>";
 								echo "</form>";
 

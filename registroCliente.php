@@ -65,7 +65,7 @@
 				<div id="navbar" class="navbar-collapse collapse" style="background-color: #0080FF;>
 					<div class="alert">
 					<span class="closebtn" onclick="this.parentElement.style.display='none';"><a href="signin.php">X</a></span>
-					<strong><center>Hubo un error !</strong>
+					<strong>Hubo un error !</strong>
 					</div>
 				</div>
            <?php
@@ -84,19 +84,19 @@
 					<table class="table table-striped">
 						<tr>
 							<td>Nombre</td>
-							<td><input type="text" name="nombre" required></td>
+							<td><input type="text" id="nombre" name="nombre" required></td>
 						</tr>
 						<tr>
 							<td>Apellido</td>
-							<td><input type="text" name="apellido" required></td>
+							<td><input type="text" id="apellido" name="apellido" required></td>
 						</tr>
 						<tr>
 							<td>Telefono</td>
-							<td><input type="text" name="telefono" required></td>
+							<td><input type="text" id="telefono" name="telefono" required></td>
 						</tr>
 						<tr>
 							<td>Domicilio</td>
-							<td><input type="text" name="domicilio" required></td>
+							<td><input type="text" id="domicilio" name="domicilio" required></td>
 						</tr>
 						<tr>
 							<td>Fecha Nacimiento</td>
@@ -104,15 +104,15 @@
 						</tr>
 						<tr>
 							<td>E-Mail</td>
-							<td><input type="email" name="mail" required></td>
+							<td><input type="email" maxlength="30" id="email" name="mail" required></td>
 						</tr>
 						<tr>
 							<td>Usuario</td>
-							<td><input type="text" name="usuario" required></td>
+							<td><input type="text"  id="usuario" name="usuario" required></td>
 						</tr>
 						<tr>
 							<td>Contraseña</td>
-							<td><input type="password" name="contraseña" required></td>
+							<td><input maxlength="8"  type="password" name="contraseña" required></td>
 						</tr>
 						<tr>
 							<td>Localidad</td>
@@ -137,25 +137,121 @@
 	       ?>
       </div>
     </div>
+        </div>
+
+
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 	<script type="text/javascript">
-			$("#fecha").datepicker({format:'dd/mm/yyyy',language:'es'});
+
+
+		$("#fecha").datepicker({
+			maxDate: '0'
+		});
+
+
 		   </script>
 		<script src="dist/sweetalert.min.js"></script>
-	 <script>
+
+
+		<script>
     $(document).ready(function(){
 
-		$("form").submit(function(event){
 
-  				var localidad=$("#localidad_id").val();
-  				if(localidad === ''){
-  					//alert("El campo Localidad no puede quedar vacio, seleccione una opcion.");
-					//cancela el evento
-   					event.preventDefault();
-					swal("", "El campo Localidad no puede quedar vacio, seleccione una opcion.", "warning");
-  				}
+		$("form").submit(function(event) {
+
+			var localidad = $("#localidad_id").val();
+			if (localidad === '') {
+				//alert("El campo Localidad no puede quedar vacio, seleccione una opcion.");
+				//cancela el evento
+				event.preventDefault();
+				swal("", "El campo Localidad no puede quedar vacio, seleccione una opcion.", "warning");
+			}
+
+			var today = new Date();
+			var date=$("#fecha").val();
+			var date2= new Date(date);
+
+			if (date2>today)
+			{
+				event.preventDefault();
+				swal("", "La fecha ingresada no es correcta.", "warning");
+			}
+
+            if($("#apellido").val().length >15){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#apellido").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo apellido supera el permitido.", "warning");
+
+            }
+
+            if($("#nombre").val().length >10){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#nombre").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo nombre supera el permitido.", "warning");
+
+            }
+
+
+
+            if($("#telefono").val().length >15){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#telefono").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo telefono supera el permitido.", "warning");
+
+            }
+
+
+            var telefono=$("#telefono").val();
+            if(isNaN(telefono)){
+                //alert("El campo Numero de Tarjeta debe ser numerico");
+
+                //cancela el evento
+                event.preventDefault();
+                $("#telefono").val("");
+                $("#telefono").focus();
+                error=true;
+                swal("", "El campo telefono debe ser numerico.", "warning");
+
+            }
+
+
+
+
+            if($("#domicilio").val().length >20){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#nombre").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo domicilio supera el permitido.", "warning");
+
+            }
+
+            if($("#usuario").val().length >15){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#nombre").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo usuario supera el permitido.", "warning");
+
+            }
+
+
+
+
 		});
-    });
+
+
+
+	});
+
+
     </script>
     <!-- Bootstrap core JavaScript
     ================================================== -->

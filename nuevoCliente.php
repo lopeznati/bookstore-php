@@ -54,21 +54,21 @@ $localidades=ConsultaSql('select * from localidades');
 
                 <tr>
                   <td>Nombre:</td>
-                  <td><input type="text" name="nombre" required></td>
+                  <td><input type="text" id="nombre" name="nombre" required></td>
                 </tr>
 
 				<tr>
                   <td>Apellido:</td>
-                  <td><input type="text" name="apellido" required></td>
+                  <td><input type="text" id="apellido" name="apellido" required></td>
                 </tr>
 
 				<tr>
                   <td>Telefono:</td>
-                  <td><input type="text" name="telefono" required></td>
+                  <td><input type="text" id="telefono" name="telefono" required></td>
                 </tr>
 				<tr>
                   <td>Domicilio:</td>
-                  <td><input type="text" name="domicilio" placeholder="Calle y Nro" required></td>
+                  <td><input type="text" id="domicilio" name="domicilio" placeholder="Calle y Nro" required></td>
                 </tr>
 
 				<tr>
@@ -78,12 +78,12 @@ $localidades=ConsultaSql('select * from localidades');
 
 				<tr>
                   <td>Usuario:</td>
-                  <td><input type="text" name="usuario" required></td>
+                  <td><input type="text" maxlength="30"  name="usuario" required></td>
                 </tr>
 
 				<tr>
                   <td>Contraseña:</td>
-                  <td><input type="password" name="contraseña" required></td>
+                  <td><input type="password" maxlength="8"  name="contraseña" required></td>
                 </tr>
 
 				<tr>
@@ -243,6 +243,9 @@ $localidades=ConsultaSql('select * from localidades');
 
 		$("#form1").submit(function(event){
 
+
+		var error=false;
+
   				var localidad=$("#localidad_id").val();
   				if(localidad === ''){
   					//alert("El campo Localidad no puede quedar vacio, seleccione una opcion.");
@@ -263,7 +266,76 @@ $localidades=ConsultaSql('select * from localidades');
 
 
 
-				if (localidad!="" && rol!=""){
+
+
+
+  				if($("#apellido").val().length >15){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#apellido").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo apellido supera el permitido.", "warning");
+
+            }
+
+            if($("#nombre").val().length >10){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#nombre").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo nombre supera el permitido.", "warning");
+
+            }
+
+
+
+            if($("#telefono").val().length >15){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#telefono").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo telefono supera el permitido.", "warning");
+
+            }
+
+
+            var telefono=$("#telefono").val();
+            if(isNaN(telefono)){
+                //alert("El campo Numero de Tarjeta debe ser numerico");
+
+                //cancela el evento
+                event.preventDefault();
+                $("#telefono").val("");
+                $("#telefono").focus();
+                error=true;
+                swal("", "El campo telefono debe ser numerico.", "warning");
+
+            }
+
+
+
+
+            if($("#domicilio").val().length >15){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#nombre").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo domicilio supera el permitido.", "warning");
+
+            }
+
+            if($("#usuario").val().length >15){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#nombre").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo usuario supera el permitido.", "warning");
+
+            }
+
+
+
+				if (localidad!="" && rol!="" && error==false){
 					swal("Cliente guardado", "", "success");
 
 					//$('#form1').submit();
