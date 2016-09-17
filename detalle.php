@@ -69,9 +69,9 @@
                                         <a href='detalle.php'><botton class='btn btn-primary'> Carro</botton></a>-->
 
 										</br>
-									</div>
+
 									<input type='hidden' name='id' value='".$l['id']."'>
-									</td>
+			                </td>
 
 
 								<?php

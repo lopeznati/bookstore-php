@@ -67,11 +67,11 @@
 						<input type="hidden" name="Modificado" value="1">
 						<tr>
 							<td>ISBN:</td>
-							<td><input id="isbn" type="text" name="isbn" value="<?php echo $libroMod['ISBN'];?>" required></td>
+							<td><input id="isbn" type="text"  name="isbn" value="<?php echo $libroMod['ISBN'];?>" required></td>
 						</tr>
 						<tr>
 							<td>Titulo:</td>
-							<td><input  type="text" name="titulo" value="<?php echo $libroMod['titulo'];?>" required></td>
+							<td><input  type="text" id="titulo" name="titulo" value="<?php echo $libroMod['titulo'];?>" required></td>
 						</tr>
 						<tr>
 							<td>Descripcion:</td>
@@ -79,7 +79,7 @@
 						</tr>
 						<tr>
 							<td>Autor:</td>
-							<td><input type="text" name="autor" value="<?php echo $libroMod['autor'];?>" required ></td>
+							<td><input type="text" id="autor" name="autor" value="<?php echo $libroMod['autor'];?>" required ></td>
 						</tr>
 						<tr>
 							<td>Cantidad de Paginas:</td>
@@ -196,7 +196,8 @@
 									else
 										echo "<td></td>";
 									echo "<td><a href='modLibro.php?idmodif=".$l['id']."'><IMG SRC='icon/modify.png' WIDTH=20 HEIGHT=20></a>
-								          <a href='eliLibro.php?idelim=".$l['id']."'> <IMG SRC='icon/gnome_edit_delete.png' WIDTH=30 HEIGHT=30>  </a></td>";
+									<a href='#' onClick='eliminar(".$l['id'].")'> <IMG SRC='icon/gnome_edit_delete.png' WIDTH=30 HEIGHT=30>  </a></td>";
+
 									echo "<tr>";
 								}
 							?>
@@ -206,6 +207,12 @@
 			</div>
 		</div>
 	</div>
+
+
+	<form class="elim" action="" method="get">
+			<input class="idelim" type="hidden" name="idelim" value="">
+	</form>
+
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 		<script src="dist/sweetalert.min.js"></script>
 	<script>
@@ -235,6 +242,15 @@
 	   				event.preventDefault();
 	  			}
 
+	  			if($("#cpaginas").val().length >5){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#cpaginas").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo Cantidad de Paginas supera el permitido.", "warning");
+
+            	}
+
 	  			var nro_edicion=$("#nedicion").val();
 	  			nro_edicion =parseInt(nro_edicion);
 	  			if(isNaN(nro_edicion)){
@@ -246,8 +262,36 @@
 					event.preventDefault();
 	  			}
 
+	  			if($("#nedicion").val().length >5){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#nedicion").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo  Número de Edicion supera el permitido.", "warning");
+
+            	}
+
+            	if($("#autor").val().length >15){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#nedicion").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo  Autor supera el permitido.", "warning");
+
+            	}
+
+            	if($("#titulo").val().length >15){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#nedicion").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo  titulo supera el permitido.", "warning");
+
+            	}
+
+
 	  			var precio=$("#precio").val();
-	  			precio =parseFloat(precio);
+	  			//precio =parseFloat(precio);
 	  			if(isNaN(precio)){
 	  				//alert("El campo Precio ingresado debe ser un numero o un decimal");
 	  				swal("", "El campo Precio ingresado debe ser un numero o un decimal", "warning");
@@ -256,6 +300,18 @@
 	  				//cancela el evento
 	   				event.preventDefault();
 	  			}
+
+
+
+
+	  			if($("#precio").val().length >5){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#precio").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo Precio supera el permitido.", "warning");
+
+            	}
 
 	  			var existencia=$("#nexistencia").val();
 	  			existencia =parseInt(existencia);
@@ -267,6 +323,17 @@
 	  				//cancela el evento
 	   				event.preventDefault();
 	  			}
+
+
+	  			if($("#existencia").val().length >5){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#precio").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo Precio supera el permitido.", "warning");
+
+            	}
+
 				if (error==false){
 					swal("Libro guardado", "", "success");
 
@@ -275,6 +342,27 @@
 				}
 			});
 		});
+
+
+		function  eliminar(id){
+            swal({
+            title: "Desea eliminar al cliente?",
+            text: "",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Si, eliminarlo!",
+            closeOnConfirm: false
+        }, function () {
+            swal("Eliminado!", "El libro ha sido eliminada.", "success");
+              var url='eliLibro.php';
+            $('.elim').attr('action',url);
+            $('.idelim').attr('value',id);
+            $('.elim').submit();
+
+        });
+        }
+
 	</script>
 
     <!-- Bootstrap core JavaScript

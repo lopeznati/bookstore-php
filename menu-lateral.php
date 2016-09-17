@@ -74,14 +74,17 @@ include_once "funciones.php";
 					<li><a href="listadoPedidosClientes.php">Pedidos Clientes</a></li>
 				<?php
 				}
-				else if ((strcmp($_SESSION['rol'],'cli'))==0)
+				else { ?>
+					<li><a href="verCarro.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+					<?php
+					if ((strcmp($_SESSION['rol'],'cli'))==0)
 				{?>
 					<li><a href="pedidosCliente.php">Mis Pedidos</a></li>
 					<?php
-				}
+				}}
 				?>
 				<li><a href="formularioContacto.php">Contacto</a></li>
-				<li><a href="verCarro.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+
 				<li>
 					<a class="btn btn-default btn-outline btn-circle collapsed"  href="logout.php" aria-expanded="false" >Cerrar Sesión</a>
 				</li>

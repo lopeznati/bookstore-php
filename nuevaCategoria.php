@@ -54,7 +54,7 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
 
                 <tr>
                   <td>Descripcion:</td>
-                  <td><input type="text" name="descripcion" required></td>
+                  <td><input type="text" id="descripcion" name="descripcion" required></td>
                 </tr>
 
 				<tr>
@@ -118,12 +118,27 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
 
           </div>
         </div>
+
+
+
+
+
+
+
       </div>
     </div>
+
+
+
+
 
     <form class="elim" action="" method="get">
         <input class="idelim" type="hidden" name="idelim" value="">
     </form>
+
+
+
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -139,11 +154,24 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
 
         $('form').on('submit',function(){
 
-          swal("Categoria guardada", "", "success");
+        var error=false
+                if($("#descripcion").val().length >15){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#descripcion").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo Descripcion supera el permitido.", "warning");
+
+            	}
+        if(error==false){
+         swal("Categoria guardada", "", "success");
           $('.confirm').click(function(){
              //$('#form1').submit();
 
           });
+        }
+
+
         });
 
 

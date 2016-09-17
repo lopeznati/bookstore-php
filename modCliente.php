@@ -5,10 +5,15 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
 	header('Location: signin.php');
 }else{
 
+//devuelvo libro a modificar
+		$idModificar=$_REQUEST['idmodif'];
+		$sql="select * from clientes where id=".$idModificar."";
+		$resultado=ConsultaSql($sql);
+		$clienteMod=mysql_fetch_array($resultado);
 
 
-
-if(!empty($_POST) AND !empty($_POST['nombre']) AND !empty($_POST['apellido']) AND !empty($_POST['telefono']) AND !empty($_POST['domicilio']) AND !empty($_POST['mail']) AND !empty($_POST['usuario']) AND !empty($_POST['contraseña']) AND !empty($_POST['localidad_id'])){
+if(!empty($_POST) AND isset($_POST['Modificado']) AND $_POST['Modificado']==1 AND !empty($_POST['nombre']) AND !empty($_POST['apellido']) AND !empty($_POST['telefono']) AND !empty($_POST['domicilio']) AND !empty($_POST['mail'])  AND !empty($_POST['localidad_id'])){
+	$id=trim($_POST['idcliente']);
 	$nombre=trim($_POST['nombre']);
 	$apellido=trim($_POST['apellido']);
 	$telefono=trim($_POST['telefono']);
@@ -20,10 +25,14 @@ if(!empty($_POST) AND !empty($_POST['nombre']) AND !empty($_POST['apellido']) AN
 	$localidadid=trim($_POST['localidad_id']);
 	$rol=trim($_POST['rol']);
 
-	$agregarCliente="INSERT INTO clientes(id,usuario,clave,apellido, nombre,domicilio,telefono,mail,id_localidad, rol)
-	VALUES('','".$usuario."','".$contraseña."','".$apellido."','".$nombre."','".$domicilio."','".$telefono."','".$mail."','".$localidadid."', '".$rol."')";
-	$resultado=ConsultaSql($agregarCliente);
-	echo $resultado;
+
+	$modificarLibro="UPDATE clientes SET apellido='".$apellido."',nombre='".$nombre."',domicilio='".$domicilio."',telefono='".$telefono."',mail='".$mail."',id_localidad='".$localidadid."' WHERE id='".$id."'";
+	$resultado=ConsultaSql($modificarLibro);
+
+	echo $modificarLibro;
+
+	header('Location: nuevoCliente.php');
+	exit();
 
 
 
@@ -52,39 +61,33 @@ $localidades=ConsultaSql('select * from localidades');
 		  <form id="form1" action="" method="post">
 		  <table class="table table-striped">
 
+              <input type="hidden" name="idcliente" value="<?php echo $clienteMod['id'];?>">
+              <input type="hidden" name="Modificado" value="1">
+
                 <tr>
                   <td>Nombre:</td>
-                  <td><input type="text" id="nombre" name="nombre" required></td>
+                  <td><input type="text" id="nombre" name="nombre" value="<?php echo $clienteMod['nombre'];?>" required></td>
                 </tr>
 
 				<tr>
                   <td>Apellido:</td>
-                  <td><input type="text" id="apellido" name="apellido" required></td>
+                  <td><input type="text" id="apellido" name="apellido" value="<?php echo $clienteMod['apellido'];?>" required></td>
                 </tr>
 
 				<tr>
                   <td>Telefono:</td>
-                  <td><input type="text" id="telefono" name="telefono" required></td>
+                  <td><input type="text" id="telefono" name="telefono" value="<?php echo $clienteMod['telefono'];?>" required></td>
                 </tr>
 				<tr>
                   <td>Domicilio:</td>
-                  <td><input type="text" id="domicilio" name="domicilio" placeholder="Calle y Nro" required></td>
+                  <td><input type="text" id="domicilio" name="domicilio" placeholder="Calle y Nro" value="<?php echo $clienteMod['domicilio'];?>" required></td>
                 </tr>
 
 				<tr>
                   <td>E-Mail:</td>
-                  <td><input type="email" name="mail" required></td>
+                  <td><input type="email" name="mail" value="<?php echo $clienteMod['mail'];?>" required></td>
                 </tr>
 
-				<tr>
-                  <td>Usuario:</td>
-                  <td><input type="text" maxlength="30"  name="usuario" required></td>
-                </tr>
-
-				<tr>
-                  <td>Contraseña:</td>
-                  <td><input type="password" maxlength="8"  name="contraseña" required></td>
-                </tr>
 
 				<tr>
                   <td>Localidad:</td>
@@ -94,27 +97,20 @@ $localidades=ConsultaSql('select * from localidades');
 						<option value="">Elegir Opcion</option>
 						<?php
 							while($c=mysql_fetch_array($localidades)){
-								echo "<option value='".$c['id']."'>".$c['nombre']."</option>";
+
+							    if($c['id']==$clienteMod['id_localidad'])
+												$sel='selected';
+								else $sel='';
+								echo "<option ".$sel." value='".$c['id']."'>".$c['nombre']."</option>";
+
 							}
 						?>
 					</select>
 				  </td>
                 </tr>
 
-				<tr>
-                  <td>Rol:</td>
 
-                  <td>
-					<select id="rol" name="rol">
-						<option value="">Elegir Opcion</option>
-						<option value='admi'>Administrador</option>
-						<option value='cli'>Cliente</option>
 
-					</select>
-				  </td>
-                </tr>
-
-				<tr>
                   <td></td>
                   <td><input type="submit" id="guardar" class="btn btn-primary" value="Guardar"></td>
                 </tr>
@@ -246,23 +242,6 @@ $localidades=ConsultaSql('select * from localidades');
 
 		var error=false;
 
-  				var localidad=$("#localidad_id").val();
-  				if(localidad === ''){
-  					//alert("El campo Localidad no puede quedar vacio, seleccione una opcion.");
-					//cancela el evento
-   					event.preventDefault();
-   					swal("", "El campo Localidad no puede quedar vacio, seleccione una opcion.", "warning");
-  				}
-
-				var rol=$("#rol").val();
-  				if(rol === ''){
-  					//alert("El campo Rol no puede quedar vacio, seleccione una opcion.");
-					//cancela el evento
-   					event.preventDefault();
-   					swal("", "El campo Rol no puede quedar vacio, seleccione una opcion.", "warning");
-
-  				}
-
 
 
 
@@ -324,18 +303,11 @@ $localidades=ConsultaSql('select * from localidades');
 
             }
 
-            if($("#usuario").val().length >15){
-                //alert("El numero de tarjeta debe tener 16 caracteres");
-                event.preventDefault()
-                $("#nombre").focus();
-                error=true;
-                swal("", "La cantidad de caracteres ingresados en el campo usuario supera el permitido.", "warning");
-
-            }
 
 
 
-				if (localidad!="" && rol!="" && error==false){
+
+				if (error==false){
 					swal("Cliente guardado", "", "success");
 
 					//$('#form1').submit();

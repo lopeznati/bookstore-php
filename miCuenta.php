@@ -94,24 +94,24 @@ ob_start();
 													<tbody>
 														<tr>
 															<td>Nombre:</td>
-															<td><input type="text" name="nombre" value="<?php echo $clienteMod['nombre'];?>" required></td>
+															<td><input type="text" name="nombre" id="nombre" value="<?php echo $clienteMod['nombre'];?>" required></td>
 														</tr>
 														<tr>
 															<td>Apellido:</td>
-															<td><input type="text" name="apellido" value="<?php echo $clienteMod['apellido'];?>" required></td>
+															<td><input type="text" name="apellido" id="apellido" value="<?php echo $clienteMod['apellido'];?>" required></td>
 														</tr>
 														<tr>
 															<td>Contraseña:</td>
-															<td><input type="text" name="clave" value="<?php echo $clienteMod['clave'];?>" required></td>
+															<td><input type="password" name="clave" value="<?php echo $clienteMod['clave'];?>" required></td>
 														</tr>
 															 <tr>
 																	 <tr>
 															<td>Domicilio:</td>
-															<td><input type="text" name="domicilio" value="<?php echo $clienteMod['domicilio'];?>" required></td>
+															<td><input type="text" name="domicilio" id="domicilio" value="<?php echo $clienteMod['domicilio'];?>" required></td>
 														</tr>
 															<tr>
 															<td>Teléfono:</td>
-															<td><input type="text" name="telefono" value="<?php echo $clienteMod['telefono'];?>" required></td>
+															<td><input type="text" name="telefono" id="telefono" value="<?php echo $clienteMod['telefono'];?>" required></td>
 														</tr>
 														<tr>
 															<td>Email:</td>
@@ -196,9 +196,80 @@ ob_start();
 	    $(document).ready(function(){
 
 		$("#form1").submit(function(event){
+
+
+					//$('#form1').submit();
+
+
+
+
+				var error=false;
+
+  				var localidad=$("#localidad_id").val();
+
+  				if($("#apellido").val().length >15){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#apellido").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo apellido supera el permitido.", "warning");
+
+            }
+
+            if($("#nombre").val().length >10){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#nombre").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo nombre supera el permitido.", "warning");
+
+            }
+
+
+
+            if($("#telefono").val().length >15){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#telefono").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo telefono supera el permitido.", "warning");
+
+            }
+
+
+            var telefono=$("#telefono").val();
+            if(isNaN(telefono)){
+                //alert("El campo Numero de Tarjeta debe ser numerico");
+
+                //cancela el evento
+                event.preventDefault();
+                $("#telefono").val("");
+                $("#telefono").focus();
+                error=true;
+                swal("", "El campo telefono debe ser numerico.", "warning");
+
+            }
+
+
+
+
+            if($("#domicilio").val().length >15){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#nombre").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo domicilio supera el permitido.", "warning");
+
+            }
+
+
+				if (error==false){
 					swal("Datos guardado", "", "success");
 
 					//$('#form1').submit();
+
+
+				}
 
 
 

@@ -59,7 +59,7 @@ if($_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION[
 
 
 
-		  <form action="" method="post">
+		  <form id="form1" action="" method="post">
 		  <table class="table table-striped">
 
                 <input type="hidden" name="id" value="<?php echo $categoriaMod['id'];?>">
@@ -67,7 +67,7 @@ if($_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION[
 				<tr>
                   <td>Descripcion:</td>
 
-                  <td><input type="text" name="descripcion" value="<?php echo $categoriaMod['descripcion'];?>" required></td>
+                  <td><input type="text" name="descripcion" id="descripcion" value="<?php echo $categoriaMod['descripcion'];?>" required></td>
                 </tr>
 
 
@@ -113,7 +113,7 @@ if($_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION[
 					echo "<td>".$l['id']."</td>";
 					echo "<td>".$l['descripcion']."</td>";
 					echo "<td><a href='modCategoria.php?idmodif=".$l['id']."'><IMG SRC='icon/modify.png' WIDTH=20 HEIGHT=20></a>
-				         <a href='CatLibro.php?idelim=".$l['id']."'> <IMG SRC='icon/gnome_edit_delete.png' WIDTH=30 HEIGHT=30>  </a></td>";
+				           <a class='eliminar' id='eliminar_".$l['id']."' onClick='eliminar(".$l['id'].")' href='#'> <IMG SRC='icon/gnome_edit_delete.png' WIDTH=30 HEIGHT=30>  </a></td>";
 
 				   echo "<tr>";
 
@@ -130,6 +130,81 @@ if($_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION[
         </div>
       </div>
     </div>
+
+      <form class="elim" action="" method="get">
+        <input class="idelim" type="hidden" name="idelim" value="">
+    </form>
+
+
+     <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+    <script src="dist/sweetalert.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+
+
+        $('form').on('submit',function(){
+
+        var error=false
+                if($("#descripcion").val().length >15){
+                //alert("El numero de tarjeta debe tener 16 caracteres");
+                event.preventDefault()
+                $("#descripcion").focus();
+                error=true;
+                swal("", "La cantidad de caracteres ingresados en el campo Descripcion supera el permitido.", "warning");
+
+            	}
+        if(error==false){
+         swal("Categoria guardada", "", "success");
+          $('.confirm').click(function(){
+             //$('#form1').submit();
+
+          });
+        }
+
+
+        });
+
+
+
+
+    });
+    function  eliminar(id){
+
+            //var url='eliCategoria.php?idelim='+id;
+
+            //$('#eliminar_'+id).attr('href',url);
+
+           // alert('eliminando');
+
+
+            swal({
+            title: "Desea eliminar la categoria?",
+            text: "",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Si, eliminarlo!",
+            closeOnConfirm: false
+        }, function () {
+            swal("Eliminado!", "La categoria ha sido eliminada.", "success");
+              var url='eliCategoria.php';
+            $('.elim').attr('action',url);
+            $('.idelim').attr('value',id);
+
+          //  $('.elim').trigger('click');
+          $('.elim').submit();
+
+        });
+        }
+
+
+
+    </script>
+
+
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
