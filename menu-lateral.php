@@ -49,14 +49,14 @@ include_once "funciones.php";
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar-collapse-2">
           <ul class="nav navbar-nav navbar-right">
-            <?php 
+            <?php
 			if(!isset($_SESSION['rol']) or !isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE )
             {
             ?>
             <li><a href="miCuenta.php">Mi Cuenta</a></li>
-			<li><a href="verCarro.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
 			<li><a href="formularioContacto.php">Contacto</a></li>
-			<li><a href="mapaSitio.php">Mapa del Sitio</a></li>
+      <li><a href="verCarro.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+      <li><a href="mapaSitio.php">Mapa del Sitio</a></li>
 			<li><a class="btn btn-default btn-outline btn-circle collapsed"  href="signin.php" aria-expanded="false" >Iniciar Sesión</a></li>
             <?php
             }
@@ -88,7 +88,7 @@ include_once "funciones.php";
 				<li>
 					<a class="btn btn-default btn-outline btn-circle collapsed"  href="logout.php" aria-expanded="false" >Cerrar Sesión</a>
 				</li>
-			<?php 
+			<?php
 			} ?>
           </ul>
         <!--  <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse2">
