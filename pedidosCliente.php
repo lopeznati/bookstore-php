@@ -65,6 +65,12 @@
 							?>
 						</tbody>
 					</table>
+					<center>
+						<div>
+							<input type="button" class="btn btn-primary" value="Volver a inicio" onClick="location.href='index.php'">
+							<input type="reset" class="btn btn-primary" value="Ir a Carrito" onClick="location.href='verCarro.php'">
+						</div>
+					</center>
 				</div>
 			</div>
 			</div>

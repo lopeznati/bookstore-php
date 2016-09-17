@@ -133,8 +133,11 @@
 							</td>
 						</tr>
 						<tr>
-							<td></td>
-							<td><input type="submit"  class="btn btn-primary" value="Guardar"></td>
+							<td>
+								<input type="submit" class="btn btn-primary" value="Enviar">
+								<input type="button" class="btn btn-primary" value="Cancelar" onClick="location.href='signin.php'">
+								<input type="reset" class="btn btn-primary" value="Borrar">	
+							</td>
 						</tr>
 					</table>
 				</form>

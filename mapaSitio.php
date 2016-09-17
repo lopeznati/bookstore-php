@@ -3,17 +3,21 @@
 	date_default_timezone_set('America/Argentina/Buenos_Aires');
 
 ?>
-<meta charset="utf-8">
-<script src="https://use.fontawesome.com/7fa1cd24b5.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Crete+Round|Oswald|Roboto" rel="stylesheet">
-<link href="dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="styles.css" rel="stylesheet">
-
+<head>
+	<meta charset="utf-8">
+	<script src="https://use.fontawesome.com/7fa1cd24b5.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Crete+Round|Oswald|Roboto" rel="stylesheet">
+	<link href="dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="styles.css" rel="stylesheet">
+	<style type="text/css">
+	</style>
+</head>
+<body>
 		<div class="container-fluid margen">
 			<div class="row margen">
 				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main margen">
 					<h1 class="page-header">Mapa del Sitio</h1>
-					<div id="SitemapTreeContainer">
+					<div  id="SitemapTreeContainer">
 						<ul>
 							<li id="SitemapTreeRootNode"><a href="index.php">Inicio</a>
 							<ul>
@@ -58,3 +62,4 @@
 				</div>
 			</div>
 		</div>
+</body>
