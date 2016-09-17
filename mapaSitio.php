@@ -9,8 +9,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Crete+Round|Oswald|Roboto" rel="stylesheet">
 	<link href="dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="styles.css" rel="stylesheet">
-	<style type="text/css">
-	</style>
 </head>
 <body>
 		<div class="container-fluid margen">
