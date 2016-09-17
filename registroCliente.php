@@ -237,7 +237,7 @@
             if($("#domicilio").val().length >20){
                 //alert("El numero de tarjeta debe tener 16 caracteres");
                 event.preventDefault()
-                $("#nombre").focus();
+                $("#domicio").focus();
                 error=true;
                 swal("", "La cantidad de caracteres ingresados en el campo domicilio supera el permitido.", "warning");
 
@@ -246,7 +246,7 @@
             if($("#usuario").val().length >15){
                 //alert("El numero de tarjeta debe tener 16 caracteres");
                 event.preventDefault()
-                $("#nombre").focus();
+                $("#usuario").focus();
                 error=true;
                 swal("", "La cantidad de caracteres ingresados en el campo usuario supera el permitido.", "warning");
 

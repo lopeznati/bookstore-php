@@ -373,12 +373,12 @@
 	   				event.preventDefault();
 	  			}
 
-	  			if($("#existencia").val().length >5){
+	  			if($("#nexistencia").val().length >5){
                 //alert("El numero de tarjeta debe tener 16 caracteres");
                 event.preventDefault()
-                $("#precio").focus();
+                $("#nexistencia").focus();
                 error=true;
-                swal("", "La cantidad de caracteres ingresados en el campo Precio supera el permitido.", "warning");
+                swal("", "La cantidad de caracteres ingresados en el campo Existencia supera el permitido.", "warning");
 
             	}
 

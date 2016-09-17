@@ -55,6 +55,8 @@ if($_SESSION['usuario_valido']==true){
 				if($resultado)
 				{
 					echo "<div style='text-align:center; color:blue;'>Se ha realizado la compra!!!!</div>";
+
+					unset($_SESSION['carro']);
 				}
 			}
 			$localidades=ConsultaSql('select * from localidades');
@@ -66,7 +68,7 @@ if($_SESSION['usuario_valido']==true){
 						<td colspan='2' class='titulos'>Datos de Entrega:</td>
 					</tr>
 					<tr>
-						<td>Domicilio:</td> <td><input type="text" name="domicilio" placeHolder="Calle y Nro" required></td>
+						<td>Domicilio:</td> <td><input type="text" name="domicilio" id="domicilio" placeHolder="Calle y Nro" required></td>
 					<tr>
 					<tr>
 						<td>Localidad:</td>
@@ -177,6 +179,17 @@ if($_SESSION['usuario_valido']==true){
 
 				}
 
+
+
+				if($("#domicilio").val().length >20){
+					//alert("El numero de tarjeta debe tener 16 caracteres");
+					event.preventDefault()
+					$("#domicilio").focus();
+					error=true;
+					swal("", "La cantidad de caracteres ingresados en el campo domicilio supera el permitido.", "warning");
+
+				}
+
 				if(error==false){
 					swal({   title: "Compra Realizada",   text: "Muchas gracias por su compra",   timer: 5000,   showConfirmButton: false });
 				}
@@ -189,6 +202,6 @@ if($_SESSION['usuario_valido']==true){
 	}else{
 	header('location:signin.php');
 	}
-	$arreglo=$_SESSION['carro'];
+	//$arreglo=$_SESSION['carro'];
 	$fecha=time();
 	?>

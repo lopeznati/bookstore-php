@@ -66,10 +66,9 @@ outline-offset: none;
 margin-top: 2px;
 }
 
-a {color:#fff;}
+a {color: #0b090b;}
 
 
-a:hover {text-decoration:none; color:#fff;}
 a:hover {text-decoration:underline; color:#ff0000;}
 a:visited {text-decoration:none; color:#008000;}
 a:active {text-decoration:none; color:#0000ff ;}

@@ -116,7 +116,7 @@
 
 
 			if(error==false){
-				swal({   title: "Compra Realizada",   text: "Muchas gracias por su compra",   timer: 5000,   showConfirmButton: false });
+				swal({   title: "Consulta enviada",   text: "Muchas gracias por su consulta",   timer: 5000,   showConfirmButton: false });
 			}
 
 
