@@ -3,7 +3,7 @@
 	$idlibro=$_REQUEST['id'];
 	$sql="select * from libros where id='".$idlibro."'";
 	$libro=ConsultaSql($sql);
-	echo $idLibro;
+	//echo $idLibro;
 ?>
 <link href="dashboard.css" rel="stylesheet">
 
@@ -49,12 +49,12 @@
 							
 							
 								<td>
-									<span class='titulos'><?php=$l['titulo']?></span></br>
-									<span class='titulos'>ISBN: </span><?php=$l['ISBN']?></br>
-									<span class='titulos'>Precio: </span>$ <?php=$l['precio']?></br>
-									<span class='titulos'>Categoria: </span><?php=utf8_encode($c['descripcion'])?></br>
+									<span class='titulos'><?=$l['titulo']?></span></br>
+									<span class='titulos'>ISBN: </span><?=$l['ISBN']?></br>
+									<span class='titulos'>Precio: </span>$ <?=$l['precio']?></br>
+									<span class='titulos'>Categoria: </span><?=utf8_encode($c['descripcion'])?></br>
 									<span class='titulos'>Editorial: </span><?=$e['nombre']?></br>
-									<span class='titulos'>Paginas: </span><?php=$l['cantPaginas']?></br>
+									<span class='titulos'>Paginas: </span><?=$l['cantPaginas']?></br>
 									<?php 
 										if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION['usuario_valido']!=TRUE )
 										{ ?>
@@ -67,7 +67,7 @@
                                         <botton id='cartelLibro' class='btn btn-primary'> Carro</botton>
                                         <a href='detalle.php'><botton class='btn btn-primary'> Carro</botton></a>-->
 										</br>
-									<input type='hidden' name='id' value='".$l['id']."'>
+									<input type='hidden' name='id' value='<?=$l['id']?>'>
 								</td>
 								<?php
 

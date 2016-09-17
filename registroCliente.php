@@ -21,7 +21,13 @@
 		$validar=ConsultaSql('select * from clientes where usuario="'.$usuario.'"');
 		if(mysql_num_rows($validar)==1)
 		{
-			echo "</br><div style='text-align:center; color:blue;'>usuario ya usado</div>";
+			//echo "</br><div style='text-align:center; color:blue;'>usuario ya usado</div>";
+		
+
+			echo "<script language='javascript'>
+									 alert('El nombre usuario ya fue usado.');
+
+				</script>";
 		}
 		else
 		{
@@ -141,6 +147,7 @@
 
 
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="dist/sweetalert.min.js"></script>
 
 	<script type="text/javascript">
 
@@ -151,7 +158,7 @@
 
 
 		   </script>
-		<script src="dist/sweetalert.min.js"></script>
+
 
 
 		<script>
