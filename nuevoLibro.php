@@ -124,7 +124,10 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td><input type="submit" id="guardar" class="btn btn-primary" value="Guardar"></td>
+							<td>
+								<input type="submit" id="guardar" class="btn btn-primary" value="Guardar">
+								<input type="reset" id="borrar" class="btn btn-primary" value="Borrar">
+							</td>
 						</tr>
 					</table>
 				</form>

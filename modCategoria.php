@@ -74,7 +74,10 @@ if($_SESSION['rol']!='admi' or !isset($_SESSION['usuario_valido']) or $_SESSION[
 
 				<tr>
                   <td></td>
-                  <td><input type="submit" class="btn btn-primary" value="Guardar"></td>
+                  <td>
+					<input type="submit" class="btn btn-primary" value="Guardar">
+					<input type="button" class="btn btn-primary" value="Cancelar" onClick="location.href='nuevaCategoria.php'">
+				  </td>
                 </tr>
 
            </table>

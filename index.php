@@ -91,7 +91,7 @@ include_once "menu-lateral.php";
 								$e=mysql_fetch_assoc(ConsultaSql($sqlEditorial));
 								echo "<form action='verCarro.php' action='GET'>";
 								echo "<tr>";
-								echo "<td class='celdafoto'><img class='foto' src='".$l['foto']."'/></td>";
+								echo "<td class='celdafoto'><img src='".$l['foto']."' class='foto'></td>";
 
 
 								/*echo "<td>

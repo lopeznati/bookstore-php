@@ -109,7 +109,11 @@ if($_SESSION['usuario_valido']==true){
 						<td>Titular:</td> <td><input type="text" name="titular" placeHolder="Apellido y Nombre" required></td>
 					</tr>
 					<tr>
-						<td colspan='2'><input type="submit" class="btn btn-primary" value="Confirmar"></td>
+						<td colspan='2'>
+							<input type="submit" class="btn btn-primary" value="Confirmar">
+							<input type="button" class="btn btn-primary" value="Cancelar" onClick="location.href='index.php'">
+							<input type="reset" class="btn btn-primary" value="Borrar">
+						</td>
 					</tr>
 				</table>
 			</form>

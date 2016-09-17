@@ -59,7 +59,10 @@ if(!isset($_SESSION['rol']) or $_SESSION['rol']!='admi' or !isset($_SESSION['usu
 
 				<tr>
                   <td></td>
-                  <td><input type="submit" class="btn btn-primary" id="guardar" value="Guardar"></td>
+                  <td>
+					<input type="submit" class="btn btn-primary" id="guardar" value="Guardar">
+					<input type="reset" id="borrar" class="btn btn-primary" value="Borrar">
+				  </td>
 
 
                 </tr>

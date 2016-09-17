@@ -76,7 +76,9 @@
 							<tr>
 								<td>
 									<input type="submit" class="btn btn-primary" value="Enviar">
-									<input type="reset" class="btn btn-primary" value="Limpiar">
+									<input type="button" class="btn btn-primary" value="Cancelar" onClick="location.href='index.php'">
+									<input type="reset" class="btn btn-primary" value="Borrar">
+									
 								</td>
 							</tr>
 						</table>
@@ -84,9 +86,6 @@
 				</div>
 			</div>
 		</div>
-
-
-
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="dist/sweetalert.min.js"></script>

@@ -133,7 +133,11 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td><input type="submit" id="guardar" class="btn btn-primary" value="Guardar"></td>
+							<td>
+								<input type="submit" id="guardar" class="btn btn-primary" value="Guardar">
+								<input type="button" id="cancelar" class="btn btn-primary" value="Cancelar" onClick="location.href='nuevoLibro.php'">
+							</td>
+							
 						</tr>
 					</table>
 				</form>

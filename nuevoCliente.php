@@ -116,7 +116,11 @@ $localidades=ConsultaSql('select * from localidades');
 
 				<tr>
                   <td></td>
-                  <td><input type="submit" id="guardar" class="btn btn-primary" value="Guardar"></td>
+                  <td>
+					<input type="submit" id="guardar" class="btn btn-primary" value="Guardar">
+					<input type="reset" id="borrar" class="btn btn-primary" value="Borrar">
+				  </td>
+				  
                 </tr>
 
            </table>
@@ -215,7 +219,7 @@ $localidades=ConsultaSql('select * from localidades');
 				$ac = fopen($nombreArchivo,'a+');
 				fputs($ac,$salida);
 				fclose($ac);
-				echo "Generé el archivo csv en el disco !!";
+				echo "Se ha generado y guardado el archivo csv en el disco !!";
 			}
 
 			?>

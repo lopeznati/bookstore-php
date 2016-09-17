@@ -112,7 +112,10 @@ $localidades=ConsultaSql('select * from localidades');
 
 
                   <td></td>
-                  <td><input type="submit" id="guardar" class="btn btn-primary" value="Guardar"></td>
+                  <td>
+					<input type="submit" id="guardar" class="btn btn-primary" value="Guardar">
+					<input type="button" class="btn btn-primary" value="Cancelar" onClick="location.href='nuevoCliente.php'">
+				  </td>
                 </tr>
 
            </table>

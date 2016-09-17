@@ -54,10 +54,10 @@ include_once "funciones.php";
             {
             ?>
             <li><a href="miCuenta.php">Mi Cuenta</a></li>
+			<li><a href="verCarro.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
 			<li><a href="formularioContacto.php">Contacto</a></li>
-            <li><a href="verCarro.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-
-			<a class="btn btn-default btn-outline btn-circle collapsed"  href="signin.php" aria-expanded="false" >Iniciar Sesión</a>
+			<li><a href="mapaSitio.php">Mapa del Sitio</a></li>
+			<li><a class="btn btn-default btn-outline btn-circle collapsed"  href="signin.php" aria-expanded="false" >Iniciar Sesión</a></li>
             <?php
             }
 			else if (isset($_SESSION['rol']))
@@ -84,7 +84,7 @@ include_once "funciones.php";
 				}}
 				?>
 				<li><a href="formularioContacto.php">Contacto</a></li>
-
+				<li><a href="mapaSitio.php">Mapa del Sitio</a></li>
 				<li>
 					<a class="btn btn-default btn-outline btn-circle collapsed"  href="logout.php" aria-expanded="false" >Cerrar Sesión</a>
 				</li>

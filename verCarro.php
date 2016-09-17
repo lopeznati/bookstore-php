@@ -133,6 +133,7 @@ if(isset($_SESSION['carro'])){
 		$contador++;
 		//este es el contador que usamos
 		//para los colores alternos
+
 		?>
 		<div class="producto_<?php echo $v['id']; ?>">
 		<tr bgcolor="<?php echo $color[$contador%2]; ?>" class='prod'>
