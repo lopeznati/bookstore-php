@@ -67,7 +67,12 @@ margin-top: 2px;
 }
 
 a {color:#fff;}
+
+
 a:hover {text-decoration:none; color:#fff;}
+a:hover {text-decoration:underline; color:#ff0000;}
+a:visited {text-decoration:none; color:#008000;}
+a:active {text-decoration:none; color:#0000ff ;}
 
 .navbar-brand { position: relative; z-index: 2; font-family: 'Crete Round', serif; }
 
@@ -165,7 +170,3 @@ a:hover {text-decoration:none; color:#fff;}
 {margin-top:20px;
 }
 
-#SitemapTreeRootNode a, #SitemapTreeContainer a{
-  color: black !important;
-  font-size: 15px;
-}
